@@ -1,0 +1,476 @@
+<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>张俊林：OpenAI o1价值意义及RL的Scaling Law | 青稞社区</title><meta name="keywords" content="张俊林,OpenAI"><meta name="author" content="青稞"><meta name="copyright" content="青稞"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="张俊林：OpenAI o1价值意义及RL的Scaling Law"><meta name="application-name" content="张俊林：OpenAI o1价值意义及RL的Scaling Law"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="张俊林：OpenAI o1价值意义及RL的Scaling Law"><meta property="og:url" content="https://github.com/qingkelab/2024/09/17/LLM/2024-09-17/index.html"><meta property="og:site_name" content="青稞社区"><meta property="og:description" content="作者：张俊林，新浪微博新技术研发负责人 原文：https:&amp;#x2F;&amp;#x2F;zhuanlan.zhihu.com&amp;#x2F;p&amp;#x2F;720078255   OpenAI o1是大模型的巨大进步 我觉得OpenAI o1是自GPT 4发布以来，基座大模型最大的进展，逻辑推理能力提升的效果和方法比我想的要好，GPT 4o和o1是"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://images.ctfassets.net/kftzwdyauwt9/4G2ZNJjHK6uhLQO2pXR7e3/9522fa4dd9f372deddfc710a02fad44c/o1-research.png?w=1920&amp;q=90&amp;fm=webp"><meta property="article:author" content="青稞"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://images.ctfassets.net/kftzwdyauwt9/4G2ZNJjHK6uhLQO2pXR7e3/9522fa4dd9f372deddfc710a02fad44c/o1-research.png?w=1920&amp;q=90&amp;fm=webp"><meta name="description" content="作者：张俊林，新浪微博新技术研发负责人 原文：https:&amp;#x2F;&amp;#x2F;zhuanlan.zhihu.com&amp;#x2F;p&amp;#x2F;720078255   OpenAI o1是大模型的巨大进步 我觉得OpenAI o1是自GPT 4发布以来，基座大模型最大的进展，逻辑推理能力提升的效果和方法比我想的要好，GPT 4o和o1是"><link rel="shortcut icon" href="/%E9%9D%92%E7%A8%9E.jpg"><link rel="canonical" href="https://github.com/qingkelab/2024/09/17/LLM/2024-09-17/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: {"skills":null},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 青稞","link":"链接: ","source":"来源: 青稞社区","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '青稞社区',
+  title: '张俊林：OpenAI o1价值意义及RL的Scaling Law',
+  postAI: '',
+  pageFillDescription: 'OpenAI o1是大模型的巨大进步, 为什么说o1比4o方向重要？, 从上面o1的做法可以知道Prompt工程会逐渐消亡, Agent属于概念火但无法实用化的方向主要原因就在于基座模型的复杂推理能力不够强作者张俊林新浪微博新技术研发负责人原文是大模型的巨大进步我觉得是自发布以来基座大模型最大的进展逻辑推理能力提升的效果和方法比我想的要好和是发展大模型不同的方向但是这个方向更根本重要性也比这种方向要重要得多原因下面会分析为什么说比方向重要这是两种不同的大模型发展思路说实话在看到发布的时候我是有些失望的我当时以为会优先做这种方向但是没想到先出了本质上是要探索不同模态相互融合的大一统模型应该怎么做的问题对于提升大模型的智力水平估计帮助不大而本质上是在探索大模型在路上能走多远天花板在哪里的问题很明显第二个问题更重要的问题在于本身大模型的智力水平还不够高所以做不了复杂任务导致很多应用场景无法实用化而指望靠图片视频这类新模态数据大幅提升大模型智力水平是不太可能的尽管确实能拓展更丰富的多模态应用场景但这类数据弥补的更多是大模型对外在多模态世界的感知能力而不是认知能力提升大模型认知能力主要还要靠文本模型而提升模型认知能力的核心又在复杂逻辑推理能力的逻辑推理能力越强则能解锁更多复杂应用大模型应用的天花板就越高所以不遗余力地提升大模型尤其是文本模型的逻辑能力应该是最重要的事情没有之一如果模型能力越做越强则可以反哺这种多模态大一统模型可以通过直接用基座模型替换的基座或者利用模型生成逻辑推理方面的合成数据增强再或者用蒸馏模型等等能玩的花样应该有很多都可以直接提升的复杂任务解决能力从而解锁更复杂的多模态应用场景未来计划两条线一条是一条是它的内在逻辑大概应该是这样的就是说通过增强最重要的基座模型逻辑推理能力而再把这种能力迁移到这种多模态通用模型上的做法本质上是的自动化我们知道通过把一个复杂问题拆解成若干简单步骤这有利于大模型解决复杂逻辑问题但之前主要靠人工写来达成从用户提出的问题形成树的根结点出发最终走到给出正确答案可以想像成类似下棋形成了巨大的由具体步骤构成的树形搜索空间这里的具体步骤的组合空间是巨大的人写的未必最优如果我们有大量逻辑数据是由问题明确的正确答案构成则通过类似的搜索强化学习确实是可以训练大模型快速找到通向正确答案的路径的而问题越复杂则这个树的搜索空间越大搜索复杂度越高找到正确答案涉及到的步骤越多则模型生成的就越复杂体现在的速度越慢生成的数越多很明显问题越复杂自己生成的隐藏的越长大模型推理成本越高但效果最重要成本其实不是问题最近一年大模型推理成本降低速度奇快这个总有办法快速降下去从上面的做法可以知道工程会逐渐消亡之前解决复杂问题需要人写非常复杂的而本质上是等复杂的自动化所以之后是不太需要用户自己构造复杂的本来让用户写复杂就是不人性化的所有复杂人工环节的自动化这肯定是大势所趋属于概念火但无法实用化的方向主要原因就在于基座模型的复杂推理能力不够强如果通过基座模型把一个复杂任务分解为个步骤哪怕单个步骤的正确率高达要想最后把任务做对个环节的准确率连乘下来最终的正确率只有惨不忍睹那有了是不是这个方向就前途坦荡也是也不是的专门测试了任务对于简单和中等难度的任务有明显提升但是复杂的环节多的任务准确率还是不太高就是说不是说有了就现状光明但是很明显这种通过增强逻辑推理能力的方向应该还有很大的发展潜力从这个角度讲说未来前途光明问题应该不大很多时候起到一个行业指路明灯的作用往往是第一个证明某个方向是行得通的比如包括这次的然后其他人开始疯狂往这个方向卷到后来甚至卷的速度太快把都甩到后面吃尾气典型例子就是如果不是出于阻击竞争对手秀一下肌肉大家都没有意识到原来这个方向是可以走这么远的但当意识到这一点后只要你专一地卷一个方向方向明确且资源聚焦是可能赶超的目前国内外各种视频生成模型有些甚至可能已经比好了至今仍然是期货状态主要想做的方向太多资源分散导致分到具体一个方向的资源不够用所以越往后发展期货状态的方向越多也让人觉得尽显疲态等于给大家又指出了一个前景光明的方向估计后面大家又开始都往这个方向卷我觉得卷这个方向比去卷和视频生成要好虽然具体怎么做的都不知道但是大方向清楚且效果基本得到证明过半年肯定头部几家都能摸清具体技术追上来希望能再次让吃尾气而且这个方向看上去资源耗费应该不会特别大偏向算法和数据一些数据量规模估计不会特别巨大卷起来貌似成本低一些这是个卷的好方向预训练为何一定会变缓粗分的话大语言模型最基础的能力有三种语言理解和表达能力世界知识存储和查询能力以及逻辑推理能力包括数学推理等理科能力这里有一定的特殊性是语言能力和逻辑掺杂在一起的混合能力从语言角度可以看成一种受限的自然语言但是混杂着复杂的内在逻辑问题从语言角度看貌似是容易解决的从逻辑角度看又相对难解决总之目前看是除了语言理解外大模型做得最好的方向语言理解和表达是最强的能力初版就可以完全胜任各种纯语言交流的任务基本达到人类水准目前即使是小模型在这方面比大模型能力也不弱世界知识能力虽说随着模型规模越大效果越好但幻觉问题目前无法根治这是制约各种应用的硬伤之一逻辑推理能力一直都是的弱项也是最难提升的方面从开始往后如何有效并大幅提升的逻辑推理能力是体现不同大模型差异和优势的最核心问题所以大模型最重要的一个是世界知识方面如何有效消除幻觉一个是如何大幅提升复杂逻辑推理能力语言能力已不是问题从大模型的基础能力我们再说回已经被谈滥了的大模型现在普遍认为通过增加数据和模型规模来提升大模型效果的模式其增长速度在放缓其实我们对照下大模型的三个基础能力的能力来源基本就能看出来这是为啥以下是我猜的不保真本质上大模型的能力来源都来自训练数据包含能体现这方面能力的训练数据越多则这种能力越强语言能力不用说了任意一份预训练数据其中都包含相当比例的语言的词法句法等成分所以训练数据中体现语言能力的数据是最多的这也是为何大模型的语言能力最强的原因而数据中包含的世界知识含量基本是和训练数据量成正比的明显数据量越多包含的世界知识越多是数据中包含的世界知识含量关系的一个体现但是这里有个问题大模型见过越多数据则新数据里面包含的新知识比例越小因为很多知识在之前的数据里都见过了所以随着数据规模增大遇到的新知识比例就越低在世界知识方面就体现出的减缓现象而为啥逻辑推理能力最难提升因为能体现这方面的自然数据代码数学题物理题科学论文等在训练数据中比例太低自然大模型就学不好尽管通过不断增加数据能增加逻辑推理方面数据的绝对数量但因为占比太少这方面提升的效果和增加的总体数据规模就不成比例效果也不会太明显就体现在逻辑推理能力看上去的放缓这是很自然的这也是为何现在为了提高模型逻辑能力往往在预训练阶段和阶段大幅增加逻辑推理数据占比的原因且是有成效的的有吗所以目前大模型的核心能力提升聚焦到不断通过合成数据等方式构造更多比例的逻辑推理数据上来但是大部分逻辑推理数据的形式是问题正确答案缺了中间的详细推理步骤而本质上是让大模型学会自动寻找从问题到正确答案的中间步骤以此来增强复杂问题的解决能力提到了关于在训练和推理时候的并指出这与预训练时候的具有不同特性很明显如果走的是搜索技术路线那么把拆分的越细增加搜索树的深度或提出更多的可能选择节点的分支增多就是说树的宽度越宽则搜索空间越大找到好路径可能性越大效果越好而训练和推理的时候需要算力肯定越大看上去有着效果随着算力增长而增长的态势也就是所谓的的这其实是树搜索本来应有之义我倒觉得把这个称为的有点名不副实',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-17 20:25:02',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/%E9%9D%92%E7%A8%9E.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">青稞社区</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 青稞</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/5%E5%88%86%E9%92%9F%E6%9E%81%E5%87%8F%E9%98%85%E8%AF%BB/" style="font-size: 1.05rem;">5分钟极减阅读<sup>2</sup></a><a href="/tags/AIGC/" style="font-size: 1.05rem;">AIGC<sup>6</sup></a><a href="/tags/Anwen-Hu/" style="font-size: 1.05rem;">Anwen Hu<sup>2</sup></a><a href="/tags/Bohan-Zhuang/" style="font-size: 1.05rem;">Bohan Zhuang<sup>1</sup></a><a href="/tags/GPT-5/" style="font-size: 1.05rem;">GPT-5<sup>1</sup></a><a href="/tags/LLAMA-3/" style="font-size: 1.05rem;">LLAMA-3<sup>1</sup></a><a href="/tags/LLM/" style="font-size: 1.05rem;">LLM<sup>29</sup></a><a href="/tags/LLaMA/" style="font-size: 1.05rem;">LLaMA<sup>2</sup></a><a href="/tags/Long-Context/" style="font-size: 1.05rem;">Long Context<sup>1</sup></a><a href="/tags/MLLM/" style="font-size: 1.05rem;">MLLM<sup>5</sup></a><a href="/tags/MOE/" style="font-size: 1.05rem;">MOE<sup>1</sup></a><a href="/tags/OpenAI/" style="font-size: 1.05rem;">OpenAI<sup>3</sup></a><a href="/tags/Q/" style="font-size: 1.05rem;">Q*<sup>1</sup></a><a href="/tags/Scaling-Law/" style="font-size: 1.05rem;">Scaling Law<sup>1</sup></a><a href="/tags/Sora/" style="font-size: 1.05rem;">Sora<sup>1</sup></a><a href="/tags/TAMU/" style="font-size: 1.05rem;">TAMU<sup>1</sup></a><a href="/tags/Transformer/" style="font-size: 1.05rem;">Transformer<sup>2</sup></a><a href="/tags/VLM/" style="font-size: 1.05rem;">VLM<sup>2</sup></a><a href="/tags/%E3%80%8A%E4%BB%8E%E5%88%86%E5%B8%83%E5%88%B0%E7%94%9F%E6%88%90%E3%80%8B%E4%B8%93%E9%A2%98/" style="font-size: 1.05rem;">《从分布到生成》专题<sup>2</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA/" style="font-size: 1.05rem;">减论<sup>2</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA%E7%B3%BB%E5%88%97%E4%B8%93%E6%A0%8F/" style="font-size: 1.05rem;">减论系列专栏<sup>2</sup></a><a href="/tags/%E5%8D%8E%E4%B8%BA/" style="font-size: 1.05rem;">华为<sup>1</sup></a><a href="/tags/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">南开大学<sup>4</sup></a><a href="/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/" style="font-size: 1.05rem;">合成数据<sup>2</sup></a><a href="/tags/%E5%94%90%E4%B8%9A%E8%BE%89/" style="font-size: 1.05rem;">唐业辉<sup>1</sup></a><a href="/tags/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/" style="font-size: 1.05rem;">图像生成<sup>1</sup></a><a href="/tags/%E5%AD%9F%E7%B9%81%E7%BB%AD/" style="font-size: 1.05rem;">孟繁续<sup>2</sup></a><a href="/tags/%E5%BC%A0%E4%BF%8A%E6%9E%97/" style="font-size: 1.05rem;">张俊林<sup>4</sup></a><a href="/tags/%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86/" style="font-size: 1.05rem;">文档处理<sup>1</sup></a><a href="/tags/%E6%9D%8E%E7%BF%94/" style="font-size: 1.05rem;">李翔<sup>4</sup></a><a href="/tags/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">浙江大学<sup>2</sup></a><a href="/tags/%E6%B6%82%E6%AD%A3%E4%B8%AD/" style="font-size: 1.05rem;">涂正中<sup>1</sup></a><a href="/tags/%E6%BD%98%E6%A2%93%E6%AD%A3/" style="font-size: 1.05rem;">潘梓正<sup>1</sup></a><a href="/tags/%E7%8E%8B%E6%AC%A2/" style="font-size: 1.05rem;">王欢<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95%E5%AE%9E%E4%B9%A0%E7%94%9F/" style="font-size: 1.05rem;">算法实习生<sup>1</sup></a><a href="/tags/%E8%8E%AB%E7%BA%B3%E4%BB%80%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">莫纳什大学<sup>2</sup></a><a href="/tags/%E8%A5%BF%E6%B9%96%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">西湖大学<sup>1</sup></a><a href="/tags/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/" style="font-size: 1.05rem;">视频生成<sup>3</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/" style="font-size: 1.05rem;">阿里巴巴<sup>1</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E9%80%9A%E4%B9%89%E5%AE%9E%E9%AA%8C%E5%AE%A4%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E6%99%BA%E8%83%BD%E5%9B%A2%E9%98%9F/" style="font-size: 1.05rem;">阿里巴巴通义实验室自然语言智能团队<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">12</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">10</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/LLM/" itemprop="url">LLM</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%BC%A0%E4%BF%8A%E6%9E%97/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>张俊林</span></a><a class="article-meta__tags" href="/tags/OpenAI/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>OpenAI</span></a></span></div></div><h1 class="post-title" itemprop="name headline">张俊林：OpenAI o1价值意义及RL的Scaling Law</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-09-17T12:22:32.000Z" title="发表于 2024-09-17 20:22:32">2024-09-17</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-09-17T12:25:02.649Z" title="更新于 2024-09-17 20:25:02">2024-09-17</time></span></div><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://images.ctfassets.net/kftzwdyauwt9/4G2ZNJjHK6uhLQO2pXR7e3/9522fa4dd9f372deddfc710a02fad44c/o1-research.png?w=1920&amp;q=90&amp;fm=webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://github.com/qingkelab/2024/09/17/LLM/2024-09-17/"><header><a class="post-meta-categories" href="/categories/LLM/" itemprop="url">LLM</a><a href="/tags/%E5%BC%A0%E4%BF%8A%E6%9E%97/" tabindex="-1" itemprop="url">张俊林</a><a href="/tags/OpenAI/" tabindex="-1" itemprop="url">OpenAI</a><h1 id="CrawlerTitle" itemprop="name headline">张俊林：OpenAI o1价值意义及RL的Scaling Law</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">青稞</span><time itemprop="dateCreated datePublished" datetime="2024-09-17T12:22:32.000Z" title="发表于 2024-09-17 20:22:32">2024-09-17</time><time itemprop="dateCreated datePublished" datetime="2024-09-17T12:25:02.649Z" title="更新于 2024-09-17 20:25:02">2024-09-17</time></header><blockquote>
+<p>作者：张俊林，新浪微博新技术研发负责人 <br>原文：<a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/720078255">https://zhuanlan.zhihu.com/p/720078255</a></p>
+</blockquote>
+<p><img
+src="https://images.ctfassets.net/kftzwdyauwt9/4G2ZNJjHK6uhLQO2pXR7e3/9522fa4dd9f372deddfc710a02fad44c/o1-research.png?w=1920&amp;q=90&amp;fm=webp" /></p>
+<h1 id="openai-o1是大模型的巨大进步">OpenAI o1是大模型的巨大进步</h1>
+<p>我觉得OpenAI o1是自GPT
+4发布以来，基座大模型最大的进展，逻辑推理能力提升的效果和方法比我想的要好，GPT
+4o和o1是发展大模型不同的方向，但是o1这个方向更根本，重要性也比GPT
+4o这种方向要重要得多，原因下面会分析。</p>
+<h3 id="为什么说o1比4o方向重要">为什么说o1比4o方向重要？</h3>
+<p>这是两种不同的大模型发展思路，说实话在看到GPT
+4o发布的时候我是有些失望的，我当时以为OpenAI会优先做o1这种方向，但是没想到先出了GPT
+4o。<strong>GPT
+4o本质上是要探索不同模态相互融合的大一统模型应该怎么做的问题，对于提升大模型的智力水平估计帮助不大；而o1本质上是在探索大模型在AGI路上能走多远、天花板在哪里的问题，很明显第二个问题更重要。</strong></p>
+<p>GPT
+4o的问题在于本身大模型的智力水平还不够高，所以做不了复杂任务，导致很多应用场景无法实用化，而指望靠图片、视频这类新模态数据大幅提升大模型智力水平是不太可能的，尽管确实能拓展更丰富的多模态应用场景，但这类数据弥补的更多是大模型对外在多模态世界的感知能力，而不是认知能力。提升大模型认知能力主要还要靠LLM文本模型，而提升LLM模型认知能力的核心又在复杂逻辑推理能力。LLM的逻辑推理能力越强，则能解锁更多复杂应用，大模型应用的天花板就越高，所以不遗余力地提升大模型尤其是文本模型的逻辑能力应该是最重要的事情，没有之一。</p>
+<p>如果o1模型能力越做越强，则可以反哺GPT
+4o这种多模态大一统模型，可以通过直接用o1基座模型替换GPT
+4o的基座、或者利用o1模型生成逻辑推理方面的合成数据增强GPT
+4o、再或者用o1蒸馏GPT 4o模型…..
+等等，能玩的花样应该有很多，都可以直接提升GPT
+4o的复杂任务解决能力，从而解锁更复杂的多模态应用场景。OpenAI未来计划两条线，一条是o1，一条是GPT
+4o，它的内在逻辑大概应该是这样的，就是说<strong>通过o1增强最重要的基座模型逻辑推理能力，而再把这种能力迁移到GPT
+4o这种多模态通用模型上。</strong></p>
+<h3 id="openai-o1的做法本质上是cot的自动化">OpenAI
+o1的做法本质上是COT的自动化</h3>
+<p>我们知道，通过COT把一个复杂问题拆解成若干简单步骤，这有利于大模型解决复杂逻辑问题，但之前主要靠人工写COT来达成。从用户提出的问题形成树的根结点出发，最终走到给出正确答案，可以想像成类似AlphaGo下棋，形成了巨大的由COT具体步骤构成的树形搜索空间，这里COT的具体步骤的组合空间是巨大的，人写的COT未必最优。如果我们有大量逻辑数据，是由&lt;问题，明确的正确答案&gt;构成，则通过类似AlphaGo的Monte
+Carlo Tree
+Search（MCTS）搜索+强化学习，确实是可以训练大模型快速找到通向正确答案的COT路径的。而问题越复杂，则这个树的搜索空间越大，搜索复杂度越高，找到正确答案涉及到的COT步骤越多，则模型生成的COT就越复杂，体现在o1的速度越慢，生成的COT
+Token数越多。很明显，问题越复杂，o1自己生成的隐藏的COT越长，大模型推理成本越高，但<strong>效果最重要，成本其实不是问题，最近一年大模型推理成本降低速度奇快，这个总有办法快速降下去。</strong></p>
+<h3
+id="从上面o1的做法可以知道prompt工程会逐渐消亡">从上面o1的做法可以知道Prompt工程会逐渐消亡</h3>
+<p>之前解决复杂问题，需要人写非常复杂的Prompt，而o1本质上是COT等复杂Prompt的自动化，所以之后是不太需要用户自己构造复杂Prompt的。本来让用户写复杂Prompt就是不人性化的，所有复杂人工环节的自动化，这肯定是大势所趋。</p>
+<h3
+id="agent属于概念火但无法实用化的方向主要原因就在于基座模型的复杂推理能力不够强">Agent属于概念火但无法实用化的方向，主要原因就在于基座模型的复杂推理能力不够强</h3>
+<p>如果通过基座模型Plan把一个复杂任务分解为10个步骤，哪怕单个步骤的正确率高达95%，要想最后把任务做对，10个环节的准确率连乘下来，最终的正确率只有59%，惨不忍睹。那有了o1是不是这个方向就前途坦荡？也是也不是，o1的Model
+Card专门测试了Agent任务，对于简单和中等难度的Agent任务有明显提升，但是复杂的、环节多的任务准确率还是不太高。就是说，不是说有了o1
+Agent就现状光明，但是很明显o1这种通过Self
+Play增强逻辑推理能力的方向应该还有很大的发展潜力，从这个角度讲说Agent未来前途光明问题应该不大。</p>
+<p>OpenAI很多时候起到一个行业指路明灯的作用，往往是第一个证明某个方向是行得通的（比如ChatGPT、GPT
+4、Sora、GPT
+4o包括这次的o1），然后其他人开始疯狂往这个方向卷，到后来甚至卷的速度太快把OpenAI都甩到后面吃尾气。典型例子就是Sora，如果OpenAI不是出于阻击竞争对手秀一下肌肉，大家都没有意识到原来这个方向是可以走这么远的，但当意识到这一点后，只要你专一地卷一个方向，方向明确且资源聚焦，是可能赶超OpenAI的，目前国内外各种视频生成模型有些甚至可能已经比Sora好了，Sora至今仍然是期货状态，主要OpenAI想做的方向太多，资源分散导致分到具体一个方向的资源不够用，所以越往后发展期货状态的方向越多，也让人觉得尽显疲态。</p>
+<p>OpenAI
+o1等于给大家又指出了一个前景光明的方向，估计后面大家又开始都往这个方向卷。我觉得卷这个方向比去卷GPT
+4o和视频生成要好，虽然具体怎么做的都不知道，但是大方向清楚且效果基本得到证明，过半年肯定头部几家都能摸清具体技术追上来，希望能再次让OpenAI吃尾气。而且这个方向看上去资源耗费应该不会特别大，偏向算法和数据一些，数据量规模估计不会特别巨大，卷起来貌似成本低一些。这是个卷的好方向。</p>
+<h1 id="预训练scaling-law为何一定会变缓">预训练Scaling
+Law为何一定会变缓</h1>
+<p>粗分的话，大语言模型最基础的能力有三种：<strong>语言理解和表达能力、世界知识存储和查询能力以及逻辑推理能力</strong>（包括数学、Coding、推理等理科能力，这里Coding有一定的特殊性，是语言能力和逻辑掺杂在一起的混合能力，Coding从语言角度可以看成一种受限的自然语言，但是混杂着复杂的内在逻辑问题。从语言角度看，Coding貌似是容易解决的，从逻辑角度看又相对难解决。总之，Coding目前看是除了语言理解外，大模型做得最好的方向）。</p>
+<p>语言理解和表达是LLM最强的能力，初版ChatGPT就可以完全胜任各种纯语言交流的任务，基本达到人类水准，目前即使是小模型，在这方面比大模型能力也不弱；世界知识能力虽说随着模型规模越大效果越好，但幻觉问题目前无法根治，这是制约各种应用的硬伤之一；逻辑推理能力一直都是LLM的弱项，也是最难提升的方面，从GPT
+4开始往后，如何有效并大幅提升LLM的逻辑推理能力是体现不同大模型差异和优势的最核心问题。所以，大模型最重要的一个是世界知识方面如何有效消除幻觉，一个是如何大幅提升复杂逻辑推理能力。语言能力已不是问题。</p>
+<p>从大模型的基础能力，我们再说回已经被谈滥了的大模型Scaling
+law。现在普遍认为通过增加数据和模型规模来提升大模型效果的Scaling
+law模式，其增长速度在放缓。其实我们对照下大模型的三个基础能力的能力来源，基本就能看出来这是为啥（以下是我猜的，不保真）：</p>
+<p>本质上大模型的能力来源都来自训练数据，包含能体现这方面能力的训练数据越多，则这种能力越强。语言能力不用说了，任意一份预训练数据，其中都包含相当比例的语言的词法句法等成分，所以训练数据中体现语言能力的数据是最多的，这也是为何大模型的语言能力最强的原因。</p>
+<p>而数据中包含的世界知识含量，基本是和训练数据量成正比的，明显数据量越多，包含的世界知识越多，Scaling
+law是数据中包含的世界知识含量关系的一个体现，但是这里有个问题，大模型见过越多数据，则新数据里面包含的新知识比例越小，因为很多知识在之前的数据里都见过了，所以随着数据规模增大，遇到的新知识比例就越低，在世界知识方面就体现出Scaling
+law的减缓现象。</p>
+<p>而为啥逻辑推理能力最难提升？因为能体现这方面的自然数据（代码、数学题、物理题、科学论文等）在训练数据中比例太低，自然大模型就学不好，尽管通过不断增加数据，能增加逻辑推理方面数据的绝对数量，但因为占比太少，这方面提升的效果和增加的总体数据规模就不成比例，效果也不会太明显，就体现在逻辑推理能力Scaling
+law看上去的放缓。这是很自然的。这也是<strong>为何现在为了提高模型逻辑能力，往往在预训练阶段和Post-training阶段，大幅增加逻辑推理数据占比的原因，且是有成效的。</strong>
+# o1的RL有 Scaling Law吗？</p>
+<p>所以目前大模型的核心能力提升，聚焦到不断通过合成数据等方式构造更多比例的逻辑推理数据上来。但是大部分逻辑推理数据的形式是&lt;问题，正确答案&gt;，缺了中间的详细推理步骤，而o1本质上是让大模型学会自动寻找从问题到正确答案的中间步骤，以此来增强复杂问题的解决能力。</p>
+<p>OpenAI o1提到了关于RL在训练和推理时候的Scaling
+law，并指出这与预训练时候的Scaling
+law具有不同特性。很明显，如果o1走的是MCTS搜索技术路线，那么把COT拆分的越细（增加搜索树的深度），或提出更多的可能选择（节点的分支增多，就是说树的宽度越宽），则搜索空间越大，找到好COT路径可能性越大，效果越好，而训练和推理的时候需要算力肯定越大。看上去有着效果随着算力增长而增长的态势，也就是所谓的RL的Scaling
+law。这其实是树搜索本来应有之义，我倒觉得<strong>把这个称为RL的Scaling
+law有点名不副实。</strong></p>
+</article><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/09/13/zhibo/Talk/2024-09-23/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2024/09/13/zhibo/Talk/2024-09-23/517.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">青稞Talk 23预告！CogVideoX 视频生成开源模型上手实践</div></div></a></div><div class="next-post pull-right"><a href="/2024/09/18/JD/2024-09-18/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="http://mms0.baidu.com/it/u=1982084812,3208803399&amp;fm=253&amp;app=138&amp;f=JPEG?w=230&amp;h=98" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">秋招上岸！AIGC/LLM高薪岗位推荐</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2024/03/21/LLM/2024-03-21/" title="张俊林：技术神秘化的去魅，Sora关键技术逆向工程图解"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://picx.zhimg.com/70/v2-317e64c3715a6f0a47445936e2d15f70_1440w.awebp?source=172ae18b&biz_tag=Post" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-03-21</div><div class="title">张俊林：技术神秘化的去魅，Sora关键技术逆向工程图解</div></div></a></div><div><a href="/2024/04/21/LLM/2024-04-21/" title="张俊林：聊聊对LLAMA-3、大模型开源与闭源以及合成数据的看法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsdUg49iK-_8MXnxBKJSPPJPuhciiqCiKG3luQTwVQVA&s" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-04-21</div><div class="title">张俊林：聊聊对LLAMA-3、大模型开源与闭源以及合成数据的看法</div></div></a></div><div><a href="/2024/05/31/LLM/2024-05-31/" title="张俊林：关于Scaling Law、半合成数据、MOE及长文本的看法及未来"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2024/05/31/LLM/2024-05-31/2024-05-31.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-31</div><div class="title">张俊林：关于Scaling Law、半合成数据、MOE及长文本的看法及未来</div></div></a></div><div><a href="/2024/08/20/LLM/2024-08-20/" title="OpenAI 绝密项目「草莓」技术详解"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.zhimg.com/70/v2-97f6d3af6b26fdfe62e1ce0424adf65e_1440w.avis?source=172ae18b&biz_tag=Post" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-08-20</div><div class="title">OpenAI 绝密项目「草莓」技术详解</div></div></a></div><div><a href="/2024/09/18/LLM/2024-09-23/" title="万字长文推演OpenAI o1 self-play RL 技术路线"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic4.zhimg.com/80/v2-8ba95e688fb718ba5d9e4d5cbee58c9b_720w.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-09-18</div><div class="title">万字长文推演OpenAI o1 self-play RL 技术路线</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/%E9%9D%92%E7%A8%9E.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">青稞</h1><div class="author-info__desc">青年AI研究员Idea加油站，转行码农的新能源充电站</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/qingkelab" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(/qr_code.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#openai-o1%E6%98%AF%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B7%A8%E5%A4%A7%E8%BF%9B%E6%AD%A5"><span class="toc-number">1.</span> <span class="toc-text">OpenAI o1是大模型的巨大进步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4o1%E6%AF%944o%E6%96%B9%E5%90%91%E9%87%8D%E8%A6%81"><span class="toc-number">1.0.1.</span> <span class="toc-text">为什么说o1比4o方向重要？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#openai-o1%E7%9A%84%E5%81%9A%E6%B3%95%E6%9C%AC%E8%B4%A8%E4%B8%8A%E6%98%AFcot%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96"><span class="toc-number">1.0.2.</span> <span class="toc-text">OpenAI
+o1的做法本质上是COT的自动化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E4%B8%8A%E9%9D%A2o1%E7%9A%84%E5%81%9A%E6%B3%95%E5%8F%AF%E4%BB%A5%E7%9F%A5%E9%81%93prompt%E5%B7%A5%E7%A8%8B%E4%BC%9A%E9%80%90%E6%B8%90%E6%B6%88%E4%BA%A1"><span class="toc-number">1.0.3.</span> <span class="toc-text">从上面o1的做法可以知道Prompt工程会逐渐消亡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#agent%E5%B1%9E%E4%BA%8E%E6%A6%82%E5%BF%B5%E7%81%AB%E4%BD%86%E6%97%A0%E6%B3%95%E5%AE%9E%E7%94%A8%E5%8C%96%E7%9A%84%E6%96%B9%E5%90%91%E4%B8%BB%E8%A6%81%E5%8E%9F%E5%9B%A0%E5%B0%B1%E5%9C%A8%E4%BA%8E%E5%9F%BA%E5%BA%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%A4%8D%E6%9D%82%E6%8E%A8%E7%90%86%E8%83%BD%E5%8A%9B%E4%B8%8D%E5%A4%9F%E5%BC%BA"><span class="toc-number">1.0.4.</span> <span class="toc-text">Agent属于概念火但无法实用化的方向，主要原因就在于基座模型的复杂推理能力不够强</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%84%E8%AE%AD%E7%BB%83scaling-law%E4%B8%BA%E4%BD%95%E4%B8%80%E5%AE%9A%E4%BC%9A%E5%8F%98%E7%BC%93"><span class="toc-number">2.</span> <span class="toc-text">预训练Scaling
+Law为何一定会变缓</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/09/18/LLM/2024-09-19/" title="现代LLM基本技术整理"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pica.zhimg.com/70/v2-7a80e49ac2d794e2b653f464713ff4f5_1440w.avis?source=172ae18b&amp;biz_tag=Post" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="现代LLM基本技术整理"/></a><div class="content"><a class="title" href="/2024/09/18/LLM/2024-09-19/" title="现代LLM基本技术整理">现代LLM基本技术整理</a><time datetime="2024-09-18T07:55:39.000Z" title="发表于 2024-09-18 15:55:39">2024-09-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/18/LLM/2024-09-23/" title="万字长文推演OpenAI o1 self-play RL 技术路线"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic4.zhimg.com/80/v2-8ba95e688fb718ba5d9e4d5cbee58c9b_720w.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="万字长文推演OpenAI o1 self-play RL 技术路线"/></a><div class="content"><a class="title" href="/2024/09/18/LLM/2024-09-23/" title="万字长文推演OpenAI o1 self-play RL 技术路线">万字长文推演OpenAI o1 self-play RL 技术路线</a><time datetime="2024-09-18T06:05:37.000Z" title="发表于 2024-09-18 14:05:37">2024-09-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/18/JD/2024-09-18/" title="秋招上岸！AIGC/LLM高薪岗位推荐"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="http://mms0.baidu.com/it/u=1982084812,3208803399&amp;fm=253&amp;app=138&amp;f=JPEG?w=230&amp;h=98" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="秋招上岸！AIGC/LLM高薪岗位推荐"/></a><div class="content"><a class="title" href="/2024/09/18/JD/2024-09-18/" title="秋招上岸！AIGC/LLM高薪岗位推荐">秋招上岸！AIGC/LLM高薪岗位推荐</a><time datetime="2024-09-18T05:23:29.000Z" title="发表于 2024-09-18 13:23:29">2024-09-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/17/LLM/2024-09-17/" title="张俊林：OpenAI o1价值意义及RL的Scaling Law"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://images.ctfassets.net/kftzwdyauwt9/4G2ZNJjHK6uhLQO2pXR7e3/9522fa4dd9f372deddfc710a02fad44c/o1-research.png?w=1920&amp;q=90&amp;fm=webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="张俊林：OpenAI o1价值意义及RL的Scaling Law"/></a><div class="content"><a class="title" href="/2024/09/17/LLM/2024-09-17/" title="张俊林：OpenAI o1价值意义及RL的Scaling Law">张俊林：OpenAI o1价值意义及RL的Scaling Law</a><time datetime="2024-09-17T12:22:32.000Z" title="发表于 2024-09-17 20:22:32">2024-09-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/13/zhibo/Talk/2024-09-23/" title="青稞Talk 23预告！CogVideoX 视频生成开源模型上手实践"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2024/09/13/zhibo/Talk/2024-09-23/517.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="青稞Talk 23预告！CogVideoX 视频生成开源模型上手实践"/></a><div class="content"><a class="title" href="/2024/09/13/zhibo/Talk/2024-09-23/" title="青稞Talk 23预告！CogVideoX 视频生成开源模型上手实践">青稞Talk 23预告！CogVideoX 视频生成开源模型上手实践</a><time datetime="2024-09-13T12:04:28.000Z" title="发表于 2024-09-13 20:04:28">2024-09-13</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2023 - 2024 By <a class="footer-bar-link" href="/" title="青稞" target="_blank">青稞</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js').then(() => {
+    jinrishici.load(result =>{
+      if (true) {
+        const sub = []
+        const content = result.data.content
+        sub.unshift(content)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = result.data.content
+      }
+    })
+  })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">103</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">6</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">关注我</div><div class="back-menu-list"><a class="back-menu-item" href="/about" title="About"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/icon-zhifeiji" alt="About"/><span class="back-menu-item-text">About</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 青稞</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/5%E5%88%86%E9%92%9F%E6%9E%81%E5%87%8F%E9%98%85%E8%AF%BB/" style="font-size: 0.88rem;">5分钟极减阅读<sup>2</sup></a><a href="/tags/AIGC/" style="font-size: 0.88rem;">AIGC<sup>6</sup></a><a href="/tags/Anwen-Hu/" style="font-size: 0.88rem;">Anwen Hu<sup>2</sup></a><a href="/tags/Bohan-Zhuang/" style="font-size: 0.88rem;">Bohan Zhuang<sup>1</sup></a><a href="/tags/GPT-5/" style="font-size: 0.88rem;">GPT-5<sup>1</sup></a><a href="/tags/LLAMA-3/" style="font-size: 0.88rem;">LLAMA-3<sup>1</sup></a><a href="/tags/LLM/" style="font-size: 0.88rem;">LLM<sup>29</sup></a><a href="/tags/LLaMA/" style="font-size: 0.88rem;">LLaMA<sup>2</sup></a><a href="/tags/Long-Context/" style="font-size: 0.88rem;">Long Context<sup>1</sup></a><a href="/tags/MLLM/" style="font-size: 0.88rem;">MLLM<sup>5</sup></a><a href="/tags/MOE/" style="font-size: 0.88rem;">MOE<sup>1</sup></a><a href="/tags/OpenAI/" style="font-size: 0.88rem;">OpenAI<sup>3</sup></a><a href="/tags/Q/" style="font-size: 0.88rem;">Q*<sup>1</sup></a><a href="/tags/Scaling-Law/" style="font-size: 0.88rem;">Scaling Law<sup>1</sup></a><a href="/tags/Sora/" style="font-size: 0.88rem;">Sora<sup>1</sup></a><a href="/tags/TAMU/" style="font-size: 0.88rem;">TAMU<sup>1</sup></a><a href="/tags/Transformer/" style="font-size: 0.88rem;">Transformer<sup>2</sup></a><a href="/tags/VLM/" style="font-size: 0.88rem;">VLM<sup>2</sup></a><a href="/tags/%E3%80%8A%E4%BB%8E%E5%88%86%E5%B8%83%E5%88%B0%E7%94%9F%E6%88%90%E3%80%8B%E4%B8%93%E9%A2%98/" style="font-size: 0.88rem;">《从分布到生成》专题<sup>2</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA/" style="font-size: 0.88rem;">减论<sup>2</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA%E7%B3%BB%E5%88%97%E4%B8%93%E6%A0%8F/" style="font-size: 0.88rem;">减论系列专栏<sup>2</sup></a><a href="/tags/%E5%8D%8E%E4%B8%BA/" style="font-size: 0.88rem;">华为<sup>1</sup></a><a href="/tags/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">南开大学<sup>4</sup></a><a href="/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/" style="font-size: 0.88rem;">合成数据<sup>2</sup></a><a href="/tags/%E5%94%90%E4%B8%9A%E8%BE%89/" style="font-size: 0.88rem;">唐业辉<sup>1</sup></a><a href="/tags/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/" style="font-size: 0.88rem;">图像生成<sup>1</sup></a><a href="/tags/%E5%AD%9F%E7%B9%81%E7%BB%AD/" style="font-size: 0.88rem;">孟繁续<sup>2</sup></a><a href="/tags/%E5%BC%A0%E4%BF%8A%E6%9E%97/" style="font-size: 0.88rem;">张俊林<sup>4</sup></a><a href="/tags/%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86/" style="font-size: 0.88rem;">文档处理<sup>1</sup></a><a href="/tags/%E6%9D%8E%E7%BF%94/" style="font-size: 0.88rem;">李翔<sup>4</sup></a><a href="/tags/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">浙江大学<sup>2</sup></a><a href="/tags/%E6%B6%82%E6%AD%A3%E4%B8%AD/" style="font-size: 0.88rem;">涂正中<sup>1</sup></a><a href="/tags/%E6%BD%98%E6%A2%93%E6%AD%A3/" style="font-size: 0.88rem;">潘梓正<sup>1</sup></a><a href="/tags/%E7%8E%8B%E6%AC%A2/" style="font-size: 0.88rem;">王欢<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95%E5%AE%9E%E4%B9%A0%E7%94%9F/" style="font-size: 0.88rem;">算法实习生<sup>1</sup></a><a href="/tags/%E8%8E%AB%E7%BA%B3%E4%BB%80%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">莫纳什大学<sup>2</sup></a><a href="/tags/%E8%A5%BF%E6%B9%96%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">西湖大学<sup>1</sup></a><a href="/tags/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/" style="font-size: 0.88rem;">视频生成<sup>3</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/" style="font-size: 0.88rem;">阿里巴巴<sup>1</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E9%80%9A%E4%B9%89%E5%AE%9E%E9%AA%8C%E5%AE%A4%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E6%99%BA%E8%83%BD%E5%9B%A2%E9%98%9F/" style="font-size: 0.88rem;">阿里巴巴通义实验室自然语言智能团队<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("10/24/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 青稞 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.cbd.int/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
