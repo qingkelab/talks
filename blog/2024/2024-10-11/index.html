@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>青稞·LLMC：大语言模型的量化基准 | 知识社区</title>
+  <link rel="icon" href="https://qingkelab.github.io/talks/images/16x16.tiff" >
+
+  
+  
+
+  <link rel='stylesheet' href='https://unpkg.com/ress/dist/ress.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/8.5.10/mmenu.min.css">
+  <link rel="stylesheet" href="https://qingkelab.github.io/talks/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  
+
+  
+  <!-- Primary Meta Tags -->
+  
+    
+  
+  <meta name="description" content="
+10月11日晚7点，青稞Talk 第25期，商汤科技算法实习生、香港科技大学准博士生黄雨石，将直播分享《LLMC:大语言模型的量化基准》。
+主讲嘉宾
+黄雨石，本科毕业于北京航空航天大学，即将进入香港…">
+
+</head>
+
+<body class="body-block">
+  
+
+  <main class="content-block">
+
+      <div class="content-header">
+        <nav>
+          <ul>
+
+            <li>
+              <h3 class="title">
+                <a href="https://qingkelab.github.io" style="padding-left: 10px;">青稞</a>·
+                <a href="https://qingkelab.github.io/talks" style="padding-right: 25px;">知识社区</a>
+              </h3>
+            </li>
+
+            <li><a href="/">首页</a></li>
+
+
+            
+            
+                <li><a href="https://qingkelab.github.io/talks/categories/panel/">Panel</a></li>
+            
+                <li><a href="https://qingkelab.github.io/talks/categories/talk/">Talk</a></li>
+            
+                <li><a href="https://qingkelab.github.io/talks/categories/xi-lie-ke/">系列课</a></li>
+            
+
+            <li><a href="https://appodzjvyp51702.h5.xiaoeknow.com" target="_blank">H5店铺</a></li>
+
+            <li><a href="https://e1r5m17x3ld.feishu.cn/base/IkJubBfuAa6TETsUx0FcFaqOncc?from=from_copylink" target="_blank">直播日历</a></li>
+
+            <li><a href="https://github.com/qingkelab/talks" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Star</a ></li>
+               
+          </ul>
+        </nav>
+    </div>
+
+    <aside class="content-aside">
+      
+    <!--   <h1 class="title">
+    <a href="/">知识社区</a>
+  </h1> -->
+
+      
+      <nav id="nav-block">
+        
+        <center>
+          <hr style="width:40%;">
+        </center>
+        
+
+        <ul id="tag-list">
+          
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/3dgs/">3DGS</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/3dsheng-cheng/">3D生成</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/ai-agent/">AI Agent</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/aigc/">AIGC</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/can-shu-wei-diao/">参数微调</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/da-mo-xing-liang-hua/">大模型量化</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/da-mo-xing-ping-gu/">大模型评估</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/da-mo-xing-tui-li/">大模型推理</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/da-mo-xing-xun-lian/">大模型训练</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/duo-mo-tai-da-mo-xing/">多模态大模型</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/ju-shen-zhi-neng/">具身智能</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/llm/">LLM</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/rag/">RAG</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/sglang/">SGLang</a></li>
+          
+            <li class="item"><a href="https://qingkelab.github.io/talks/tags/shi-pin-sheng-cheng/">视频生成</a></li>
+          
+        </ul>
+
+      </nav>
+
+      <center>
+          <img src="https://qingkelab.github.io/talks/images/qr.png" style="width:80%;margin-left: 15px;margin-top: 20px;">
+      </center>
+
+      <center style="margin-left: 15px;margin-top: 20%;">
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5se61lg8c78&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+      </center>
+
+
+    </aside>
+
+    
+  
+
+  <article class="content-article">
+    <main class="article-content">
+      <!-- <h1 class="heading">
+        LLMC：大语言模型的量化基准
+      </h1>
+      <p class="description">
+        
+      </p> -->
+      <p><a href="https://hcqnc.xetlk.com/sl/4xORVG"><img src="https://qingkelab.github.io/talks/blog/2024/2024-10-11/Canvas%20%E2%80%93%20545.png" alt="alt text" /></a></p>
+<p><strong>10月11日晚7点</strong>，青稞Talk 第25期，商汤科技算法实习生、香港科技大学准博士生黄雨石，将直播分享《<strong>LLMC:大语言模型的量化基准</strong>》。</p>
+<h1 id="zhu-jiang-jia-bin">主讲嘉宾</h1>
+<p>黄雨石，本科毕业于北京航空航天大学，即将进入香港科技大学攻读计算机博士学位。研究方向为高效的AIGC模型，神经网络压缩与加速等，目前已在CVPR， EMNLP， ACM MM发表多篇论文。</p>
+<h1 id="zhu-ti-ti-gang">主题提纲</h1>
+<p>LLMC：大语言模型的量化基准</p>
+<p>1、大语言模型量化技术概述
+<br>2、大模型压缩工具 LLMC
+<br>3、基于 LLMC 的量化基准测试
+<br>- 校准数据
+<br>- 算法（三种策略）
+<br>- 数据格式</p>
+<h1 id="cheng-guo-lian-jie">成果链接</h1>
+<p><a href="https://github.com/ModelTC/llmc">https://github.com/ModelTC/llmc</a>  欢迎大家Star!</p>
+<h1 id="zhi-bo-shi-jian">直播时间</h1>
+<p>10月11日（周五）19:00 - 20:00</p>
+
+    </main>
+    <br>
+  </article>
+
+  </main>
+
+</body>
+
+</html>
