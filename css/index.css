@@ -6120,17 +6120,27 @@ h1.page-title + .tag-cloud-list {
   }
 }
 .banners-title {
-  top: 2.9rem;
-  left: 3rem;
+  font-family: 'Lobster', cursive; /* 或者 'CustomFont' */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  font-size: 2.5rem;
+  letter-spacing: 1px;
   position: absolute;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -o-box-orient: vertical;
-  flex-direction: column;
+  top: 2.9rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block; /* 使元素宽度与文字一致 */
+}
+.banners-title::after {
+  content: '';
+  display: block;
+  width: 100%; /* 与文字宽度一致 */
+  height: 5px; /* 下划线的粗细 */
+  background-color: #4a90e2; /* 下划线的颜色 */
+  margin-top: 5px; /* 下划线与文字的间距 */
 }
 .banners-title-big {
-  font-size: 36px;
+  font-family: 'Lobster', cursive;
+  font-size: 80px;
   line-height: 1;
   font-weight: bold;
   margin-bottom: 8px;
