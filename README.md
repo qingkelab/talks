@@ -30,7 +30,8 @@
 | ---------- | ------------------------------------------------------------ | ------------------------------- |
 | 2024.10.06 | SGLang Q4 planning<br>Deepseek MLA<br>关于批处理和专家并行性的讨论 | https://hcqnc.xetlk.com/s/3oOTt |
 | 2024.09.22 | SGLang Q4 planning<br>Double Sparsity for Fast Attention     | https://hcqnc.xetlk.com/s/xkK7Z |
-
+| 2024.10.22 | CPU Overhead Hiding<br>Cache-aware DP routing (design review + quick demo)<br>Brief updates on double sparsity |https://hcqnc.xetlk.com/s/43yW0Q|
+| 2024.11.03 | Reward Model Integration and External Collaboration<br>FP8 scaling and path to MXFP: Kv-cache-type fp8 and beyond |https://hcqnc.xetlk.com/s/1sZAJQ|
 ---
 
 #### [青稞Talk/Panel](https://qingkelab.github.io/talks)
