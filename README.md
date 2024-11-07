@@ -1,4 +1,4 @@
-### [青稞](https://qingkelab.github.io)·[知识社区](https://qingkelab.github.io/talks)直播分享
+### [青稞](https://qingkelab.github.io)·[知识社区](https://qingkelab.github.io/talks)【[H5链接](https://appodzjvyp51702.h5.xiaoeknow.com/)】直播分享
 
 <details>
   <summary><strong><a href="https://hcqnc.xetlk.com/s/1SKePY" target="_blank">经典大模型公开课第二季</a></strong></summary>

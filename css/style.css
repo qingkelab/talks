@@ -880,7 +880,6 @@ h6,
   border-radius: 0.4rem;
   background-size: cover;
   background-position: center;
-  background-image: url("/images/banner/banner.jpg");
 }
 .banner::before {
   content: '';
@@ -890,7 +889,7 @@ h6,
   right: 0;
   left: 0;
   top: 0;
-  background-color: rgba(0,22,43,0.5);
+  background-color: rgba(0,72,143,0.5);
 }
 .banner .banner-text {
   position: absolute;
@@ -899,11 +898,15 @@ h6,
   left: 50%;
   transform: translate(-50%, -50%);
   color: #f8f9fa;
+  font-family: Lobster, cursive;
+  font-size: 16px;
 }
 .banner .banner-text .page-type-title {
   padding: 0;
   font-weight: normal;
   font-size: 3.2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-family: Lobster, cursive;
 }
 .carousel {
   position: relative;
