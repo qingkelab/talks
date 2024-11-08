@@ -1003,11 +1003,40 @@ h6,
   opacity: 0.8;
 }
 .instapic {
-  margin: -1rem;
-}
-.instapic .brand-img {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
   padding: 1rem;
-  height: 6.4rem;
+}
+.instapic .card {
+  width: 18rem;
+  height: 8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #fff;
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+.instapic .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.instapic .card a {
+  text-decoration: none;
+  color: inherit;
+}
+.instapic .card a .card-title {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+}
+.instapic .card a .card-subtitle {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #666;
 }
 .archive-year-wrap {
   padding: 1rem 0;
