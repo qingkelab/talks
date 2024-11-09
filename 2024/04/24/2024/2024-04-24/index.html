@@ -220,12 +220,18 @@
           </ul>
 
         </div>
+
         <div class="col-4">
-          <h5>友情链接</h5>
+          <!-- <h5>友情链接</h5> -->
           <ul class="list-inline">
             
-          </ul>
+          </ul>  
         </div>
+
+        <div class="revolver-map-container">
+          <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5se61lg8c78&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+        </div>
+        
       </div>
     </div>
     <hr class="hr" style="opacity: .25;">
@@ -263,6 +269,19 @@
       margin-top: 5px; /* 图标与文字的间距 */
       color: white; /* 文字颜色 */
       font-size: 12px; /* 字体大小 */
+  }
+  .revolver-map-container {
+    width: 300px;
+    height: 300px;
+    overflow: hidden; /* 确保超出部分隐藏 */
+    display: inline-block; /* 根据需要调整布局 */
+  }
+
+  .revolver-map-container iframe {
+    transform: scale(1); /* 调整缩放比例 */
+    transform-origin: top left; /* 保证缩放从左上角开始 */
+    width: 300px; /* 根据原始宽度调整 */
+    height: 300px; /* 根据原始高度调整 */
   }
 </style>
   </main>
