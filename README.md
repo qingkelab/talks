@@ -38,7 +38,7 @@
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| 2024.11.23 |                 NVIDIA VILA 团队实习生方云浩                 | [$VILA^2$](https://arxiv.org/pdf/2407.17453) : 视觉语言模型能力的自我提升 |              https://hcqnc.xetlk.com/sl/3WqBpe               |
+| 2024.11.23 |                 NVIDIA VILA 团队实习生方云浩                 | [VILA^2](https://arxiv.org/pdf/2407.17453) : 视觉语言模型能力的自我提升 |              https://hcqnc.xetlk.com/sl/3WqBpe               |
 | 2024.11.05 |       中科院自动化所和香港城市大学联合培养博士生林浩坤       | [DuQuant]( https://github.com/Hsu1023/DuQuant)： 基于正交变换实现大型语言模型的 SOTA级 4 bit 量化 |              https://hcqnc.xetlk.com/sl/2pnEgg               |
 | 2024.10.17 |                  香港科技大学在读博士高深远                  | [GenAD](https://arxiv.org/pdf/2403.09630) & [Vista](https://github.com/opendrivelab/vista)：构建通用可泛化的自动驾驶世界模型 |              https://hcqnc.xetlk.com/sl/1Cb2XV               |
 | 2024.10.14 |       南京大学智能科学与技术学院研究员、助理教授傅朝友       | [VITA](https://github.com/VITA-MLLM/VITA)：开源交互式多模态基础大模型 |               https://hcqnc.xetlk.com/sl/MRlyd               |
