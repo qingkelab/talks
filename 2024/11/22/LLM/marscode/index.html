@@ -1,0 +1,547 @@
+<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>用豆包大模型来编程是什么体验？Marscode食用指南！ | 青稞社区</title><meta name="keywords" content="AI代码生成,豆包"><meta name="author" content="青稞"><meta name="copyright" content="青稞"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="用豆包大模型来编程是什么体验？Marscode食用指南！"><meta name="application-name" content="用豆包大模型来编程是什么体验？Marscode食用指南！"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="用豆包大模型来编程是什么体验？Marscode食用指南！"><meta property="og:url" content="https://github.com/qingkelab/2024/11/22/LLM/marscode/index.html"><meta property="og:site_name" content="青稞社区"><meta property="og:description" content="前言 豆包Marscode是字节旗下的一款智能开发工具，基于「字节跳动豆包大模型」打造，拥有「云端 IDE」和「编程助手」两大产品形态，不仅支持代码补全、错误修复、AI刷题等能力，还能够帮助开发者在编程的各个阶段提供协助支持，对秋招春招的小伙伴来说, 算法机测是一个必不可少的环节, 有了Marsco"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://pic1.zhimg.com/80/v2-b316e0a4ca3fb425c5f0b8104e6169cc_1440w.gif"><meta property="article:author" content="青稞"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-b316e0a4ca3fb425c5f0b8104e6169cc_1440w.gif"><meta name="description" content="前言 豆包Marscode是字节旗下的一款智能开发工具，基于「字节跳动豆包大模型」打造，拥有「云端 IDE」和「编程助手」两大产品形态，不仅支持代码补全、错误修复、AI刷题等能力，还能够帮助开发者在编程的各个阶段提供协助支持，对秋招春招的小伙伴来说, 算法机测是一个必不可少的环节, 有了Marsco"><link rel="shortcut icon" href="/%E9%9D%92%E7%A8%9E.jpg"><link rel="canonical" href="https://github.com/qingkelab/2024/11/22/LLM/marscode/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: {"skills":null},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 青稞","link":"链接: ","source":"来源: 青稞社区","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '青稞社区',
+  title: '用豆包大模型来编程是什么体验？Marscode食用指南！',
+  postAI: '',
+  pageFillDescription: '前言, 起步, 注册amp登录, 进入工作台, Why MarsCode IDE?, 进入Marscode IDE, 以算法工程师常用的Python为例进行leetcode刷题, 创建完毕, 开始刷题, 进入项目, 测试Marscode生成的算法, 突发奇想 故意把代码改错, 总结前言豆包是字节旗下的一款智能开发工具基于字节跳动豆包大模型打造拥有云端和编程助手两大产品形态不仅支持代码补全错误修复刷题等能力还能够帮助开发者在编程的各个阶段提供协助支持对秋招春招的小伙伴来说算法机测是一个必不可少的环节有了贪玩的你再也不用担心刷时没有思路的时候在网上乱翻资料了可以帮助我们节省下时间来摸鱼学习的编程助手支持超过种编程语言兼容和代码编辑器使得开发者可以在自己熟悉的开发环境中无缝使用的功能此外还具备代码解释能力能够理解项目仓库帮助用户准确解释代码从而快速上手开发在修改或重构代码时支持基于编辑行为预测下一个改动点并给出推荐协助完成编码过程起步注册登录首先需要访问官网进行注册和登录值得一提的是支持使用抖音或稀土掘金账号快捷登录这一点对于习惯使用这些平台的用户来说非常方便进入工作台登录后在工作台页面可选择在或直接在网页端体验为方便起见这里推荐使用是的重磅产品也是我想重点和大家分享的一个内置编码助手的云端平台是国内首款云端产品它将和云计算完美结合为开发者带来了前所未有的便利具有诸多优势不用配置环境对于入门选手来说非常不错有过开发经验的同学都知道搭建环境是很耗时的如果报错了对于新人还是很难解的现在不用搭建环境可以直接进入开发了感觉对编程教育上也是一大好处尤其对于少儿新手编程方便演示有时候朋友让帮忙做个功能然后自己写完了代码还要部署一个服务但是如果不在局域网朋友根本就访问不了你的功能还要去弄服务器一大堆东西也非常的麻烦现在用可以直接启动服务让远程的朋友也能直接使用你的功能非常方便小功能脚本管理开发同学有时候会写点脚本临时解决下某些功能本地的脚本有时候四散各处后面都忘了在哪里我觉得还可以充当我们一些小功能脚本的存储地方把各种各样的小功能托管到了上统一管理结合编程助手帮你写脚本想想也不错插件功能大家可能更熟悉了还支持一些插件插件就是可以做各种各样的事情在云端做各种各样的事情大家可以尝试安装下释放下想象力如果说是一些大型项目的协作上现在可以尝试下但是觉得可能本地更方便对于一些小型的编程协作力场景感觉挺有效的不过目前也存在一些限制项目容量有限只能创建个项目但是基本上足够了资源小目前没有本地那么大单个项目可以使用的最大资源如下可视化问题一些需要展示的比如绘制图的无法做到进入进入后首次进入的用户会被要求设置个人信息如下所示保存成功后我们就可以使用了以算法工程师常用的为例进行刷题在创建项目时定义好项目名称这是必填项哦还可以根据项目特点补充详细的项目描述选填项随后点击创建一个专属的编程项目空间就诞生了此外除了从零开始创建项目你还可以导入代码仓库方便整合和管理已有代码资源这一功能我们后续会详细介绍创建完毕项目创建完成后点击项目名称比如青稞小子的智能粉碎机准备好让我们的编程冒险正式开始开始刷题进入项目正式进入我们可以开始进行测试其主要的功能区分为三个部分左边为区是存放代码图像等各种文件的地方和我们常用的等类似区则是命令行其目的是用于执行代码最特殊的当属区即我们和进行交互的地方比如我们可以让他写一个经典的快速排序算法测试生成的算法接下来我们在区创建一个名为的文件并在代码里调用如下图所示就会弹出如下的小窗口用户可以在里面输入自己的需求这里我让其生成一个快速排序算法很好快速排序代码生成出来了函数名称为其入参是一个列表用递归的方式返回结果那么算法生成完毕了下一步是进行测试我们期待给定这个函数各种未经排序的列表期待这个算法是否能够正确的返回于是我调用继续让的小助手来帮我完成这个部分可以看到贴心的帮我生成了一个的函数看起来不错我们执行看看进入区在命令行里输入可以看到这个快速排序的算法得到了成功的执行的问答功能能够针对性地优化研发领域知识问答的质量提供更准确的问答结果这意味着当你在刷题或开发过程中遇到问题时能够提供精准的答案帮助你节省时间提高学习效率通过这些功能不仅能够帮助你解决编程中的问题还能让你有更多的时间去摸鱼学习总的来说是一个强大的智能编程助手它通过提供多种智能功能极大地提升了开发者的工作效率和编程体验突发奇想故意把代码改错看起来快速排序的算法难不倒我们下面来测测一个实际情况在刷时通常会发现一个问题我们可能会在某个地方写错导致算法无法通过测试用例那么对于这种情况的助手能够发现么让我们试试还是以刚才的快速排序为例大家通常在判断和大小的时候会忽略小于等于的符号这里我们把等号去掉改前改后然后我们再次执行当当当当不出所料程序报错了此时我们选中出错的函数代码再次向助手求助看看能否帮我们修改过来问完后点击回车稍等几秒钟后惊人的发现真的能做到令人惊叹的事情发生了助手不仅准确识别出了错误还将我们删掉的等号完美复原再次执行代码所有测试用例顺利通过问题得到了圆满解决他能够把我特意删掉的等号复原再次执行后顺利通过所有的测试用例挑战成功了这一过程展示了豆包强大的错误修复能力无论是新手还是经验丰富的开发者在面对复杂的代码错误时都能借助这一智能功能快速定位并解决问题大大提高了编程效率总结豆包的出现无疑为编程领域注入了一股强大的创新力量它不仅为刷题求职的学生和工作党提供了高效的解决方案帮助大家在面对算法难题和代码错误时不再束手无策更重要的是它让开发者能够从繁琐的基础工作中解放出来将更多的时间和精力投入到思考与创造中在技术的驱动下我们有理由相信像豆包这样的原生开发者工具将引领编程方式的变革助力每一位开发者在编程之路上走得更快更远如果你渴望提升编程效率体验智能化编程的魅力那么豆包绝对值得你尝试快来加入这个充满创新与活力的编程大家庭一起探索编程的无限可能吧',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-22 15:08:28',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/%E9%9D%92%E7%A8%9E.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">青稞社区</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" target="_blank" rel="noopener" href="https://qingkelab.github.io/talks"><span> Talk &amp; Panel</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about"><span> 关于</span></a></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/5%E5%88%86%E9%92%9F%E6%9E%81%E5%87%8F%E9%98%85%E8%AF%BB/" style="font-size: 1.05rem;">5分钟极减阅读<sup>2</sup></a><a href="/tags/AIGC/" style="font-size: 1.05rem;">AIGC<sup>7</sup></a><a href="/tags/Anwen-Hu/" style="font-size: 1.05rem;">Anwen Hu<sup>2</sup></a><a href="/tags/Bohan-Zhuang/" style="font-size: 1.05rem;">Bohan Zhuang<sup>1</sup></a><a href="/tags/Dong-Zhen/" style="font-size: 1.05rem;">Dong Zhen<sup>1</sup></a><a href="/tags/LLAMA-3/" style="font-size: 1.05rem;">LLAMA-3<sup>1</sup></a><a href="/tags/LLM/" style="font-size: 1.05rem;">LLM<sup>42</sup></a><a href="/tags/LLaMA/" style="font-size: 1.05rem;">LLaMA<sup>2</sup></a><a href="/tags/Long-Context/" style="font-size: 1.05rem;">Long Context<sup>1</sup></a><a href="/tags/MLLM/" style="font-size: 1.05rem;">MLLM<sup>5</sup></a><a href="/tags/MOE/" style="font-size: 1.05rem;">MOE<sup>1</sup></a><a href="/tags/Scaling-Law/" style="font-size: 1.05rem;">Scaling Law<sup>1</sup></a><a href="/tags/Sora/" style="font-size: 1.05rem;">Sora<sup>1</sup></a><a href="/tags/TAMU/" style="font-size: 1.05rem;">TAMU<sup>1</sup></a><a href="/tags/Transformer/" style="font-size: 1.05rem;">Transformer<sup>2</sup></a><a href="/tags/%E3%80%8A%E4%BB%8E%E5%88%86%E5%B8%83%E5%88%B0%E7%94%9F%E6%88%90%E3%80%8B%E4%B8%93%E9%A2%98/" style="font-size: 1.05rem;">《从分布到生成》专题<sup>2</sup></a><a href="/tags/%E4%B8%89%E7%BB%B4%E8%A7%86%E8%A7%89/" style="font-size: 1.05rem;">三维视觉<sup>1</sup></a><a href="/tags/%E4%BD%8D%E5%A7%BF%E4%BC%B0%E8%AE%A1/" style="font-size: 1.05rem;">位姿估计<sup>1</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA/" style="font-size: 1.05rem;">减论<sup>2</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA%E7%B3%BB%E5%88%97%E4%B8%93%E6%A0%8F/" style="font-size: 1.05rem;">减论系列专栏<sup>2</sup></a><a href="/tags/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">南开大学<sup>4</sup></a><a href="/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/" style="font-size: 1.05rem;">合成数据<sup>2</sup></a><a href="/tags/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/" style="font-size: 1.05rem;">图像生成<sup>1</sup></a><a href="/tags/%E5%AD%9F%E7%B9%81%E7%BB%AD/" style="font-size: 1.05rem;">孟繁续<sup>2</sup></a><a href="/tags/%E5%BC%A0%E4%BF%8A%E6%9E%97/" style="font-size: 1.05rem;">张俊林<sup>3</sup></a><a href="/tags/%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86/" style="font-size: 1.05rem;">文档处理<sup>1</sup></a><a href="/tags/%E6%9D%8E%E7%BF%94/" style="font-size: 1.05rem;">李翔<sup>4</sup></a><a href="/tags/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">浙江大学<sup>3</sup></a><a href="/tags/%E6%B6%82%E6%AD%A3%E4%B8%AD/" style="font-size: 1.05rem;">涂正中<sup>1</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%B0%E8%AE%A1/" style="font-size: 1.05rem;">深度估计<sup>1</sup></a><a href="/tags/%E6%BD%98%E6%A2%93%E6%AD%A3/" style="font-size: 1.05rem;">潘梓正<sup>1</sup></a><a href="/tags/%E7%8E%8B%E6%AC%A2/" style="font-size: 1.05rem;">王欢<sup>1</sup></a><a href="/tags/%E7%94%B3%E5%8D%9A/" style="font-size: 1.05rem;">申博<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95%E5%AE%9E%E4%B9%A0%E7%94%9F/" style="font-size: 1.05rem;">算法实习生<sup>1</sup></a><a href="/tags/%E8%8E%AB%E7%BA%B3%E4%BB%80%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">莫纳什大学<sup>2</sup></a><a href="/tags/%E8%A5%BF%E6%B9%96%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">西湖大学<sup>1</sup></a><a href="/tags/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" style="font-size: 1.05rem;">视觉生成模型<sup>1</sup></a><a href="/tags/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/" style="font-size: 1.05rem;">视频生成<sup>3</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/" style="font-size: 1.05rem;">阿里巴巴<sup>1</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E9%80%9A%E4%B9%89%E5%AE%9E%E9%AA%8C%E5%AE%A4%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E6%99%BA%E8%83%BD%E5%9B%A2%E9%98%9F/" style="font-size: 1.05rem;">阿里巴巴通义实验室自然语言智能团队<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">十月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">17</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">10</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/LLM/" itemprop="url">LLM</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/AI%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>AI代码生成</span></a><a class="article-meta__tags" href="/tags/%E8%B1%86%E5%8C%85/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>豆包</span></a></span></div></div><h1 class="post-title" itemprop="name headline">用豆包大模型来编程是什么体验？Marscode食用指南！</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-11-22T07:07:11.000Z" title="发表于 2024-11-22 15:07:11">2024-11-22</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-11-22T07:08:28.303Z" title="更新于 2024-11-22 15:08:28">2024-11-22</time></span></div><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://pic1.zhimg.com/80/v2-b316e0a4ca3fb425c5f0b8104e6169cc_1440w.gif"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://github.com/qingkelab/2024/11/22/LLM/marscode/"><header><a class="post-meta-categories" href="/categories/LLM/" itemprop="url">LLM</a><a href="/tags/AI%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/" tabindex="-1" itemprop="url">AI代码生成</a><a href="/tags/%E8%B1%86%E5%8C%85/" tabindex="-1" itemprop="url">豆包</a><h1 id="CrawlerTitle" itemprop="name headline">用豆包大模型来编程是什么体验？Marscode食用指南！</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">青稞</span><time itemprop="dateCreated datePublished" datetime="2024-11-22T07:07:11.000Z" title="发表于 2024-11-22 15:07:11">2024-11-22</time><time itemprop="dateCreated datePublished" datetime="2024-11-22T07:08:28.303Z" title="更新于 2024-11-22 15:08:28">2024-11-22</time></header><h1 id="前言">前言</h1>
+<p>豆包Marscode是<strong>字节旗下</strong>的一款智能开发工具，基于「<strong>字节跳动豆包大模型</strong>」打造，拥有「<strong>云端
+IDE</strong>」和「<strong>编程助手</strong>」两大产品形态，不仅支持<strong>代码补全、错误修复、AI刷题</strong>等能力，还能够帮助开发者在编程的各个阶段提供协助支持，对秋招春招的小伙伴来说,
+算法机测是一个必不可少的环节, 有了Marscode, 贪玩的你,
+再也不用担心刷leetcode时没有思路的时候,
+在网上乱翻资料了。Marscode可以帮助我们节省下时间来摸鱼(学习)。</p>
+<p>Marscode的编程助手支持<strong>超过100种编程语言</strong>，兼容<strong>VSCode</strong>和<strong>JetBrains代码编辑器</strong>，使得开发者可以在自己熟悉的开发环境中无缝使用Marscode的功能。此外，Marscode还具备<strong>代码解释能力</strong>，能够理解项目仓库，帮助用户准确解释代码从而快速上手开发。在修改或重构代码时，Marscode支持基于编辑行为预测下一个改动点，并给出推荐，协助完成编码过程。</p>
+<h1 id="起步">起步</h1>
+<h3 id="注册登录">注册&amp;登录</h3>
+<p>首先需要访问<a
+target="_blank" rel="noopener" href="https://www.marscode.cn/login">Marscode官网</a>进行注册和登录。值得一提的是，Marscode支持使用抖音或稀土掘金账号快捷登录，这一点对于习惯使用这些平台的用户来说非常方便。</p>
+<p><img
+src="https://pic2.zhimg.com/80/v2-3e1019c05e4c413a4f6f5ad689ff8b05_1440w.png" /></p>
+<h3 id="进入工作台">进入工作台</h3>
+<p>登录后，在<a
+target="_blank" rel="noopener" href="https://www.marscode.cn/workbench">工作台</a>页面，可选择在 VS
+Code、JetBrains IDEs 或直接在网页端体验。为方便起见，这里推荐使用
+<strong>MarsCode IDE</strong> <img
+src="https://pic1.zhimg.com/80/v2-b316e0a4ca3fb425c5f0b8104e6169cc_1440w.gif" /></p>
+<h1 id="why-marscode-ide">Why MarsCode IDE?</h1>
+<p>MarsCode IDE是Marscode的重磅产品，也是我想重点和大家分享的,
+一个内置AI编码助手的云端IDE平台。是<strong>国内首款云端AI
+IDE产品</strong>，它将AI和云计算完美结合，为开发者带来了前所未有的便利,具有诸多优势。</p>
+<ul>
+<li><strong>不用配置环境</strong>:
+对于入门选手来说非常不错，有过开发经验的同学都知道，搭建环境是很耗时的，如果报错了，对于新人还是很难解的，
+现在不用搭建环境，可以直接进入开发了，
+感觉对编程教育上也是一大好处，尤其对于少儿、新手编程...</li>
+<li><strong>方便演示Demo</strong>:
+有时候朋友让帮忙做个功能，然后自己写完了代码，还要部署一个服务，但是如果不在局域网，朋友根本就访问不了你的功能，还要去弄服务器一大堆东西也非常的麻烦，现在用MarsCode
+IDE，可以直接启动服务，让远程的朋友也能直接使用你的功能，非常方便；</li>
+<li><strong>小功能脚本管理</strong>:
+开发同学，有时候会写点脚本临时解决下某些功能，本地的脚本有时候四散各处，后面都忘了在哪里，我觉得IDE还可以充当我们一些小功能脚本的存储地方，把各种各样的小功能托管到了IDE上。统一管理，结合AI编程助手帮你写脚本，想想也不错；</li>
+<li><strong>插件功能</strong>：大家可能更熟悉了，MarsCode还支持一些插件，插件就是可以做各种各样的事情，在云端做各种各样的事情，大家可以尝试安装下释放下想象力。</li>
+</ul>
+<p>如果说是一些大型项目的协作上，现在
+IDE可以尝试下，但是觉得可能本地更方便，对于一些小型的编程协作力场景，感觉挺有效的。</p>
+<p>不过，MarsCode 目前也存在一些限制</p>
+<ul>
+<li><p><strong>项目容量有限</strong>:
+只能创建10个项目，但是基本上足够了；</p></li>
+<li><p><strong>资源小</strong>:
+目前没有本地那么大，单个项目可以使用的最大资源如下： <img
+src="https://pic4.zhimg.com/80/v2-de8c4cad6f50e9ff888fe90a1fb2eacf_1440w.jpeg" /></p></li>
+<li><p><strong>可视化问题</strong>: 一些需要展示的比如绘制图的无法做到。
+<img
+src="https://pic4.zhimg.com/80/v2-1f6513eca2b92bde36a8b02996d0f73f_1440w.jpeg" /></p></li>
+</ul>
+<h3 id="进入marscode-ide">进入Marscode IDE</h3>
+<p>进入后, 首次进入的用户会被要求设置个人信息, 如下所示, 保存成功后,
+我们就可以使用了! <img
+src="https://pic3.zhimg.com/80/v2-8fbb1028b24b3029db800cfb2316cfe6_1440w.jpeg" />
+<img
+src="https://pic1.zhimg.com/80/v2-dcfd533a3397d7d246189556ea11e718_1440w.jpeg" /></p>
+<h3
+id="以算法工程师常用的python为例进行leetcode刷题">以算法工程师常用的Python为例进行leetcode刷题</h3>
+<p>在创建项目时，定义好项目名称（这是必填项哦），还可以根据项目特点补充详细的项目描述（选填项），随后点击创建，一个专属的编程项目空间就诞生了。</p>
+<p>此外，除了从零开始创建项目，你还可以导入 Git
+代码仓库，方便整合和管理已有代码资源，这一功能我们后续会详细介绍。</p>
+<p><img
+src="https://pic3.zhimg.com/80/v2-de7b352bf293e2441038d8f3654e37c6_1440w.jpeg" /></p>
+<h3 id="创建完毕">创建完毕</h3>
+<p>项目创建完成后，点击项目名称，比如 <strong>青稞小子的 AI 智能
+Leetcode 粉碎机</strong>，准备好，让我们的编程冒险正式开始！</p>
+<p><img
+src="https://pic3.zhimg.com/80/v2-39c01ca2d1da571f705f46daae0eec12_1440w.jpeg" /></p>
+<h1 id="开始刷题">开始刷题</h1>
+<h3 id="进入项目">进入项目</h3>
+<p>正式进入Marscode IDE, 我们可以开始进行测试。 <img
+src="https://pic2.zhimg.com/80/v2-52898163cebbf2bcba0115c3a15f8541_1440w.jpeg" /></p>
+<p>其主要的功能区分为<strong>三个部分</strong>: 左边为C区,
+是存放代码、图像等各种文件的地方, 和我们常用的VSCode, PyCharm等类似,
+B区则是命令行, 其目的是用于执行代码。最特殊的当属A区,
+即我们和MarsCode进行交互的地方, 比如,
+我们可以让他写一个经典的快速排序算法。</p>
+<p><img
+src="https://pic2.zhimg.com/80/v2-a895e632d72d5ccb6acb08d0fbb2ecd5_1440w.jpeg" /></p>
+<h3 id="测试marscode生成的算法">测试Marscode生成的算法</h3>
+<p>接下来, 我们在C区, 创建一个名为quick_sort.py的python文件,
+并在代码里调用Marscode, (Ctrl+I), 如下图所示, 就会弹出如下的小窗口,
+用户可以在里面输入自己的需求。</p>
+<p><img
+src="https://pic2.zhimg.com/80/v2-5447156a8dec2e258cc2e6070c682a55_1440w.jpeg" /></p>
+<p>这里, 我让其生成一个快速排序算法</p>
+<p><img
+src="https://pic2.zhimg.com/80/v2-f129bb8d0d040efabed87f83a93d7ec5_1440w.jpeg" /></p>
+<p>很好, 快速排序代码生成出来了, 函数名称为quick_sort, 其入参是一个列表,
+用递归的方式返回结果。那么, 算法生成完毕了, 下一步是进行测试,
+我们期待给定这个函数各种未经排序的列表,
+期待这个算法是否能够正确的返回。</p>
+<p><img
+src="https://pic3.zhimg.com/80/v2-78dd2ddcf5ae761561afbce133ce5a0a_1440w.jpeg" /></p>
+<p>于是, 我调用Ctrl+I, 继续让Marscode的AI小助手(AI
+Assistant)来帮我完成这个部分。</p>
+<p>可以看到, Marscode贴心的帮我生成了一个test_quick_sort()的函数</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-1478d9b88dd05a6f82510c0d7c6ef2af_1440w.jpeg" /></p>
+<p>看起来不错! 我们执行看看? 进入B区, 在命令行(Terminal)里输入:
+&gt;Python quick_sort.py</p>
+<p>可以看到, 这个快速排序的算法得到了成功的执行。</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-5243a5be93d7fcdf0079c9f3a5dd6193_1440w.jpeg" /></p>
+<p>Marscode的AI问答功能能够针对性地优化研发领域知识问答的质量，提供更准确的问答结果。这意味着，当你在刷题或开发过程中遇到问题时，Marscode能够提供精准的答案，帮助你节省时间，提高学习效率。通过这些功能，Marscode不仅能够帮助你解决编程中的问题，还能让你有更多的时间去“摸鱼”（学习）。总的来说，Marscode是一个强大的智能编程助手，它通过提供多种智能功能，极大地提升了开发者的工作效率和编程体验。</p>
+<h3 id="突发奇想-故意把代码改错">突发奇想: 故意把代码改错</h3>
+<p>看起来, 快速排序的算法难不倒MarsCode。我们下面来测测一个实际情况,
+在刷Leetcode时, 通常会发现一个问题: 我们可能会在某个地方写错,
+导致算法无法通过测试用例, 那么对于这种情况,
+MarsCode的AI助手能够发现么?</p>
+<p>让我们试试!</p>
+<p>还是以刚才的快速排序为例, 大家通常在判断和pivot大小的时候,
+会忽略小于等于的符号“&lt;=” , 这里, 我们把等号去掉</p>
+<p>改前:</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-e8111fbfab5e1052602dcedd3060866b_1440w.jpeg" /></p>
+<p>改后：</p>
+<p><img
+src="https://pic1.zhimg.com/80/v2-2bb9727ce286307b65b2d0303ecfe3c4_1440w.jpeg" /></p>
+<p>然后我们再次执行: python quick_sort.py, 当当当当...,
+不出所料，程序报错了。</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-64b4faacca65cb5444c7334ec000e9c3_1440w.jpeg" /></p>
+<p>此时，我们选中出错的 quick_sort 函数代码，再次向 AI
+助手求助，看看能否帮我们修改过来?</p>
+<p><img
+src="https://pic1.zhimg.com/80/v2-5d96710fbdde71901a0185bbd976bd44_1440w.jpeg" /></p>
+<p>问完后, 点击回车, 稍等几秒钟后, 惊人的发现, Marscode真的能做到!</p>
+<p>令人惊叹的事情发生了，AI
+助手不仅准确识别出了错误，还将我们删掉的等号完美复原。再次执行代码，所有测试用例顺利通过，问题得到了圆满解决。</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-4e3883dc0d13371ecb8c695c51054dff_1440w.jpeg" /></p>
+<p>他能够把我特意删掉的等号复原! 再次执行后, 顺利通过所有的测试用例!
+挑战成功了!</p>
+<p>这一过程展示了豆包 Marscode
+强大的错误修复能力，无论是新手还是经验丰富的开发者，在面对复杂的代码错误时，都能借助这一智能功能快速定位并解决问题，大大提高了编程效率。</p>
+<h1 id="总结">总结</h1>
+<p>豆包 Marscode
+的出现，无疑为编程领域注入了一股强大的创新力量。它不仅为刷题求职的学生和工作党提供了高效的解决方案，帮助大家在面对算法难题和代码错误时不再束手无策，更重要的是，它让开发者能够从繁琐的基础工作中解放出来，将更多的时间和精力投入到思考与创造中。在
+AI 技术的驱动下，我们有理由相信，像豆包 Marscode 这样的 AI
+原生开发者工具将引领编程方式的变革，助力每一位开发者在编程之路上走得更快、更远。</p>
+<p>如果你渴望提升编程效率，体验智能化编程的魅力，那么豆包 Marscode
+绝对值得你尝试。快来加入这个充满创新与活力的编程大家庭，一起探索编程的无限可能吧！</p>
+</article><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/11/18/zhibo/Talk/2024-11-23/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://qingkelab.github.io/talks/images/zhibo/2024-11-23-2.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">青稞Talk 29预告！VILA^2:视觉语言模型能力的自我提升</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/%E9%9D%92%E7%A8%9E.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">青稞</h1><div class="author-info__desc">青年AI研究员Idea加油站，AI开发者的新能源充电站</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/qingkelab" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(/qr_code.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B5%B7%E6%AD%A5"><span class="toc-number">2.</span> <span class="toc-text">起步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E7%99%BB%E5%BD%95"><span class="toc-number">2.0.1.</span> <span class="toc-text">注册&amp;登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E5%B7%A5%E4%BD%9C%E5%8F%B0"><span class="toc-number">2.0.2.</span> <span class="toc-text">进入工作台</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#why-marscode-ide"><span class="toc-number">3.</span> <span class="toc-text">Why MarsCode IDE?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5marscode-ide"><span class="toc-number">3.0.1.</span> <span class="toc-text">进入Marscode IDE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%B8%B8%E7%94%A8%E7%9A%84python%E4%B8%BA%E4%BE%8B%E8%BF%9B%E8%A1%8Cleetcode%E5%88%B7%E9%A2%98"><span class="toc-number">3.0.2.</span> <span class="toc-text">以算法工程师常用的Python为例进行leetcode刷题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%AF%95"><span class="toc-number">3.0.3.</span> <span class="toc-text">创建完毕</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%88%B7%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text">开始刷题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E9%A1%B9%E7%9B%AE"><span class="toc-number">4.0.1.</span> <span class="toc-text">进入项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95marscode%E7%94%9F%E6%88%90%E7%9A%84%E7%AE%97%E6%B3%95"><span class="toc-number">4.0.2.</span> <span class="toc-text">测试Marscode生成的算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%81%E5%8F%91%E5%A5%87%E6%83%B3-%E6%95%85%E6%84%8F%E6%8A%8A%E4%BB%A3%E7%A0%81%E6%94%B9%E9%94%99"><span class="toc-number">4.0.3.</span> <span class="toc-text">突发奇想: 故意把代码改错</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/22/LLM/marscode/" title="用豆包大模型来编程是什么体验？Marscode食用指南！"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.zhimg.com/80/v2-b316e0a4ca3fb425c5f0b8104e6169cc_1440w.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用豆包大模型来编程是什么体验？Marscode食用指南！"/></a><div class="content"><a class="title" href="/2024/11/22/LLM/marscode/" title="用豆包大模型来编程是什么体验？Marscode食用指南！">用豆包大模型来编程是什么体验？Marscode食用指南！</a><time datetime="2024-11-22T07:07:11.000Z" title="发表于 2024-11-22 15:07:11">2024-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/18/zhibo/Talk/2024-11-23/" title="青稞Talk 29预告！VILA^2:视觉语言模型能力的自我提升"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://qingkelab.github.io/talks/images/zhibo/2024-11-23-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="青稞Talk 29预告！VILA^2:视觉语言模型能力的自我提升"/></a><div class="content"><a class="title" href="/2024/11/18/zhibo/Talk/2024-11-23/" title="青稞Talk 29预告！VILA^2:视觉语言模型能力的自我提升">青稞Talk 29预告！VILA^2:视觉语言模型能力的自我提升</a><time datetime="2024-11-18T09:31:24.000Z" title="发表于 2024-11-18 17:31:24">2024-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/17/LLM/2024-11-17/" title="干货分享精调视觉语言模型VLM的经验"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pica.zhimg.com/v2-b0c606f797b89c199b52537c7bbd94b0_1440w.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="干货分享精调视觉语言模型VLM的经验"/></a><div class="content"><a class="title" href="/2024/11/17/LLM/2024-11-17/" title="干货分享精调视觉语言模型VLM的经验">干货分享精调视觉语言模型VLM的经验</a><time datetime="2024-11-17T14:46:20.000Z" title="发表于 2024-11-17 22:46:20">2024-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/09/LLM/2024-11-11/" title="DPO新作Your Language Model is Secretly a Q-Function解读，与OPENAI Q* 的联系？"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.zhimg.com/v2-6242ba7373feb47c5d715f3c6e037e06_1440w.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DPO新作Your Language Model is Secretly a Q-Function解读，与OPENAI Q* 的联系？"/></a><div class="content"><a class="title" href="/2024/11/09/LLM/2024-11-11/" title="DPO新作Your Language Model is Secretly a Q-Function解读，与OPENAI Q* 的联系？">DPO新作Your Language Model is Secretly a Q-Function解读，与OPENAI Q* 的联系？</a><time datetime="2024-11-09T15:34:46.000Z" title="发表于 2024-11-09 23:34:46">2024-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/09/LLM/2024-11-10/" title="DPO，RM，RLHF 傻傻分不清楚"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic4.zhimg.com/v2-11e9bf76796c533c063e8c8e9d79370b_1440w.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DPO，RM，RLHF 傻傻分不清楚"/></a><div class="content"><a class="title" href="/2024/11/09/LLM/2024-11-10/" title="DPO，RM，RLHF 傻傻分不清楚">DPO，RM，RLHF 傻傻分不清楚</a><time datetime="2024-11-09T14:55:11.000Z" title="发表于 2024-11-09 22:55:11">2024-11-09</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2023 - 2024 By <a class="footer-bar-link" href="/" title="青稞" target="_blank">青稞</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js').then(() => {
+    jinrishici.load(result =>{
+      if (true) {
+        const sub = []
+        const content = result.data.content
+        sub.unshift(content)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = result.data.content
+      }
+    })
+  })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">81</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">126</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">7</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">关注我</div><div class="back-menu-list"><a class="back-menu-item" href="/about" title="About"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/icon-zhifeiji" alt="About"/><span class="back-menu-item-text">About</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" target="_blank" rel="noopener" href="https://qingkelab.github.io/talks"><span> Talk &amp; Panel</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about"><span> 关于</span></a></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/5%E5%88%86%E9%92%9F%E6%9E%81%E5%87%8F%E9%98%85%E8%AF%BB/" style="font-size: 0.88rem;">5分钟极减阅读<sup>2</sup></a><a href="/tags/AIGC/" style="font-size: 0.88rem;">AIGC<sup>7</sup></a><a href="/tags/Anwen-Hu/" style="font-size: 0.88rem;">Anwen Hu<sup>2</sup></a><a href="/tags/Bohan-Zhuang/" style="font-size: 0.88rem;">Bohan Zhuang<sup>1</sup></a><a href="/tags/Dong-Zhen/" style="font-size: 0.88rem;">Dong Zhen<sup>1</sup></a><a href="/tags/LLAMA-3/" style="font-size: 0.88rem;">LLAMA-3<sup>1</sup></a><a href="/tags/LLM/" style="font-size: 0.88rem;">LLM<sup>42</sup></a><a href="/tags/LLaMA/" style="font-size: 0.88rem;">LLaMA<sup>2</sup></a><a href="/tags/Long-Context/" style="font-size: 0.88rem;">Long Context<sup>1</sup></a><a href="/tags/MLLM/" style="font-size: 0.88rem;">MLLM<sup>5</sup></a><a href="/tags/MOE/" style="font-size: 0.88rem;">MOE<sup>1</sup></a><a href="/tags/Scaling-Law/" style="font-size: 0.88rem;">Scaling Law<sup>1</sup></a><a href="/tags/Sora/" style="font-size: 0.88rem;">Sora<sup>1</sup></a><a href="/tags/TAMU/" style="font-size: 0.88rem;">TAMU<sup>1</sup></a><a href="/tags/Transformer/" style="font-size: 0.88rem;">Transformer<sup>2</sup></a><a href="/tags/%E3%80%8A%E4%BB%8E%E5%88%86%E5%B8%83%E5%88%B0%E7%94%9F%E6%88%90%E3%80%8B%E4%B8%93%E9%A2%98/" style="font-size: 0.88rem;">《从分布到生成》专题<sup>2</sup></a><a href="/tags/%E4%B8%89%E7%BB%B4%E8%A7%86%E8%A7%89/" style="font-size: 0.88rem;">三维视觉<sup>1</sup></a><a href="/tags/%E4%BD%8D%E5%A7%BF%E4%BC%B0%E8%AE%A1/" style="font-size: 0.88rem;">位姿估计<sup>1</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA/" style="font-size: 0.88rem;">减论<sup>2</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA%E7%B3%BB%E5%88%97%E4%B8%93%E6%A0%8F/" style="font-size: 0.88rem;">减论系列专栏<sup>2</sup></a><a href="/tags/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">南开大学<sup>4</sup></a><a href="/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/" style="font-size: 0.88rem;">合成数据<sup>2</sup></a><a href="/tags/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/" style="font-size: 0.88rem;">图像生成<sup>1</sup></a><a href="/tags/%E5%AD%9F%E7%B9%81%E7%BB%AD/" style="font-size: 0.88rem;">孟繁续<sup>2</sup></a><a href="/tags/%E5%BC%A0%E4%BF%8A%E6%9E%97/" style="font-size: 0.88rem;">张俊林<sup>3</sup></a><a href="/tags/%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86/" style="font-size: 0.88rem;">文档处理<sup>1</sup></a><a href="/tags/%E6%9D%8E%E7%BF%94/" style="font-size: 0.88rem;">李翔<sup>4</sup></a><a href="/tags/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">浙江大学<sup>3</sup></a><a href="/tags/%E6%B6%82%E6%AD%A3%E4%B8%AD/" style="font-size: 0.88rem;">涂正中<sup>1</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%B0%E8%AE%A1/" style="font-size: 0.88rem;">深度估计<sup>1</sup></a><a href="/tags/%E6%BD%98%E6%A2%93%E6%AD%A3/" style="font-size: 0.88rem;">潘梓正<sup>1</sup></a><a href="/tags/%E7%8E%8B%E6%AC%A2/" style="font-size: 0.88rem;">王欢<sup>1</sup></a><a href="/tags/%E7%94%B3%E5%8D%9A/" style="font-size: 0.88rem;">申博<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95%E5%AE%9E%E4%B9%A0%E7%94%9F/" style="font-size: 0.88rem;">算法实习生<sup>1</sup></a><a href="/tags/%E8%8E%AB%E7%BA%B3%E4%BB%80%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">莫纳什大学<sup>2</sup></a><a href="/tags/%E8%A5%BF%E6%B9%96%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">西湖大学<sup>1</sup></a><a href="/tags/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" style="font-size: 0.88rem;">视觉生成模型<sup>1</sup></a><a href="/tags/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/" style="font-size: 0.88rem;">视频生成<sup>3</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/" style="font-size: 0.88rem;">阿里巴巴<sup>1</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E9%80%9A%E4%B9%89%E5%AE%9E%E9%AA%8C%E5%AE%A4%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E6%99%BA%E8%83%BD%E5%9B%A2%E9%98%9F/" style="font-size: 0.88rem;">阿里巴巴通义实验室自然语言智能团队<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("10/24/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 青稞 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.cbd.int/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
