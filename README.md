@@ -28,12 +28,12 @@
 
 | 时间       | 议程                                                         | 回放链接                        |
 | ---------- | ------------------------------------------------------------ | ------------------------------- |
-| 2024.10.06 | SGLang Q4 planning<br>Deepseek MLA<br>关于批处理和专家并行性的讨论 | https://hcqnc.xetlk.com/s/3oOTt |
-| 2024.09.22 | SGLang Q4 planning<br>Double Sparsity for Fast Attention     | https://hcqnc.xetlk.com/s/xkK7Z |
-| 2024.10.22 | CPU Overhead Hiding<br>Cache-aware DP routing (design review + quick demo)<br>Brief updates on double sparsity |https://hcqnc.xetlk.com/s/43yW0Q|
-| 2024.11.03 | Reward Model Integration and External Collaboration<br>FP8 scaling and path to MXFP: Kv-cache-type fp8 and beyond |https://hcqnc.xetlk.com/s/1sZAJQ|
-| 2024.11.17 | Rust-based Cache-Aware Data Parallelism Router<br>Speculative Decoding + X-Grammar<br>Timing side channels of KV Cache |https://hcqnc.xetlk.com/s/22zjjx|
-| 2024.11.31 | SGLang v0.4 release：Data Parallelism Router/Data parallelism attention/Online weight update API for RLHF<br>Speculative decoding support<br>Plans:  Multi-layer cache/CacheBlend/Next Step For OpenRLHF/P-D disaggregate/code-walk-through |https://hcqnc.xetlk.com/s/Kq7vX|
+| 2024.10.06 | - SGLang Q4 planning<br>- Deepseek MLA<br>- 关于批处理和专家并行性的讨论 | https://hcqnc.xetlk.com/s/3oOTt |
+| 2024.09.22 | - SGLang Q4 planning<br>- Double Sparsity for Fast Attention | https://hcqnc.xetlk.com/s/xkK7Z |
+| 2024.10.22 | - CPU Overhead Hiding<br>- Cache-aware DP routing (design review + quick demo)<br>- Brief updates on double sparsity |https://hcqnc.xetlk.com/s/43yW0Q|
+| 2024.11.03 | - Reward Model Integration and External Collaboration<br>- FP8 scaling and path to MXFP: Kv-cache-type fp8 and beyond |https://hcqnc.xetlk.com/s/1sZAJQ|
+| 2024.11.17 | - Rust-based Cache-Aware Data Parallelism Router<br>- Speculative Decoding + X-Grammar<br>- Timing side channels of KV Cache |https://hcqnc.xetlk.com/s/22zjjx|
+| 2024.11.31 | - SGLang v0.4 release：Data Parallelism Router/Data parallelism attention/Online weight update API for RLHF<br>- Speculative decoding support<br>- Plans:  Multi-layer cache/CacheBlend/Next Step For OpenRLHF/P-D disaggregate/code-walk-through |https://hcqnc.xetlk.com/s/Kq7vX|
 ---
 
 #### [青稞Talk/Panel](https://qingkelab.github.io/talks)
