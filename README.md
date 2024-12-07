@@ -32,12 +32,15 @@
 | 2024.09.22 | SGLang Q4 planning<br>Double Sparsity for Fast Attention     | https://hcqnc.xetlk.com/s/xkK7Z |
 | 2024.10.22 | CPU Overhead Hiding<br>Cache-aware DP routing (design review + quick demo)<br>Brief updates on double sparsity |https://hcqnc.xetlk.com/s/43yW0Q|
 | 2024.11.03 | Reward Model Integration and External Collaboration<br>FP8 scaling and path to MXFP: Kv-cache-type fp8 and beyond |https://hcqnc.xetlk.com/s/1sZAJQ|
+| 2024.11.17 | Rust-based Cache-Aware Data Parallelism Router<br>Speculative Decoding + X-Grammar<br>Timing side channels of KV Cache |https://hcqnc.xetlk.com/s/22zjjx|
+| 2024.11.31 | SGLang v0.4 release：Data Parallelism Router/Data parallelism attention/Online weight update API for RLHF<br>Speculative decoding support<br>Plans:  Multi-layer cache/CacheBlend/Next Step For OpenRLHF/P-D disaggregate/code-walk-through |https://hcqnc.xetlk.com/s/Kq7vX|
 ---
 
 #### [青稞Talk/Panel](https://qingkelab.github.io/talks)
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 2024.12.14 |        深度求索(DeepSeek)研究员、UT Austin博士刘星超         | [Rectified Flow](https://github.com/gnobitab/RectifiedFlow)：矫正流生成式模型的概念及应用实践 |              https://hcqnc.xetlk.com/sl/1iuade               |
 | 2024.11.30 |        微软研究院 AI Frontiers 实验室高级研究员鲁亚东        | [OminiParser](https://github.com/microsoft/OmniParser)：基于纯视觉的 GUI Agent |              https://hcqnc.xetlk.com/sl/2FcEML               |
 | 2024.11.23 |                 NVIDIA VILA 团队实习生方云浩                 | [VILA^2](https://arxiv.org/pdf/2407.17453) : 视觉语言模型能力的自我提升 |              https://hcqnc.xetlk.com/sl/3WqBpe               |
 | 2024.11.05 |       中科院自动化所和香港城市大学联合培养博士生林浩坤       | [DuQuant]( https://github.com/Hsu1023/DuQuant)： 基于正交变换实现大型语言模型的 SOTA级 4 bit 量化 |              https://hcqnc.xetlk.com/sl/2pnEgg               |

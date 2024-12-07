@@ -612,6 +612,7 @@ h6,
   white-space: normal; /* 允许换行 */
   word-wrap: break-word; /* 长单词换行 */
   overflow-wrap: break-word; /* 增强兼容性 */
+  color: #000 !important; /* 使用 !important 强制覆盖其他颜色设置 */
 }
 .page-type-title {
   position: relative;
@@ -966,16 +967,20 @@ h6,
   transition: all 0.3s ease-in-out 0s;
   font-size: 1.2rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  height: 260px;
+  height: 300px;
+  border: 0.1px solid #ccc;
+  border-radius: 20px; /* 统一调整为较大的圆角 */
 }
 .card .card-img {
   display: block;
   height: 170px;
-  width: 100%;
+  width: 98%;
   max-width: 100%;
+  max-height: 100%; /* 保持图片高度不超过容器 */
   object-fit: cover;
   transition: all 0.3s ease-in-out 0s;
-  margin: 0 auto;
+  margin: 0.5rem auto;
+  border-radius: 10px; /* 调整图片圆角为与卡片一致 */
 }
 .card .card-body,
 .card .card-header,
@@ -983,24 +988,35 @@ h6,
   padding-top: 1rem;
   padding-left: 1rem;
 }
-.card .card-body .archive-article-title {
-  white-space: normal; /* 允许换行 */
-  word-wrap: break-word; /* 长单词换行 */
-  overflow-wrap: break-word; /* 增强兼容性 */
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-.card .card-text,
-.card .card-text > p {
-  min-height: 4.800000000000001rem;
-  margin-bottom: 0;
-}
 .card:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  border: 2px solid #007bff;
+  border-radius: 10px; /* 悬停时圆角不变 */
 }
 .card:hover .card-img {
   opacity: 0.8;
+}
+.card .live-link {
+  background-color: #f0f0f0; /* 设置背景颜色，浅灰色 */
+  padding: 5px 10px; /* 添加内边距，使背景颜色更明显 */
+  border-radius: 20px; /* 增加圆角效果 */
+  text-decoration: none; /* 去除默认的下划线 */
+  color: #000; /* 设置文字颜色为黑色 */
+}
+.card .live-link:hover {
+  background-color: #e0e0e0; /* 悬停时背景颜色变为稍微深一点的灰色 */
+}
+.card .live-time {
+  background-color: #f0f0f0; /* 设置背景颜色，浅灰色 */
+  padding: 5px 10px; /* 添加内边距，使背景颜色更明显 */
+  border-radius: 20px; /* 调整圆角效果 */
+  font-size: 1rem; /* 设置字体大小 */
+  color: #000; /* 设置文字颜色为黑色 */
+  margin-right: 10px; /* 增加右边距 */
+}
+.card .live-time:hover {
+  background-color: #e0e0e0; /* 悬停时背景颜色变为稍微深一点的灰色 */
 }
 .instapic {
   display: flex;
