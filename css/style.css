@@ -1255,9 +1255,10 @@ h6,
   bottom: 0;
   left: 0;
   overflow: hidden;
-  background-size: cover;
+  background-size: 95%;
   background-position: center;
   background-repeat: no-repeat;
+  border: 2px solid #ccc;
   border-radius: 1rem;
 }
 .album-art::after,
