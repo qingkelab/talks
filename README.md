@@ -40,6 +40,7 @@
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 2024.12.16 |           商汤科技研究院模型压缩研究员谷石桥、雍洋           | [LLMC](https://github.com/ModelTC/llmc)：大语言模型压缩工具的开发实践 |              https://hcqnc.xetlk.com/sl/4n2ZdO               |
 | 2024.12.14 |        深度求索(DeepSeek)研究员、UT Austin博士刘星超         | [Rectified Flow](https://github.com/gnobitab/RectifiedFlow)：矫正流生成式模型的概念及应用实践 |              https://hcqnc.xetlk.com/sl/1iuade               |
 | 2024.11.30 |        微软研究院 AI Frontiers 实验室高级研究员鲁亚东        | [OminiParser](https://github.com/microsoft/OmniParser)：基于纯视觉的 GUI Agent |              https://hcqnc.xetlk.com/sl/2FcEML               |
 | 2024.11.23 |                 NVIDIA VILA 团队实习生方云浩                 | [VILA^2](https://arxiv.org/pdf/2407.17453) : 视觉语言模型能力的自我提升 |              https://hcqnc.xetlk.com/sl/3WqBpe               |
