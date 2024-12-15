@@ -40,6 +40,8 @@
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 2024.12.24 | 中国科学院自动化研究所博士生、新加坡国立大学访问博士生李志凯 | [K-Sort Arena](https://huggingface.co/spaces/ksort/K-Sort-Arena)：视觉生成模型的高效人类偏好竞技场 |              https://hcqnc.xetlk.com/sl/3XRo1Q               |
+| 2024.12.21 |                       CMU 博士生董易昕                       | [XGrammar](https://github.com/mlc-ai/xgrammar)：高效实现 LLM灵活且可移植的结构化生成 |              https://hcqnc.xetlk.com/sl/2lfUzu               |
 | 2024.12.16 |           商汤科技研究院模型压缩研究员谷石桥、雍洋           | [LLMC](https://github.com/ModelTC/llmc)：大语言模型压缩工具的开发实践 |              https://hcqnc.xetlk.com/sl/4n2ZdO               |
 | 2024.12.14 |        深度求索(DeepSeek)研究员、UT Austin博士刘星超         | [Rectified Flow](https://github.com/gnobitab/RectifiedFlow)：矫正流生成式模型的概念及应用实践 |              https://hcqnc.xetlk.com/sl/1iuade               |
 | 2024.11.30 |        微软研究院 AI Frontiers 实验室高级研究员鲁亚东        | [OminiParser](https://github.com/microsoft/OmniParser)：基于纯视觉的 GUI Agent |              https://hcqnc.xetlk.com/sl/2FcEML               |
