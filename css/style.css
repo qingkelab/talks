@@ -614,6 +614,9 @@ h6,
   overflow-wrap: break-word; /* 增强兼容性 */
   color: #000 !important; /* 使用 !important 强制覆盖其他颜色设置 */
 }
+.article-title a {
+  color: #000 !important; /* 链接字体颜色为黑色 */
+}
 .page-type-title {
   position: relative;
   font-weight: normal;
