@@ -1,0 +1,526 @@
+<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>对OpenAI o3模型的看法、思考与反思 | 青稞社区</title><meta name="keywords" content="OpenAI,OpenAI o3"><meta name="author" content="青稞"><meta name="copyright" content="青稞"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="对OpenAI o3模型的看法、思考与反思"><meta name="application-name" content="对OpenAI o3模型的看法、思考与反思"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="对OpenAI o3模型的看法、思考与反思"><meta property="og:url" content="https://github.com/qingkelab/2024/12/25/LLM/2024-12-12/index.html"><meta property="og:site_name" content="青稞社区"><meta property="og:description" content="作者：李博杰 原文：https:&amp;#x2F;&amp;#x2F;www.zhihu.com&amp;#x2F;question&amp;#x2F;7416922570&amp;#x2F;answer&amp;#x2F;60763494897  o1 刚出来的时候，很多人还质疑这还达不到 AGI（通用人工智能）。o3 体现出的编程和数学能力，不仅达到了 AGI 的门槛，甚至摸到了 ASI（超级人工"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fo7w20vxl5oi646b5o2y8.png"><meta property="article:author" content="青稞"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fo7w20vxl5oi646b5o2y8.png"><meta name="description" content="作者：李博杰 原文：https:&amp;#x2F;&amp;#x2F;www.zhihu.com&amp;#x2F;question&amp;#x2F;7416922570&amp;#x2F;answer&amp;#x2F;60763494897  o1 刚出来的时候，很多人还质疑这还达不到 AGI（通用人工智能）。o3 体现出的编程和数学能力，不仅达到了 AGI 的门槛，甚至摸到了 ASI（超级人工"><link rel="shortcut icon" href="/%E9%9D%92%E7%A8%9E.jpg"><link rel="canonical" href="https://github.com/qingkelab/2024/12/25/LLM/2024-12-12/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: {"skills":null},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 青稞","link":"链接: ","source":"来源: 青稞社区","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '青稞社区',
+  title: '对OpenAI o3模型的看法、思考与反思',
+  postAI: '',
+  pageFillDescription: '作者李博杰原文刚出来的时候很多人还质疑这还达不到通用人工智能体现出的编程和数学能力不仅达到了的门槛甚至摸到了超级人工智能的边也进一步验证了和的价值在高质量预训练数据基本耗尽模型能力撞墙的情况下提供了一条通过后训练和增加推理时间继续提升模型智力解决更困难问题的路径具体的性能指标很多人都看到了我就不再重复了省流版在编程竞技中击败了的程序员在名程序员中排名名甚至的作者都打不过在编程解决真实世界需求方面也比有明显提升在软件开发测试中之前发布的是是也就是的真实世界需求可以直接做对并通过单元测试也就意味着只有剩下的工作需要人类程序员去编码完成了而这部分工作也可以帮助人类程序员大大提升效率在数学测试中做对了相当于在美国数学奥林匹克竞赛上只答错了一道题在博士级别科学问题测试的中超过个百分点而已经基本上是人类博士生的平均水平图形逻辑推理的经过微调后达到超过人类平均水平但并不是万能的现实世界工程任务的处理能力并没有想象的那么强我发现大型工程项目中的编程任务的准确率并不如擅长的是边界清晰定义明确的封闭式科学问题不知道怎么样但从只能做对来看还是不如人类软件开发工程师的因为一个合格的全栈工程师不能说我只能完成的需求剩下的需求做不了在上超过的人类是因为编程竞赛题都是边界清晰定义明确的而在真实世界的工程任务上就远不如编程竞赛那么强有些人说现在太贵了一个任务美金什么的还是真人便宜我想从几个角度驳斥这个观点大多数软件项目的编程任务只要的能力就够了它比更强但比便宜而即使的价格已经低于人类工程师的开发成本这意味着对于能解决的软件开发问题的成本是低于人类工程师纯手工编程的不能解决需要满血版才能解决的问题往往是比较困难的问题普通程序员或者数学专业的大学生并不能解决如果要招一个靠谱的大神程序员或者数学专家来解决这些问题所需的成本远远超过美金大模型的知识密度在不断提高刘知远老师提出的知识密度定律每个月模型知识密度提升一倍对模型仍然成立例如仅仅半年过去就以低倍的成本达到了的能力因此随着硬件的摩尔定律和模型知识密度提高推理成本会快速降低因此我认为这一波大模型的进展证实了我一直相信的观点在能源有限的情况下相比人类是智能更高效的形式很高兴看到一直在引领整个行业探索将能源转化成智能更高效的解决方案从今年月发布开始我就陷入了迷茫的软件开发能力已经超过人类的智力超越人类也已成定局那人类程序员还能做什么如果让我和上打比赛不要说连都不一定能打过我也是算法竞赛保送的在公司我对编码能力还是有一些自信比如我做面试官的时候从来不让候选人运行代码因为面试题这种几十行的小程序我基本上一眼就能看出他哪里写错了但在面前我仍然感受到深深的无力感而真实项目中的简单软件开发需求我也不一定能打过有时候我觉得里面的或者类似的一款编程软件输出比较慢就想只改几行代码的简单需求我自己写会不会更快但我试了几次往往是我刚刚在代码仓里面定位到该改哪块代码就已经写完了大多数时候我干的事情反而是最没有技术含量的或者说更类似产品经理的把需求用自然语言描述清楚告诉然后看输出的东西是否符合我的需求当然今天还没有这么强当它搞不定的时候还得我动手去改代码今天的里面也能看到整个里面最慢的不是而是操作的人那么这种相对专业的领域是不是还只能靠人类专家比如给定一个万卡集群的训练任务和硬件配置问三种并行方式最优的参数怎么选择我在草稿纸上算了一晚上才算出来如果直接去问它也会答错因为缺少领域知识比如它不知道的硬件参数和的但如果我从知识库里找到相关的背景知识告诉在它第一步输出之后指出它的问题让它继续改进只要轮对话半个小时包括输入的时间就能列公式计算得到跟我想了一晚上一样的结论一个好的推论是基于推理能力最强的模型可以大大提升领域专家的工作效率一个坏的推论是领域专业知识和经验并不是人在面前的护城河昨天晚上我正好跟老婆讨论这个问题我老婆就说月我觉得编程厉害可以一个人写一个大项目不需要团队但实际呢首先的代码质量和软件工程能力还不如专业程序员月开始我独立负责一个项目的大部分技术开发工作有了和一个月万多行的代码产量确实比之前高了很多但的代码质量还是不如人比如不遵循原则大量代码重复由于测试用例不完善还经常把本来对的地方改错了导致项目里到处都是因此人仍然需要作为的守门员类似软件开发团队里的角色其次独行快众行远一个人的思考容易陷入死胡同也容易丧失动力合伙人的作用并不简单是帮忙分担工作更重要的是提供不同的思考角度能在悲观绝望的时候拉一把能在得意自满的时候浇一盆冷水能在分心的时候催一催进展能在技术行不通的时候换个路线甚至干脆砍掉这个特性最后技术仅仅是公司的一个方面还不一定是最重要的方面比如这次发布会两位技术专家的明显不如会讲两位技术专家都是我非常膜拜的大神但做的时候仍然很难让外行人理解这技术有多么牛逼在中自己写了个框架一次跑通用户又在这个框架里写了一个评测自己的程序也是一次跑通最后出来一个的性能指标我们内行人直呼太强了但旁边的提醒他们解释下这是在干啥估计在很多外行人眼里这个就是开发了一个粗糙的界面输入一段出来一个不知道是啥的测试结果根本不到的厉害让我想起来去年底我们做出来第一版语音电话做了和的数字分身能够给和打电话聊天音色和说话风格都很类似但投资人看了就是蒙的这玩意有啥用用户为啥要给和的数字分身打电话一些朋友就跟我说别人是把一个分的东西讲成分我是把一个分的东西讲成分因此对一家公司而言这样的角色是非常重要的在阐明技术价值方面目前还是干不过人类综合以上三点昨天晚上我就想通了人类不应该跟拼智力这就像工业革命中人类不应该跟机器拼体力但工业革命并没有取代人类因为机器扩展了人类体力的边界既能够搬运人类搬不动的东西也提升了重复体力劳动例如种地纺织的效率让人类的体力劳动更体面了今天的也扩展了人类智力的边界未来既能解决人类需要最烧脑才能想出答案的难题又能提升重复脑力劳动例如填表写的效率这样人类的脑力劳动也将更加体面与工业革命一样我认为并不是程序员的终结者相反它可以大大提升程序员的工作效率也不用担心程序员效率普遍提升了会有很多人失业因为社会的软件开发需求目前是远远没有被满足的第一是独立开发者我有很多想做的东西但没有时间开发不出来现在效率提升了就能把之前一直想做的东西做出来了现在只能提升我整体效率一倍因为有很多做不了或者做不好的事情但我相信有了更强大的模型和年整体效率提升倍是有希望的在未来的一年里我希望能利用能力实现几个心愿第二是行业传统行业里也有很多没有被数字化的流程和知识这也是在很多行业里落地的最大挑战之前我们觉得定制化开发就是外包成本收不回来因此很多工作流就是没有数字化和自动化的现在有了给每个行业做定制化开发成本降低了整理零散知识的成本也降低了更多行业就可以实现数字化转型希望和能够早日开放使用国内各家大模型也能尽快追上的能力',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-12-25 14:59:59',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/%E9%9D%92%E7%A8%9E.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">青稞社区</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" target="_blank" rel="noopener" href="https://qingkelab.github.io/talks"><span> Talk &amp; Panel</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" target="_blank" rel="noopener" href="https://e1r5m17x3ld.feishu.cn/wiki/SyGlwuAjriVCOokxcXRckwC7nYU?from=from_copylink"><span> 关于</span></a></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/5%E5%88%86%E9%92%9F%E6%9E%81%E5%87%8F%E9%98%85%E8%AF%BB/" style="font-size: 1.05rem;">5分钟极减阅读<sup>2</sup></a><a href="/tags/AIGC/" style="font-size: 1.05rem;">AIGC<sup>10</sup></a><a href="/tags/Anwen-Hu/" style="font-size: 1.05rem;">Anwen Hu<sup>2</sup></a><a href="/tags/Bohan-Zhuang/" style="font-size: 1.05rem;">Bohan Zhuang<sup>1</sup></a><a href="/tags/Dong-Zhen/" style="font-size: 1.05rem;">Dong Zhen<sup>1</sup></a><a href="/tags/LLAMA-3/" style="font-size: 1.05rem;">LLAMA-3<sup>1</sup></a><a href="/tags/LLM/" style="font-size: 1.05rem;">LLM<sup>49</sup></a><a href="/tags/LLaMA/" style="font-size: 1.05rem;">LLaMA<sup>2</sup></a><a href="/tags/MLLM/" style="font-size: 1.05rem;">MLLM<sup>5</sup></a><a href="/tags/Sora/" style="font-size: 1.05rem;">Sora<sup>1</sup></a><a href="/tags/TAMU/" style="font-size: 1.05rem;">TAMU<sup>1</sup></a><a href="/tags/Transformer/" style="font-size: 1.05rem;">Transformer<sup>2</sup></a><a href="/tags/Weekly/" style="font-size: 1.05rem;">Weekly<sup>2</sup></a><a href="/tags/%E3%80%8A%E4%BB%8E%E5%88%86%E5%B8%83%E5%88%B0%E7%94%9F%E6%88%90%E3%80%8B%E4%B8%93%E9%A2%98/" style="font-size: 1.05rem;">《从分布到生成》专题<sup>2</sup></a><a href="/tags/%E4%B8%89%E7%BB%B4%E8%A7%86%E8%A7%89/" style="font-size: 1.05rem;">三维视觉<sup>1</sup></a><a href="/tags/%E4%BD%8D%E5%A7%BF%E4%BC%B0%E8%AE%A1/" style="font-size: 1.05rem;">位姿估计<sup>1</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA/" style="font-size: 1.05rem;">减论<sup>2</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA%E7%B3%BB%E5%88%97%E4%B8%93%E6%A0%8F/" style="font-size: 1.05rem;">减论系列专栏<sup>2</sup></a><a href="/tags/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">南开大学<sup>4</sup></a><a href="/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/" style="font-size: 1.05rem;">合成数据<sup>2</sup></a><a href="/tags/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/" style="font-size: 1.05rem;">图像生成<sup>2</sup></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" style="font-size: 1.05rem;">大模型<sup>2</sup></a><a href="/tags/%E5%AD%9F%E7%B9%81%E7%BB%AD/" style="font-size: 1.05rem;">孟繁续<sup>2</sup></a><a href="/tags/%E5%BC%A0%E4%BF%8A%E6%9E%97/" style="font-size: 1.05rem;">张俊林<sup>3</sup></a><a href="/tags/%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86/" style="font-size: 1.05rem;">文档处理<sup>1</sup></a><a href="/tags/%E6%9D%8E%E7%BF%94/" style="font-size: 1.05rem;">李翔<sup>4</sup></a><a href="/tags/%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9/" style="font-size: 1.05rem;">模型压缩<sup>2</sup></a><a href="/tags/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">浙江大学<sup>4</sup></a><a href="/tags/%E6%B6%82%E6%AD%A3%E4%B8%AD/" style="font-size: 1.05rem;">涂正中<sup>1</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%B0%E8%AE%A1/" style="font-size: 1.05rem;">深度估计<sup>1</sup></a><a href="/tags/%E6%BD%98%E6%A2%93%E6%AD%A3/" style="font-size: 1.05rem;">潘梓正<sup>1</sup></a><a href="/tags/%E7%8E%8B%E6%AC%A2/" style="font-size: 1.05rem;">王欢<sup>1</sup></a><a href="/tags/%E7%94%B3%E5%8D%9A/" style="font-size: 1.05rem;">申博<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95%E5%AE%9E%E4%B9%A0%E7%94%9F/" style="font-size: 1.05rem;">算法实习生<sup>1</sup></a><a href="/tags/%E8%8E%AB%E7%BA%B3%E4%BB%80%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">莫纳什大学<sup>2</sup></a><a href="/tags/%E8%A5%BF%E6%B9%96%E5%A4%A7%E5%AD%A6/" style="font-size: 1.05rem;">西湖大学<sup>1</sup></a><a href="/tags/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" style="font-size: 1.05rem;">视觉生成模型<sup>1</sup></a><a href="/tags/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/" style="font-size: 1.05rem;">视频生成<sup>3</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/" style="font-size: 1.05rem;">阿里巴巴<sup>1</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E9%80%9A%E4%B9%89%E5%AE%9E%E9%AA%8C%E5%AE%A4%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E6%99%BA%E8%83%BD%E5%9B%A2%E9%98%9F/" style="font-size: 1.05rem;">阿里巴巴通义实验室自然语言智能团队<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">10</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">13</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">十月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">17</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">10</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/LLM/" itemprop="url">LLM</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/OpenAI/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>OpenAI</span></a><a class="article-meta__tags" href="/tags/OpenAI-o3/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>OpenAI o3</span></a></span></div></div><h1 class="post-title" itemprop="name headline">对OpenAI o3模型的看法、思考与反思</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-12-25T06:54:24.000Z" title="发表于 2024-12-25 14:54:24">2024-12-25</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-12-25T06:59:59.995Z" title="更新于 2024-12-25 14:59:59">2024-12-25</time></span></div><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fo7w20vxl5oi646b5o2y8.png"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://github.com/qingkelab/2024/12/25/LLM/2024-12-12/"><header><a class="post-meta-categories" href="/categories/LLM/" itemprop="url">LLM</a><a href="/tags/OpenAI/" tabindex="-1" itemprop="url">OpenAI</a><a href="/tags/OpenAI-o3/" tabindex="-1" itemprop="url">OpenAI o3</a><h1 id="CrawlerTitle" itemprop="name headline">对OpenAI o3模型的看法、思考与反思</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">青稞</span><time itemprop="dateCreated datePublished" datetime="2024-12-25T06:54:24.000Z" title="发表于 2024-12-25 14:54:24">2024-12-25</time><time itemprop="dateCreated datePublished" datetime="2024-12-25T06:59:59.995Z" title="更新于 2024-12-25 14:59:59">2024-12-25</time></header><blockquote>
+<p>作者：李博杰
+原文：https://www.zhihu.com/question/7416922570/answer/60763494897</p>
+</blockquote>
+<p><strong>o1 刚出来的时候，很多人还质疑这还达不到
+AGI（通用人工智能）。o3 体现出的编程和数学能力，不仅达到了 AGI
+的门槛，甚至摸到了 ASI（超级人工智能）的边。</strong></p>
+<p>o3 也进一步验证了 RL 和 test-time scaling
+的价值，在高质量预训练数据基本耗尽，模型能力 “撞墙”
+的情况下，提供了一条通过后训练和增加推理时间，继续提升模型智力，解决更困难问题的路径。</p>
+<p>o3 具体的性能指标很多人都看到了，我就不再重复了。省流版： - o3 在
+Codeforces 编程竞技中击败了 99.9% 的程序员，在 168076 名程序员中排名 175
+名。甚至 o3 的作者都打不过 o3。 - o3 在编程解决真实世界需求方面也比 o1
+有明显提升，在 SWE-Bench 软件开发测试中，之前发布的 o1-preview 是
+41.3%，o3 是 71.7%，也就是 70% 的真实世界需求，o3
+可以直接做对，并通过单元测试。也就意味着只有剩下 30%
+的工作需要人类程序员去编码完成了，而这部分工作 AI
+也可以帮助人类程序员大大提升效率。 - 在 AIME 2024 数学测试中做对了
+96.7%，相当于在美国数学奥林匹克竞赛上只答错了一道题。 -
+在博士级别科学问题测试的 GPQA Diamond 中超过 o1 10 个百分点，而 o1
+已经基本上是人类博士生的平均水平。 - 图形逻辑推理的 ARC-AGI，o3
+经过微调后，达到 87.5%，超过人类平均水平（85%）。</p>
+<p><strong>但 o3
+并不是万能的，现实世界工程任务的处理能力并没有想象的那么强</strong>。我发现大型工程项目中的编程任务，o1
+preview 的准确率并不如 Claude 3.5 Sonnet。o1
+擅长的是边界清晰、定义明确的封闭式科学问题。o3 不知道怎么样，但从 SWE
+Bench 只能做对 71%
+来看，还是不如人类软件开发工程师的，因为一个合格的全栈工程师不能说我只能完成
+70% 的需求，剩下 30% 的需求做不了。o3 在 Codeforces 上超过 99.9%
+的人类，是因为编程竞赛题都是边界清晰、定义明确的，而在真实世界的工程任务上就远不如编程竞赛那么强。</p>
+<p><strong>有些人说 o3 现在太贵了，一个任务 1000
+美金什么的，还是真人便宜。我想从几个角度驳斥这个观点</strong>：</p>
+<p>-<strong>大多数软件项目的编程任务只要 o3 mini
+的能力就够了</strong>，它比 o1 preview 更强，但比 o1 preview
+便宜。而即使 o1 preview 的价格已经低于人类工程师的开发成本，这意味着对于
+AI 能解决的软件开发问题，<strong>AI
+的成本是低于人类工程师纯手工编程的</strong>。 - o3 mini 不能解决，需要
+o3
+满血版才能解决的问题，往往是比较困难的问题，普通程序员或者数学专业的大学生并不能解决。<strong>如果要招一个靠谱的大神程序员或者数学专家来解决这些问题，所需的成本远远超过
+1000 美金。</strong> -
+<strong>大模型的知识密度在不断提高</strong>，刘知远老师提出的知识密度定律（每
+3.3 个月模型知识密度提升一倍）对 reasoning
+模型仍然成立。例如仅仅半年过去，o3 mini 就以低 10 倍的成本达到了 o1
+preview
+的能力。因此，随着硬件的摩尔定律和模型知识密度提高，推理成本会快速降低。</p>
+<p>因此，我认为这一波大模型的进展证实了我一直相信的观点：<strong>在能源有限的情况下，相比人类，AI
+是智能更高效的形式。很高兴看到 OpenAI
+一直在引领整个行业，探索将能源转化成智能更高效的解决方案。</strong></p>
+<p><strong>从今年 9 月 o1 发布开始，我就陷入了迷茫：AI
+的软件开发能力已经超过人类，AI
+的智力超越人类也已成定局。那人类程序员还能做什么？</strong></p>
+<p>如果让我和 AI 上 Codeforces 打比赛，不要说 o3，连 o1
+都不一定能打过。我也是 NOI
+算法竞赛保送的，在公司我对编码能力还是有一些自信，比如我做面试官的时候，从来不让候选人运行代码，因为面试题这种几十行的小程序，我基本上一眼就能看出他哪里写错了。但在
+AI 面前，我仍然感受到深深的无力感。</p>
+<p>而真实项目中的简单软件开发需求，我也不一定能打过 Claude 3.5
+Sonnet。有时候我觉得 Cursor 里面的 Composer Agent（或者类似的一款 AI
+编程软件
+Windsurf）输出比较慢，就想只改几行代码的简单需求，我自己写会不会更快。但我试了几次，往往是我刚刚在代码仓里面定位到该改哪块代码，AI
+就已经写完了。<strong>大多数时候我干的事情反而是最没有技术含量的，或者说更类似产品经理的：把需求用自然语言描述清楚告诉
+AI，然后看 AI 输出的东西是否符合我的需求。</strong>（当然今天 AI
+还没有这么强，当它搞不定的时候，还得我动手去改代码）今天 o3 的 demo
+里面，也能看到整个 demo 里面最慢的不是 AI，而是操作 AI 的人。</p>
+<p><strong>那么 AI Infra
+这种相对专业的领域，是不是还只能靠人类专家？</strong>
+比如给定一个万卡集群的训练任务和硬件配置，问 PP、DP、TP
+三种并行方式最优的参数怎么选择？我在草稿纸上算了一晚上才算出来。如果直接去问
+o1-preview，它也会答错，因为缺少领域知识，比如它不知道 GPU 的硬件参数和
+LLaMA 70B 的 tensor shape。但如果我从知识库里找到相关的背景知识告诉
+o1-preview，在它第一步输出之后指出它的问题，让它继续改进，只要 5
+轮对话，半个小时（包括输入 prompt 的时间），o1-preview
+就能列公式计算，得到跟我想了一晚上一样的结论。<strong>一个好的推论是，基于推理能力最强的模型，AI
+可以大大提升领域专家的工作效率。一个坏的推论是，领域专业知识和经验并不是人在
+AI 面前的护城河。</strong></p>
+<p>昨天晚上我正好跟老婆讨论这个问题，我老婆就说，9 月我觉得 AI
+编程厉害，可以一个人写一个大项目，不需要团队。但实际呢？</p>
+<p><strong>首先，AI 的代码质量和软件工程能力还不如专业程序员。</strong>
+11 月开始我独立负责一个项目的大部分技术开发工作，有了 Cursor 和 Claude
+3.5 Sonnet，一个月 4 万多行的代码产量确实比之前高了很多，但 AI
+的代码质量还是不如人，比如不遵循 DRY
+原则，大量代码重复。由于测试用例不完善，AI
+还经常把本来对的地方改错了，导致项目里到处都是 bug。因此，人仍然需要作为
+AI 的守门员，类似软件开发团队里 committer 的角色。</p>
+<p><strong>其次，独行快，众行远</strong>。一个人的思考容易陷入死胡同，也容易丧失动力。合伙人的作用并不简单是帮忙分担工作，更重要的是提供不同的思考角度，能在悲观绝望的时候拉一把，能在得意自满的时候浇一盆冷水，能在分心的时候催一催进展，能在技术行不通的时候换个路线甚至干脆砍掉这个特性。</p>
+<p><strong>最后，技术仅仅是公司的一个方面，还不一定是最重要的方面</strong>。比如这次
+o3 发布会，两位技术专家的 demo 明显不如 Sam Altman
+会讲。两位技术专家都是我非常膜拜的大神，但做 demo
+的时候仍然很难让外行人理解这技术有多么牛逼。在 demo 中，o3 mini
+自己写了个 Agent 框架，一次跑通，用户又在这个 Agent
+框架里写了一个评测自己的程序，也是一次跑通，最后出来一个 61%
+的性能指标。我们内行人直呼太强了，但旁边的 Sam Altman
+提醒他们解释下这是在干啥。估计在很多外行人眼里，这个 demo
+就是开发了一个粗糙的 HTML 界面，输入一段 prompt
+出来一个不知道是啥的测试结果，根本 get 不到 AI bootstrapping
+的厉害。</p>
+<p>让我想起来去年底我们做出来第一版语音电话，做了 Donald Trump 和 Elon
+Musk 的数字分身，能够给 Trump 和 Musk
+打电话聊天，音色和说话风格都很类似。但投资人看了就是蒙的，这玩意有啥用？用户为啥要给
+Trump 和 Musk 的数字分身打电话？一些朋友就跟我说，别人是把一个 100
+分的东西讲成 500 分，我是把一个 100 分的东西讲成 60
+分。因此对一家公司而言，Sam Altman
+这样的角色是非常重要的。在阐明技术价值方面，目前 AI 还是干不过人类。</p>
+<p>综合以上三点，昨天晚上我就想通了，<strong>人类不应该跟 AI
+拼智力</strong>。这就像工业革命中，人类不应该跟机器拼体力。但工业革命并没有取代人类，因为机器扩展了人类体力的边界，既能够搬运人类搬不动的东西，也提升了重复体力劳动（例如种地、纺织）的效率，让人类的体力劳动更体面了。<strong>今天的
+AI
+也扩展了人类智力的边界，未来既能解决人类需要最烧脑才能想出答案的难题，又能提升重复脑力劳动（例如填表、写
+PPT）的效率，这样人类的脑力劳动也将更加体面。</strong></p>
+<p>与工业革命一样，我认为 AI
+并不是程序员的终结者，相反，它可以大大提升程序员的工作效率。也不用担心程序员效率普遍提升了会有很多人失业，因为社会的软件开发需求目前是远远没有被满足的。</p>
+<p><strong>第一是独立开发者。我有很多想做的东西，但没有时间，开发不出来。现在效率提升了，就能把之前一直想做的东西做出来了</strong>。现在
+AI 只能提升我整体效率一倍，因为有很多 AI
+做不了或者做不好的事情。但我相信有了更强大的模型和 agentic
+workflow，2025 年整体效率提升 10
+倍是有希望的。在未来的一年里，我希望能利用 AI 能力，实现几个心愿。</p>
+<p><strong>第二是 to B
+行业</strong>。传统行业里也有很多没有被数字化的流程和知识，这也是 ERP
+在很多行业里落地的最大挑战。之前我们觉得定制化开发就是外包，成本收不回来，因此很多工作流就是没有数字化和自动化的。<strong>现在有了
+AI，给每个行业做定制化开发成本降低了，整理零散知识的成本也降低了，更多行业就可以实现数字化转型。</strong></p>
+<p>希望 o3 mini 和 o3 能够早日开放使用，国内各家大模型也能尽快追上 o1
+的能力。</p>
+</article><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/12/22/Weekly/2024-12-23/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2024/12/22/Weekly/2024-12-23/640.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">大模型Weekly｜月之暗面发布Kimi视觉思考模型 k1；谷歌发布最新视频生成模型Veo 2</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2024/08/20/LLM/2024-08-20/" title="OpenAI 绝密项目「草莓」技术详解"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.zhimg.com/70/v2-97f6d3af6b26fdfe62e1ce0424adf65e_1440w.avis?source=172ae18b&biz_tag=Post" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-08-20</div><div class="title">OpenAI 绝密项目「草莓」技术详解</div></div></a></div><div><a href="/2024/09/20/LLM/2024-09-20/" title="OpenAI o1的合成数据与推理搜索是怎么实现的"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic2.zhimg.com/80/v2-935dbbff3655d05954c2497ec5b00553_720w.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-09-20</div><div class="title">OpenAI o1的合成数据与推理搜索是怎么实现的</div></div></a></div><div><a href="/2024/09/18/LLM/2024-09-23/" title="万字长文推演OpenAI o1 self-play RL 技术路线"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic4.zhimg.com/80/v2-8ba95e688fb718ba5d9e4d5cbee58c9b_720w.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-09-18</div><div class="title">万字长文推演OpenAI o1 self-play RL 技术路线</div></div></a></div><div><a href="/2024/10/27/LLM/2024-10-23/" title="OpenAI o1：AI新范式以及对未来的 10 个启示"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F893df033-1e69-4bda-a0d7-ddbd8bc28a6e_698x268.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-10-27</div><div class="title">OpenAI o1：AI新范式以及对未来的 10 个启示</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/%E9%9D%92%E7%A8%9E.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">青稞</h1><div class="author-info__desc">青年AI研究员Idea加油站，AI开发者的新能源充电站</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/qingkelab" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(/qr_code.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/12/25/LLM/2024-12-12/" title="对OpenAI o3模型的看法、思考与反思"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fo7w20vxl5oi646b5o2y8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="对OpenAI o3模型的看法、思考与反思"/></a><div class="content"><a class="title" href="/2024/12/25/LLM/2024-12-12/" title="对OpenAI o3模型的看法、思考与反思">对OpenAI o3模型的看法、思考与反思</a><time datetime="2024-12-25T06:54:24.000Z" title="发表于 2024-12-25 14:54:24">2024-12-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/22/Weekly/2024-12-23/" title="大模型Weekly｜月之暗面发布Kimi视觉思考模型 k1；谷歌发布最新视频生成模型Veo 2"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2024/12/22/Weekly/2024-12-23/640.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="大模型Weekly｜月之暗面发布Kimi视觉思考模型 k1；谷歌发布最新视频生成模型Veo 2"/></a><div class="content"><a class="title" href="/2024/12/22/Weekly/2024-12-23/" title="大模型Weekly｜月之暗面发布Kimi视觉思考模型 k1；谷歌发布最新视频生成模型Veo 2">大模型Weekly｜月之暗面发布Kimi视觉思考模型 k1；谷歌发布最新视频生成模型Veo 2</a><time datetime="2024-12-22T11:56:33.000Z" title="发表于 2024-12-22 19:56:33">2024-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/18/zhibo/Talk/2024-12-24/" title="青稞Talk 34预告！K-Sort Arena：视觉生成模型的高效人类偏好竞技场"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://qingkelab.github.io/talks/images/zhibo/2024-12-24-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="青稞Talk 34预告！K-Sort Arena：视觉生成模型的高效人类偏好竞技场"/></a><div class="content"><a class="title" href="/2024/12/18/zhibo/Talk/2024-12-24/" title="青稞Talk 34预告！K-Sort Arena：视觉生成模型的高效人类偏好竞技场">青稞Talk 34预告！K-Sort Arena：视觉生成模型的高效人类偏好竞技场</a><time datetime="2024-12-18T05:01:32.000Z" title="发表于 2024-12-18 13:01:32">2024-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/17/zhibo/Talk/2024-12-21/" title="青稞talk 33预告！陈天奇团队开源XGrammar：近零开销实现LLM结构化生成"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://qingkelab.github.io/talks/images/zhibo/2024-12-21-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="青稞talk 33预告！陈天奇团队开源XGrammar：近零开销实现LLM结构化生成"/></a><div class="content"><a class="title" href="/2024/12/17/zhibo/Talk/2024-12-21/" title="青稞talk 33预告！陈天奇团队开源XGrammar：近零开销实现LLM结构化生成">青稞talk 33预告！陈天奇团队开源XGrammar：近零开销实现LLM结构化生成</a><time datetime="2024-12-17T06:31:22.000Z" title="发表于 2024-12-17 14:31:22">2024-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/16/Weekly/2024-12-16/" title="大模型Weekly｜谷歌发布Gemini 2.0；微软推出小模型Phi-4；智谱上线GLM-4V-Flash"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2024/12/16/Weekly/2024-12-16/640.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="大模型Weekly｜谷歌发布Gemini 2.0；微软推出小模型Phi-4；智谱上线GLM-4V-Flash"/></a><div class="content"><a class="title" href="/2024/12/16/Weekly/2024-12-16/" title="大模型Weekly｜谷歌发布Gemini 2.0；微软推出小模型Phi-4；智谱上线GLM-4V-Flash">大模型Weekly｜谷歌发布Gemini 2.0；微软推出小模型Phi-4；智谱上线GLM-4V-Flash</a><time datetime="2024-12-16T01:27:24.000Z" title="发表于 2024-12-16 09:27:24">2024-12-16</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2023 - 2024 By <a class="footer-bar-link" href="/" title="青稞" target="_blank">青稞</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js').then(() => {
+    jinrishici.load(result =>{
+      if (true) {
+        const sub = []
+        const content = result.data.content
+        sub.unshift(content)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = result.data.content
+      }
+    })
+  })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">96</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">132</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">8</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">关注我</div><div class="back-menu-list"><a class="back-menu-item" href="/about" title="About"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/icon-zhifeiji" alt="About"/><span class="back-menu-item-text">About</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" target="_blank" rel="noopener" href="https://qingkelab.github.io/talks"><span> Talk &amp; Panel</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" target="_blank" rel="noopener" href="https://e1r5m17x3ld.feishu.cn/wiki/SyGlwuAjriVCOokxcXRckwC7nYU?from=from_copylink"><span> 关于</span></a></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/5%E5%88%86%E9%92%9F%E6%9E%81%E5%87%8F%E9%98%85%E8%AF%BB/" style="font-size: 0.88rem;">5分钟极减阅读<sup>2</sup></a><a href="/tags/AIGC/" style="font-size: 0.88rem;">AIGC<sup>10</sup></a><a href="/tags/Anwen-Hu/" style="font-size: 0.88rem;">Anwen Hu<sup>2</sup></a><a href="/tags/Bohan-Zhuang/" style="font-size: 0.88rem;">Bohan Zhuang<sup>1</sup></a><a href="/tags/Dong-Zhen/" style="font-size: 0.88rem;">Dong Zhen<sup>1</sup></a><a href="/tags/LLAMA-3/" style="font-size: 0.88rem;">LLAMA-3<sup>1</sup></a><a href="/tags/LLM/" style="font-size: 0.88rem;">LLM<sup>49</sup></a><a href="/tags/LLaMA/" style="font-size: 0.88rem;">LLaMA<sup>2</sup></a><a href="/tags/MLLM/" style="font-size: 0.88rem;">MLLM<sup>5</sup></a><a href="/tags/Sora/" style="font-size: 0.88rem;">Sora<sup>1</sup></a><a href="/tags/TAMU/" style="font-size: 0.88rem;">TAMU<sup>1</sup></a><a href="/tags/Transformer/" style="font-size: 0.88rem;">Transformer<sup>2</sup></a><a href="/tags/Weekly/" style="font-size: 0.88rem;">Weekly<sup>2</sup></a><a href="/tags/%E3%80%8A%E4%BB%8E%E5%88%86%E5%B8%83%E5%88%B0%E7%94%9F%E6%88%90%E3%80%8B%E4%B8%93%E9%A2%98/" style="font-size: 0.88rem;">《从分布到生成》专题<sup>2</sup></a><a href="/tags/%E4%B8%89%E7%BB%B4%E8%A7%86%E8%A7%89/" style="font-size: 0.88rem;">三维视觉<sup>1</sup></a><a href="/tags/%E4%BD%8D%E5%A7%BF%E4%BC%B0%E8%AE%A1/" style="font-size: 0.88rem;">位姿估计<sup>1</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA/" style="font-size: 0.88rem;">减论<sup>2</sup></a><a href="/tags/%E5%87%8F%E8%AE%BA%E7%B3%BB%E5%88%97%E4%B8%93%E6%A0%8F/" style="font-size: 0.88rem;">减论系列专栏<sup>2</sup></a><a href="/tags/%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">南开大学<sup>4</sup></a><a href="/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/" style="font-size: 0.88rem;">合成数据<sup>2</sup></a><a href="/tags/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/" style="font-size: 0.88rem;">图像生成<sup>2</sup></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" style="font-size: 0.88rem;">大模型<sup>2</sup></a><a href="/tags/%E5%AD%9F%E7%B9%81%E7%BB%AD/" style="font-size: 0.88rem;">孟繁续<sup>2</sup></a><a href="/tags/%E5%BC%A0%E4%BF%8A%E6%9E%97/" style="font-size: 0.88rem;">张俊林<sup>3</sup></a><a href="/tags/%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86/" style="font-size: 0.88rem;">文档处理<sup>1</sup></a><a href="/tags/%E6%9D%8E%E7%BF%94/" style="font-size: 0.88rem;">李翔<sup>4</sup></a><a href="/tags/%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9/" style="font-size: 0.88rem;">模型压缩<sup>2</sup></a><a href="/tags/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">浙江大学<sup>4</sup></a><a href="/tags/%E6%B6%82%E6%AD%A3%E4%B8%AD/" style="font-size: 0.88rem;">涂正中<sup>1</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%B0%E8%AE%A1/" style="font-size: 0.88rem;">深度估计<sup>1</sup></a><a href="/tags/%E6%BD%98%E6%A2%93%E6%AD%A3/" style="font-size: 0.88rem;">潘梓正<sup>1</sup></a><a href="/tags/%E7%8E%8B%E6%AC%A2/" style="font-size: 0.88rem;">王欢<sup>1</sup></a><a href="/tags/%E7%94%B3%E5%8D%9A/" style="font-size: 0.88rem;">申博<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95%E5%AE%9E%E4%B9%A0%E7%94%9F/" style="font-size: 0.88rem;">算法实习生<sup>1</sup></a><a href="/tags/%E8%8E%AB%E7%BA%B3%E4%BB%80%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">莫纳什大学<sup>2</sup></a><a href="/tags/%E8%A5%BF%E6%B9%96%E5%A4%A7%E5%AD%A6/" style="font-size: 0.88rem;">西湖大学<sup>1</sup></a><a href="/tags/%E8%A7%86%E8%A7%89%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" style="font-size: 0.88rem;">视觉生成模型<sup>1</sup></a><a href="/tags/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/" style="font-size: 0.88rem;">视频生成<sup>3</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/" style="font-size: 0.88rem;">阿里巴巴<sup>1</sup></a><a href="/tags/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E9%80%9A%E4%B9%89%E5%AE%9E%E9%AA%8C%E5%AE%A4%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E6%99%BA%E8%83%BD%E5%9B%A2%E9%98%9F/" style="font-size: 0.88rem;">阿里巴巴通义实验室自然语言智能团队<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("10/24/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 青稞 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.cbd.int/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
