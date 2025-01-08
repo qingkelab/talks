@@ -40,7 +40,8 @@
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| 2025.01.04 |                 香港科技大学计算机博士生马跃                 |          Follow Family：可控视频生成方法探索与应用           |              https://hcqnc.xetlk.com/sl/3rBIPz                                                |
+| 2025.01.14 |               香港科技大学（广州）博士生许添硕               | [Motion Dreamer](https://arxiv.org/abs/2412.00547)：面向自动驾驶与物理世界对齐的视频生成模型 |              https://hcqnc.xetlk.com/sl/4y3EE0               |
+| 2025.01.04 |                 香港科技大学计算机博士生马跃                 |          Follow Family：可控视频生成方法探索与应用           |              https://hcqnc.xetlk.com/sl/3rBIPz               |
 | 2024.12.28 |                 香港科技大学广州博士生周子凯                 | Tuning-Free Enhence：通过噪声初始化和采样轨迹优化增强预训练扩散模型 |               https://hcqnc.xetlk.com/sl/IWRoq               |
 | 2024.12.24 | 中国科学院自动化研究所博士生、新加坡国立大学访问博士生李志凯 | [K-Sort Arena](https://huggingface.co/spaces/ksort/K-Sort-Arena)：视觉生成模型的高效人类偏好竞技场 |              https://hcqnc.xetlk.com/sl/3XRo1Q               |
 | 2024.12.21 |                       CMU 博士生董易昕                       | [XGrammar](https://github.com/mlc-ai/xgrammar)：高效实现 LLM灵活且可移植的结构化生成 |              https://hcqnc.xetlk.com/sl/2lfUzu               |
