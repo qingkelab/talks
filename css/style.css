@@ -1154,67 +1154,6 @@ h6,
   height: 2.4em;
   border-radius: 2.4em;
 }
-.slide-panel {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 30%;
-  max-width: 600px;
-  height: 100%;
-  background-color: #fff;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.3);
-  transition: right 0.5s ease;
-  z-index: 1000;
-  overflow-y: auto;
-}
-.slide-panel.active {
-  right: 0;
-  transform: translateX(0); /* 使侧滑更加自然 */
-}
-.slide-panel .header {
-  padding: 15px;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: #007bff;
-  color: #fff;
-  position: relative;
-  transition: background-color; /* 头部背景色变化 */
-}
-.slide-panel .header .close-btn {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  font-size: 18px;
-  cursor: pointer;
-  color: #fff;
-  transition: color; /* 关闭按钮颜色变化 */
-}
-.slide-panel .header .close-btn:hover {
-  color: #ffd700; /* 鼠标悬停时变为金色 */
-}
-.slide-panel iframe {
-  width: 100%;
-  height: calc(100% - 60px); /* 减去 header 的高度 */
-  border: none;
-  transition: transform;
-}
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-}
-.overlay.show {
-  opacity: 1;
-  visibility: visible;
-}
 .album-grid {
   display: grid;
   grid-auto-flow: row dense;
