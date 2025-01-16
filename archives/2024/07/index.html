@@ -108,17 +108,19 @@
         <div class="classtest">
             <a href="/talks//archives">#ALL</a>
             
+                <a href="/talks/tags/SGLang/"> #SGLang</a>
+            
+                <a href="/talks/tags/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"> #具身智能</a>
+            
                 <a href="/talks/tags/LLM/"> #LLM</a>
             
                 <a href="/talks/tags/AIGC/"> #AIGC</a>
-            
-                <a href="/talks/tags/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"> #视频生成</a>
             
                 <a href="/talks/tags/3D%E7%94%9F%E6%88%90/"> #3D生成</a>
             
                 <a href="/talks/tags/AI-Agent/"> #AI Agent</a>
             
-                <a href="/talks/tags/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"> #具身智能</a>
+                <a href="/talks/tags/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"> #视频生成</a>
             
                 <a href="/talks/tags/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B/"> #多模态大模型</a>
             
@@ -133,8 +135,6 @@
                 <a href="/talks/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%87%8F%E5%8C%96/"> #大模型量化</a>
             
                 <a href="/talks/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86/"> #大模型推理</a>
-            
-                <a href="/talks/tags/SGLang/"> #SGLang</a>
             
                 <a href="/talks/tags/RAG/"> #RAG</a>
             
@@ -223,7 +223,7 @@
       
   
     <!-- 检查 post.link 是否存在，如果存在则使用 post.link，否则使用 post.path -->
-    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/sl/3xzywr" rel="gallery_cm5ysxgwl001ehwohcadsagk3 noopener">
+    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/sl/3xzywr" rel="gallery_cm5yx2rwh001cvfoh1g3c7yub noopener">
       <img class="card-img lazyload" data-src="/talks/images/zhibo/2024-07-30.png" itemprop="image" alt="gallery">
     </a>
   
@@ -235,6 +235,7 @@
         直播时间：<time class="text-gray" datetime="2024-07-30T11:00:00.000Z" itemprop="datePublished">
   2024-07-30 19:00
 </time>
+        <a href="#" class="watch-live" data-link="https://hcqnc.xetlk.com/sl/3xzywr" aria-label="观看直播视频" role="button">｜🎥 观看直播</a>
         
   
     <h5 class="article-title mb-0 line-clamp line-clamp-2" itemprop="name">
@@ -242,13 +243,39 @@
     </h5>
   
 
-        <!-- <div class="card-text mt-3 line-clamp line-clamp-2"><h2 id="青稞Talk-第十七期"><a href="#青稞Talk-第十七期" class="headerlink" title="青稞Talk 第十七期
- "></a>青稞Talk 第十七期<br></div> -->
       </div>
     </div>
   </article>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      // 选择所有带有 "watch-live" 类的链接
+      const watchLiveButtons = document.querySelectorAll('.watch-live');
+  
+      // 在新窗口中打开直播链接
+      function openLiveStream(event) {
+          event.preventDefault(); // 阻止默认行为
+          const liveLink = event.currentTarget.getAttribute('data-link'); // 获取当前按钮的链接
+          if (liveLink) {
+              // 设置窗口大小和位置
+              const width = window.innerWidth * 0.30; // 宽度为屏幕宽度的30%
+              const height = window.innerHeight; // 高度为屏幕高度
+              const left = window.innerWidth - width; // 窗口靠右对齐
+  
+              // 打开新窗口
+              window.open(liveLink, '_blank', `width=${width},height=${height},left=${left},top=0`);
+          } else {
+              console.error('直播链接无效');
+          }
+      }
+  
+      // 为所有 "观看直播" 按钮绑定点击事件
+      watchLiveButtons.forEach(button => {
+          button.addEventListener('click', openLiveStream);
+      });
+  });
+</script>
       
   
 
@@ -259,7 +286,7 @@
       
   
     <!-- 检查 post.link 是否存在，如果存在则使用 post.link，否则使用 post.path -->
-    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/sl/12dD2S" rel="gallery_cm5ysxgwo0023hwoh8korcbg6 noopener">
+    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/sl/12dD2S" rel="gallery_cm5yx2rwh0019vfoh1qgi4ivm noopener">
       <img class="card-img lazyload" data-src="/talks/images/zhibo/2024-07-23.png" itemprop="image" alt="gallery">
     </a>
   
@@ -271,6 +298,7 @@
         直播时间：<time class="text-gray" datetime="2024-07-23T11:00:00.000Z" itemprop="datePublished">
   2024-07-23 19:00
 </time>
+        <a href="#" class="watch-live" data-link="https://hcqnc.xetlk.com/sl/12dD2S" aria-label="观看直播视频" role="button">｜🎥 观看直播</a>
         
   
     <h5 class="article-title mb-0 line-clamp line-clamp-2" itemprop="name">
@@ -278,13 +306,39 @@
     </h5>
   
 
-        <!-- <div class="card-text mt-3 line-clamp line-clamp-2"><h2 id="青稞Talk-第十六期"><a href="#青稞Talk-第十六期" class="headerlink" title="青稞Talk 第十六期
- "></a>青稞Talk 第十六期<br></div> -->
       </div>
     </div>
   </article>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      // 选择所有带有 "watch-live" 类的链接
+      const watchLiveButtons = document.querySelectorAll('.watch-live');
+  
+      // 在新窗口中打开直播链接
+      function openLiveStream(event) {
+          event.preventDefault(); // 阻止默认行为
+          const liveLink = event.currentTarget.getAttribute('data-link'); // 获取当前按钮的链接
+          if (liveLink) {
+              // 设置窗口大小和位置
+              const width = window.innerWidth * 0.30; // 宽度为屏幕宽度的30%
+              const height = window.innerHeight; // 高度为屏幕高度
+              const left = window.innerWidth - width; // 窗口靠右对齐
+  
+              // 打开新窗口
+              window.open(liveLink, '_blank', `width=${width},height=${height},left=${left},top=0`);
+          } else {
+              console.error('直播链接无效');
+          }
+      }
+  
+      // 为所有 "观看直播" 按钮绑定点击事件
+      watchLiveButtons.forEach(button => {
+          button.addEventListener('click', openLiveStream);
+      });
+  });
+</script>
       
   
 
@@ -295,7 +349,7 @@
       
   
     <!-- 检查 post.link 是否存在，如果存在则使用 post.link，否则使用 post.path -->
-    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/s/1SKePY" rel="gallery_cm5ysxgwa0001hwoh4sxwfomz noopener">
+    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/s/1SKePY" rel="gallery_cm5yx2rwn0038vfohefmrfoio noopener">
       <img class="card-img lazyload" data-src="/talks/images/zhibo/llm-1.png" itemprop="image" alt="gallery">
     </a>
   
@@ -307,6 +361,7 @@
         直播时间：<time class="text-gray" datetime="2024-07-17T11:00:00.000Z" itemprop="datePublished">
   2024-07-17 19:00
 </time>
+        <a href="#" class="watch-live" data-link="https://hcqnc.xetlk.com/s/1SKePY" aria-label="观看直播视频" role="button">｜🎥 观看直播</a>
         
   
     <h5 class="article-title mb-0 line-clamp line-clamp-2" itemprop="name">
@@ -314,13 +369,39 @@
     </h5>
   
 
-        <!-- <div class="card-text mt-3 line-clamp line-clamp-2"><h2 id="清华大学出品"><a href="#清华大学出品" class="headerlink" title="清华大学出品
- "></a>清华大学出品<br></div> -->
       </div>
     </div>
   </article>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      // 选择所有带有 "watch-live" 类的链接
+      const watchLiveButtons = document.querySelectorAll('.watch-live');
+  
+      // 在新窗口中打开直播链接
+      function openLiveStream(event) {
+          event.preventDefault(); // 阻止默认行为
+          const liveLink = event.currentTarget.getAttribute('data-link'); // 获取当前按钮的链接
+          if (liveLink) {
+              // 设置窗口大小和位置
+              const width = window.innerWidth * 0.30; // 宽度为屏幕宽度的30%
+              const height = window.innerHeight; // 高度为屏幕高度
+              const left = window.innerWidth - width; // 窗口靠右对齐
+  
+              // 打开新窗口
+              window.open(liveLink, '_blank', `width=${width},height=${height},left=${left},top=0`);
+          } else {
+              console.error('直播链接无效');
+          }
+      }
+  
+      // 为所有 "观看直播" 按钮绑定点击事件
+      watchLiveButtons.forEach(button => {
+          button.addEventListener('click', openLiveStream);
+      });
+  });
+</script>
       
   
 
@@ -331,7 +412,7 @@
       
   
     <!-- 检查 post.link 是否存在，如果存在则使用 post.link，否则使用 post.path -->
-    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/sl/30sK4y" rel="gallery_cm5ysxgwl001bhwoh55jf8gfu noopener">
+    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/sl/30sK4y" rel="gallery_cm5yx2rwg0017vfoh3tlubgb8 noopener">
       <img class="card-img lazyload" data-src="/talks/images/zhibo/2024-07-15.png" itemprop="image" alt="gallery">
     </a>
   
@@ -343,6 +424,7 @@
         直播时间：<time class="text-gray" datetime="2024-07-15T11:00:00.000Z" itemprop="datePublished">
   2024-07-15 19:00
 </time>
+        <a href="#" class="watch-live" data-link="https://hcqnc.xetlk.com/sl/30sK4y" aria-label="观看直播视频" role="button">｜🎥 观看直播</a>
         
   
     <h5 class="article-title mb-0 line-clamp line-clamp-2" itemprop="name">
@@ -350,13 +432,39 @@
     </h5>
   
 
-        <!-- <div class="card-text mt-3 line-clamp line-clamp-2"><h2 id="青稞Talk-第十五期"><a href="#青稞Talk-第十五期" class="headerlink" title="青稞Talk 第十五期
- "></a>青稞Talk 第十五期<br></div> -->
       </div>
     </div>
   </article>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      // 选择所有带有 "watch-live" 类的链接
+      const watchLiveButtons = document.querySelectorAll('.watch-live');
+  
+      // 在新窗口中打开直播链接
+      function openLiveStream(event) {
+          event.preventDefault(); // 阻止默认行为
+          const liveLink = event.currentTarget.getAttribute('data-link'); // 获取当前按钮的链接
+          if (liveLink) {
+              // 设置窗口大小和位置
+              const width = window.innerWidth * 0.30; // 宽度为屏幕宽度的30%
+              const height = window.innerHeight; // 高度为屏幕高度
+              const left = window.innerWidth - width; // 窗口靠右对齐
+  
+              // 打开新窗口
+              window.open(liveLink, '_blank', `width=${width},height=${height},left=${left},top=0`);
+          } else {
+              console.error('直播链接无效');
+          }
+      }
+  
+      // 为所有 "观看直播" 按钮绑定点击事件
+      watchLiveButtons.forEach(button => {
+          button.addEventListener('click', openLiveStream);
+      });
+  });
+</script>
       
   
 
@@ -367,7 +475,7 @@
       
   
     <!-- 检查 post.link 是否存在，如果存在则使用 post.link，否则使用 post.path -->
-    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/sl/34N5vR" rel="gallery_cm5ysxgwk0013hwoh3p4ndeag noopener">
+    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/sl/34N5vR" rel="gallery_cm5yx2rwg0014vfoh5h5lf6iw noopener">
       <img class="card-img lazyload" data-src="/talks/images/zhibo/2024-07-11.png" itemprop="image" alt="gallery">
     </a>
   
@@ -379,6 +487,7 @@
         直播时间：<time class="text-gray" datetime="2024-07-11T11:00:00.000Z" itemprop="datePublished">
   2024-07-11 19:00
 </time>
+        <a href="#" class="watch-live" data-link="https://hcqnc.xetlk.com/sl/34N5vR" aria-label="观看直播视频" role="button">｜🎥 观看直播</a>
         
   
     <h5 class="article-title mb-0 line-clamp line-clamp-2" itemprop="name">
@@ -386,13 +495,39 @@
     </h5>
   
 
-        <!-- <div class="card-text mt-3 line-clamp line-clamp-2"><h2 id="青稞Talk-第十四期"><a href="#青稞Talk-第十四期" class="headerlink" title="青稞Talk 第十四期
- "></a>青稞Talk 第十四期<br></div> -->
       </div>
     </div>
   </article>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      // 选择所有带有 "watch-live" 类的链接
+      const watchLiveButtons = document.querySelectorAll('.watch-live');
+  
+      // 在新窗口中打开直播链接
+      function openLiveStream(event) {
+          event.preventDefault(); // 阻止默认行为
+          const liveLink = event.currentTarget.getAttribute('data-link'); // 获取当前按钮的链接
+          if (liveLink) {
+              // 设置窗口大小和位置
+              const width = window.innerWidth * 0.30; // 宽度为屏幕宽度的30%
+              const height = window.innerHeight; // 高度为屏幕高度
+              const left = window.innerWidth - width; // 窗口靠右对齐
+  
+              // 打开新窗口
+              window.open(liveLink, '_blank', `width=${width},height=${height},left=${left},top=0`);
+          } else {
+              console.error('直播链接无效');
+          }
+      }
+  
+      // 为所有 "观看直播" 按钮绑定点击事件
+      watchLiveButtons.forEach(button => {
+          button.addEventListener('click', openLiveStream);
+      });
+  });
+</script>
       
   
 
@@ -403,7 +538,7 @@
       
   
     <!-- 检查 post.link 是否存在，如果存在则使用 post.link，否则使用 post.path -->
-    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/sl/4xFmvV" rel="gallery_cm5ysxgwk0010hwohd6iadstb noopener">
+    <a class="card-img-link" target="_blank" href="https://hcqnc.xetlk.com/sl/4xFmvV" rel="gallery_cm5yx2rwf000xvfoh8ez36g53 noopener">
       <img class="card-img lazyload" data-src="/talks/images/zhibo/2024-07-08.png" itemprop="image" alt="gallery">
     </a>
   
@@ -415,6 +550,7 @@
         直播时间：<time class="text-gray" datetime="2024-07-08T11:00:00.000Z" itemprop="datePublished">
   2024-07-08 19:00
 </time>
+        <a href="#" class="watch-live" data-link="https://hcqnc.xetlk.com/sl/4xFmvV" aria-label="观看直播视频" role="button">｜🎥 观看直播</a>
         
   
     <h5 class="article-title mb-0 line-clamp line-clamp-2" itemprop="name">
@@ -422,13 +558,39 @@
     </h5>
   
 
-        <!-- <div class="card-text mt-3 line-clamp line-clamp-2"><h2 id="青稞Talk-第十三期"><a href="#青稞Talk-第十三期" class="headerlink" title="青稞Talk 第十三期
- "></a>青稞Talk 第十三期<br></div> -->
       </div>
     </div>
   </article>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      // 选择所有带有 "watch-live" 类的链接
+      const watchLiveButtons = document.querySelectorAll('.watch-live');
+  
+      // 在新窗口中打开直播链接
+      function openLiveStream(event) {
+          event.preventDefault(); // 阻止默认行为
+          const liveLink = event.currentTarget.getAttribute('data-link'); // 获取当前按钮的链接
+          if (liveLink) {
+              // 设置窗口大小和位置
+              const width = window.innerWidth * 0.30; // 宽度为屏幕宽度的30%
+              const height = window.innerHeight; // 高度为屏幕高度
+              const left = window.innerWidth - width; // 窗口靠右对齐
+  
+              // 打开新窗口
+              window.open(liveLink, '_blank', `width=${width},height=${height},left=${left},top=0`);
+          } else {
+              console.error('直播链接无效');
+          }
+      }
+  
+      // 为所有 "观看直播" 按钮绑定点击事件
+      watchLiveButtons.forEach(button => {
+          button.addEventListener('click', openLiveStream);
+      });
+  });
+</script>
       
       
     </div>
