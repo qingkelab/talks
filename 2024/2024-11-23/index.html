@@ -120,16 +120,48 @@
     </h1>
   
 
-      <div class="article-meta">
+      <!-- <div class="article-meta">
         ⏰<time class="text-gray" datetime="2024-11-23T03:00:00.000Z" itemprop="datePublished">
   2024-11-23
 </time>
         <a href="https://hcqnc.xetlk.com/sl/3WqBpe" target="_blank">｜🎥 观看直播</a>
-      </div>
+      </div> -->
+      <div class="article-meta">
+        ⏰<time class="text-gray" datetime="2024-11-23T03:00:00.000Z" itemprop="datePublished">
+  2024-11-23
+</time>
+        <a href="#" id="watch-live" data-link="https://hcqnc.xetlk.com/sl/3WqBpe" aria-label="观看直播视频" role="button">｜🎥 观看直播</a>
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const watchLiveButton = document.querySelector('#watch-live');
+    
+        // 在新窗口中打开直播链接
+        function openLiveStream(event) {
+            event.preventDefault();  // 阻止默认链接跳转
+            const liveLink = watchLiveButton.getAttribute('data-link');
+            if (liveLink) {
+                // 设置窗口的宽度为屏幕宽度的25%，高度为100%
+                const width = window.innerWidth * 0.30;
+                const height = window.innerHeight;
+                const left = window.innerWidth - width;  // 将窗口定位在右边
+    
+                window.open(liveLink, '_blank', `width=${width},height=${height},left=${left},top=0`);
+            } else {
+                console.error('直播链接无效');
+            }
+        }
+    
+        // 绑定点击事件
+        watchLiveButton.addEventListener('click', openLiveStream);
+    });
+    </script>
+    
+
       
     </header>
     
-
     <nav class="js-toc"></nav>
     <div class="article-entry js-toc-content" itemprop="articleBody">
       <hr>
