@@ -21,25 +21,13 @@
     <li>【16】<a href="https://hcqnc.xetlk.com/s/wL9oM" target="_blank">大模型企业家访谈</a></li>
   </ul>
 </details>
-
----
-
-#### [SGLang](https://github.com/sgl-project/sglang) Public Meeting ：[Video](https://hcqnc.xetlk.com/s/ajokl)
-
-| 时间       | 议程                                                         | 回放链接                        |
-| ---------- | ------------------------------------------------------------ | ------------------------------- |
-| 2024.10.06 | - SGLang Q4 planning<br>- Deepseek MLA<br>- 关于批处理和专家并行性的讨论 | https://hcqnc.xetlk.com/s/3oOTt |
-| 2024.09.22 | - SGLang Q4 planning<br>- Double Sparsity for Fast Attention | https://hcqnc.xetlk.com/s/xkK7Z |
-| 2024.10.22 | - CPU Overhead Hiding<br>- Cache-aware DP routing (design review + quick demo)<br>- Brief updates on double sparsity |https://hcqnc.xetlk.com/s/43yW0Q|
-| 2024.11.03 | - Reward Model Integration and External Collaboration<br>- FP8 scaling and path to MXFP: Kv-cache-type fp8 and beyond |https://hcqnc.xetlk.com/s/1sZAJQ|
-| 2024.11.17 | - Rust-based Cache-Aware Data Parallelism Router<br>- Speculative Decoding + X-Grammar<br>- Timing side channels of KV Cache |https://hcqnc.xetlk.com/s/22zjjx|
-| 2024.11.31 | - SGLang v0.4 release：Data Parallelism Router/Data parallelism attention/Online weight update API for RLHF<br>- Speculative decoding support<br>- Plans:  Multi-layer cache/CacheBlend/Next Step For OpenRLHF/P-D disaggregate/code-walk-through |https://hcqnc.xetlk.com/s/Kq7vX|
 ---
 
 #### [青稞Talk/Panel](https://qingkelab.github.io/talks)
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 2025.02.22 |              上海人工智能实验室青年科学家崔淦渠              | [PRIME](https://github.com/PRIME-RL/PRIME): 结合隐式过程奖励的强化学习 |              https://hcqnc.xetlk.com/sl/3k8CLQ               |
 | 2025.02.15 |                       MIT博士生沈茂昊                        | [Satori](https://satori-reasoning.github.io)：通过训练LLM做自回归搜索来增强推理能力 |              https://hcqnc.xetlk.com/sl/3k8CLQ               |
 | 2025.01.14 |               香港科技大学（广州）博士生许添硕               | [Motion Dreamer](https://arxiv.org/abs/2412.00547)：面向自动驾驶与物理世界对齐的视频生成模型 |              https://hcqnc.xetlk.com/sl/4y3EE0               |
 | 2025.01.04 |                 香港科技大学计算机博士生马跃                 |          Follow Family：可控视频生成方法探索与应用           |              https://hcqnc.xetlk.com/sl/3rBIPz               |
