@@ -27,6 +27,7 @@
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 2025.03.08 | 商汤科技大模型工具体系团队研究员、LightLLM 核心开发人员白世豪 | 基于 [LightLLM](https://github.com/ModelTC/lightllm) 的 DeepSeek R1/V3 模型部署实战 |              https://hcqnc.xetlk.com/sl/33HDqK               |
 | 2025.02.22 |              上海人工智能实验室青年科学家崔淦渠              | [PRIME](https://github.com/PRIME-RL/PRIME): 结合隐式过程奖励的强化学习 |              https://hcqnc.xetlk.com/sl/3k8CLQ               |
 | 2025.02.15 |                       MIT博士生沈茂昊                        | [Satori](https://satori-reasoning.github.io)：通过训练LLM做自回归搜索来增强推理能力 |              https://hcqnc.xetlk.com/sl/3k8CLQ               |
 | 2025.01.14 |               香港科技大学（广州）博士生许添硕               | [Motion Dreamer](https://arxiv.org/abs/2412.00547)：面向自动驾驶与物理世界对齐的视频生成模型 |              https://hcqnc.xetlk.com/sl/4y3EE0               |
