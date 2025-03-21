@@ -21,6 +21,7 @@
     <li>【16】<a href="https://hcqnc.xetlk.com/s/wL9oM" target="_blank">大模型企业家访谈</a></li>
   </ul>
 </details>
+
 ---
 
 #### [青稞Talk/Panel](https://qingkelab.github.io/talks)
