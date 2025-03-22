@@ -6511,16 +6511,15 @@ h1.page-title + .tag-cloud-list {
   font-size: 30px;
 }
 #page-header.not-home-page {
-  height: 400px;
+  height: 50px;
 }
 @media screen and (max-width: 768px) {
   #page-header.not-home-page {
-    height: 280px;
+    height: 20px;
   }
 }
 #page-header #page-site-info {
   position: absolute;
-  top: 200px;
   padding: 0 10px;
   width: 100%;
 }
@@ -6973,7 +6972,7 @@ h1.page-title + .tag-cloud-list {
 #nav #menus a,
 #nav #nav-right .nav-button a,
 #nav #nav-right #toggle-menu a {
-  color: var(--light-grey);
+  color: var(--font-grey);
 }
 #nav #blog_name a:hover,
 #nav .mask-name-container a:hover,
