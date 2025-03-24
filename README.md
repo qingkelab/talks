@@ -28,6 +28,7 @@
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 2025.03.29 |                  UTS ReLER lab博士生杨向鹏                   | [VideoGrain](https://github.com/knightyxp/VideoGrain)：基于扩散模型的多粒度视频编辑的探索与应用 |              https://hcqnc.xetlk.com/sl/45kuGf               |
 | 2025.03.22 |           加州大学伯克利分校计算机科学博士生席浩诚           | [COAT](https://github.com/NVlabs/COAT)：显存高效的 FP8 训练，实现高效深度学习 |               https://hcqnc.xetlk.com/sl/jXKkd               |
 | 2025.03.15 |               阿里通义实验室高级算法工程师张熙               | [PC-Agent](https://github.com/X-PLUG/MobileAgent)：面向复杂 PL 任务的多模态智能体框架 |              https://hcqnc.xetlk.com/sl/3wlU5W               |
 | 2025.03.08 | 商汤科技大模型工具体系团队研究员、LightLLM 核心开发人员白世豪 | 基于 [LightLLM](https://github.com/ModelTC/lightllm) 的 DeepSeek R1/V3 模型部署实战 |              https://hcqnc.xetlk.com/sl/33HDqK               |
