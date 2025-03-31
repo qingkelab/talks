@@ -8657,7 +8657,6 @@ blockquote {
   line-height: 2;
   font-size: 2rem;
   border-radius: 8px !important;
-  text-decoration: none;
   font-weight: 700;
 }
 #article-container h1 .headerlink::before {
@@ -8679,7 +8678,6 @@ blockquote {
   line-height: 2;
   font-size: 1.8rem;
   border-radius: 8px !important;
-  text-decoration: none;
   font-weight: 700;
 }
 #article-container h2 .headerlink::before {
@@ -8699,7 +8697,6 @@ blockquote {
   line-height: 2;
   font-size: 1.3rem;
   border-radius: 8px !important;
-  text-decoration: none;
   font-weight: 700;
 }
 #article-container h3 .headerlink::before,
