@@ -8608,25 +8608,24 @@ blockquote {
   padding-left: 0;
 }
 #article-container a {
-  background-color: transparent;
+  color: var(--anzhiyu-fontcolor);
+}
+#article-container a:hover {
+  text-decoration: underline;
 }
 #article-container img {
-  display: inline-block;
-  margin: 0 auto 10px;
-  max-width: 70%;
+  display: block;
+  margin: 0 25%;
+  max-width: 50%;
   transition: 0.3s;
   border-radius: 8px;
-  transition: transform 0.3s ease;
 }
 #article-container img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: scale(1.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 #article-container p {
   margin: 0 0 16px;
-  display: block /* 默认即为块级元素 */;
-  word-wrap: break-word /* 强制长单词换行 */;
-  line-height: 1.75;
 }
 #article-container iframe {
   margin: 0 0 20px;
