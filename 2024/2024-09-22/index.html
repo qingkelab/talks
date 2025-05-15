@@ -54,7 +54,7 @@
   configTitle: '青稞社区',
   title: 'SGLang v0.3发布！SGLang邀请您参与开发者会议',
   postAI: '',
-  pageFillDescription: 'DeepSeek多头潜在注意力（MLA）吞吐量优化, Torch.compile延迟优化, 支持交错文本、多图像和视频的LLaVA-OneVision, 支持交错窗口注意力的Gemma-2, 附录, DeepSeek MLA基准测试指令, Torch.compile基准测试指令, 议程, 加入SGLang技术交流群发布它带来了显著的性能提升和对新模型架构的扩展支持相比提升倍吞吐在小上使用提升倍支持注官方团队第一时间提供的支持支持支持注最新是多头潜在注意力吞吐量优化多头潜在注意力是团队引入的一种新的注意力变体旨在提高推理效率由于它与标准注意力机制的不同现有的开源库尚未完全优化此操作在中我们为实施了各种优化包括权重吸收分组解码内核批和缓存量化基准测试结果显示通过优化实现了比基线系统高达到倍的吞吐量基准测试测量了这些模型在上的峰值输出吞吐量对于轻量级模型张量并行性对于大型模型张量并行性在数据集上的和可复制的指令在附录中虽然令人鼓舞但仍有很大的改进空间我们正在积极工作以完全复现论文中的结果延迟优化是的一个主要功能在上它执行积极的融合并生成高效的内核我们将集成到中用于线性规范激活层结合注意力和采样内核我们为批量大小到启用我们观察到在这些批量大小下加速效果最明显通过这种组合在批量大小时比更快并支持所有在线服务功能包括连续批处理和用于前缀缓存的我们正在积极与和团队合作将他们的最新优化集成到中要在中使用请在启动服务器时添加在以下基准测试中实现了高达倍的加速可复制的指令在附录中支持交错文本多图像和视频的是第一个在三个重要的计算机视觉场景中实现最先进性能的开放模型单图像多图像和视频任务我们与团队合作将这些功能集成到中您可以启动服务器并使用兼容的视觉查询它它支持交错文本多图像和视频格式使用细节在这里作者验证了模型的准确性并在和数据集上报告了基准测试结果比作者的原始实现在上快了高达倍支持交错窗口注意力的的模型使用交错窗口注意力来减少长上下文的计算复杂性在每层交替使用局部滑动窗口注意力上下文长度和全局注意力上下文长度我们增强了以完全支持上下文长度利用内核优化的窗口注意力内核它跳过计算而不是掩蔽并改进了我们的缓存管理器缺乏此功能的其他库只能以上下文长度运行您可以使用以下命令启动模型附录基准测试指令基准测试指令月日上午点社区将组织第一期开发者会议欢迎大家预约议程中的优化实现关于批处理和专家并行性的讨论加入技术交流群想要进入技术交流群的朋友可以添加小助手回复暗号进群',
+  pageFillDescription: ' DeepSeek多头潜在注意力（MLA）吞吐量优化,  Torch.compile延迟优化,  支持交错文本、多图像和视频的LLaVA-OneVision,  支持交错窗口注意力的Gemma-2,  附录,  DeepSeek MLA基准测试指令,  Torch.compile基准测试指令,  议程,  加入SGLang技术交流群发布它带来了显著的性能提升和对新模型架构的扩展支持相比提升倍吞吐在小上使用提升倍支持注官方团队第一时间提供的支持支持支持注最新是多头潜在注意力吞吐量优化多头潜在注意力是团队引入的一种新的注意力变体旨在提高推理效率由于它与标准注意力机制的不同现有的开源库尚未完全优化此操作在中我们为实施了各种优化包括权重吸收分组解码内核批和缓存量化基准测试结果显示通过优化实现了比基线系统高达到倍的吞吐量基准测试测量了这些模型在上的峰值输出吞吐量对于轻量级模型张量并行性对于大型模型张量并行性在数据集上的和可复制的指令在附录中虽然令人鼓舞但仍有很大的改进空间我们正在积极工作以完全复现论文中的结果延迟优化是的一个主要功能在上它执行积极的融合并生成高效的内核我们将集成到中用于线性规范激活层结合注意力和采样内核我们为批量大小到启用我们观察到在这些批量大小下加速效果最明显通过这种组合在批量大小时比更快并支持所有在线服务功能包括连续批处理和用于前缀缓存的我们正在积极与和团队合作将他们的最新优化集成到中要在中使用请在启动服务器时添加在以下基准测试中实现了高达倍的加速可复制的指令在附录中支持交错文本多图像和视频的是第一个在三个重要的计算机视觉场景中实现最先进性能的开放模型单图像多图像和视频任务我们与团队合作将这些功能集成到中您可以启动服务器并使用兼容的视觉查询它它支持交错文本多图像和视频格式使用细节在这里作者验证了模型的准确性并在和数据集上报告了基准测试结果比作者的原始实现在上快了高达倍支持交错窗口注意力的的模型使用交错窗口注意力来减少长上下文的计算复杂性在每层交替使用局部滑动窗口注意力上下文长度和全局注意力上下文长度我们增强了以完全支持上下文长度利用内核优化的窗口注意力内核它跳过计算而不是掩蔽并改进了我们的缓存管理器缺乏此功能的其他库只能以上下文长度运行您可以使用以下命令启动模型附录基准测试指令基准测试指令月日上午点社区将组织第一期开发者会议欢迎大家预约议程中的优化实现关于批处理和专家并行性的讨论加入技术交流群想要进入技术交流群的朋友可以添加小助手回复暗号进群',
   isPost: true,
   isHome: false,
   isHighlightShrink: false,
@@ -198,77 +198,53 @@ if (true) {
 <ul>
 <li>DeepSeek V2 MLA 相比 vLLM 提升 7 倍吞吐</li>
 <li>在小 batch size 上使用 torch.compile 提升 1.5 倍 decoding speed</li>
-<li>支持 LLaVA-OneVision（注：LLaVA-OneVision
-官方团队第一时间提供的支持）</li>
-<li>Gemma 2 支持 interleaved window attention，支持 8k context Gemma
-2（注：vLLM 最新 0.6.0 是 4k context）</li>
+<li>支持 LLaVA-OneVision（注：LLaVA-OneVision 官方团队第一时间提供的支持）</li>
+<li>Gemma 2 支持 interleaved window attention，支持 8k context Gemma 2（注：vLLM 最新 0.6.0 是 4k context）</li>
 </ul>
-<h3
-id="deepseek多头潜在注意力mla吞吐量优化">DeepSeek多头潜在注意力（MLA）吞吐量优化</h3>
-<p>多头潜在注意力（MLA）是DeepSeek团队引入的一种新的注意力变体，旨在提高推理效率。由于它与标准注意力机制的不同，现有的开源库尚未完全优化此操作。在SGLang
-v0.3中，我们为MLA实施了各种优化，包括权重吸收、分组解码内核、FP8批MatMul和FP8
-KV缓存量化。基准测试结果显示，SGLang
-v0.3通过MLA优化实现了比基线系统高达3到7倍的吞吐量。
-基准测试测量了这些模型在H100
-GPU上的峰值输出吞吐量（对于轻量级模型，张量并行性=1，对于大型模型，张量并行性=8）在ShareGPT数据集上的BF16和FP8。可复制的指令在附录中。虽然令人鼓舞，但仍有很大的改进空间。我们正在积极工作，以完全复现DeepSeek论文中的结果。</p>
-<p><img
-src="https://lmsys.org/images/blog/sglang_v0_3/deepseek_mla.svg" /></p>
-<h3 id="torch.compile延迟优化">Torch.compile延迟优化</h3>
-<p>Torch.compile是PyTorch 2.0的一个主要功能。在NVIDIA
-GPU上，它执行积极的融合并生成高效的Triton内核。我们将torch.compile集成到SGLang中，用于线性/规范/激活层，结合FlashInfer注意力和采样内核。我们为批量大小1到32启用torch.compile，我们观察到在这些批量大小下加速效果最明显。通过这种组合，SGLang在批量大小1时比gpt-fast更快，并支持所有在线服务功能，包括连续批处理和用于前缀缓存的RadixAttention。我们正在积极与torch.compile和torchao团队合作，将他们的最新优化集成到SGLang中。要在SGLang中使用torch.compile，请在启动服务器时添加--enable-torch-compile。SGLang
-w/ torch.compile在以下基准测试中实现了高达1.5倍的加速。
-可复制的指令在附录中。</p>
-<p><img
-src="https://lmsys.org/images/blog/sglang_v0_3/torch_compile.svg" /></p>
-<h3
-id="支持交错文本多图像和视频的llava-onevision">支持交错文本、多图像和视频的LLaVA-OneVision</h3>
-<p>LLaVA-OneVision是第一个在三个重要的计算机视觉场景中实现最先进性能的开放模型：单图像、多图像和视频任务。我们与LLaVA团队合作，将这些功能集成到SGLang
-v0.3中。您可以启动服务器并使用OpenAI兼容的视觉API查询它，它支持交错文本、多图像和视频格式。使用细节在这里。作者验证了模型的准确性，并在VideoDetailDescriptions和LLaVA-in-the-wild数据集上报告了基准测试结果。SGLang比作者的原始实现在HuggingFace/transformers上快了高达4.5倍。</p>
-<h3 id="支持交错窗口注意力的gemma-2">支持交错窗口注意力的Gemma-2</h3>
-<p>Google的Gemma-2模型使用交错窗口注意力来减少长上下文的计算复杂性，在每层交替使用局部滑动窗口注意力（4K上下文长度）和全局注意力（8K上下文长度）。我们增强了SGLang
-v0.3以完全支持8K上下文长度，利用FlashInfer内核优化的窗口注意力内核（它跳过计算而不是掩蔽）并改进了我们的KV缓存管理器。缺乏此功能的其他库只能以4K上下文长度运行。您可以使用以下命令启动模型：</p>
+<h3 id="deepseek多头潜在注意力mla吞吐量优化"><a class="markdownIt-Anchor" href="#deepseek多头潜在注意力mla吞吐量优化"></a> DeepSeek多头潜在注意力（MLA）吞吐量优化</h3>
+<p>多头潜在注意力（MLA）是DeepSeek团队引入的一种新的注意力变体，旨在提高推理效率。由于它与标准注意力机制的不同，现有的开源库尚未完全优化此操作。在SGLang v0.3中，我们为MLA实施了各种优化，包括权重吸收、分组解码内核、FP8批MatMul和FP8 KV缓存量化。基准测试结果显示，SGLang v0.3通过MLA优化实现了比基线系统高达3到7倍的吞吐量。 基准测试测量了这些模型在H100 GPU上的峰值输出吞吐量（对于轻量级模型，张量并行性=1，对于大型模型，张量并行性=8）在ShareGPT数据集上的BF16和FP8。可复制的指令在附录中。虽然令人鼓舞，但仍有很大的改进空间。我们正在积极工作，以完全复现DeepSeek论文中的结果。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://lmsys.org/images/blog/sglang_v0_3/deepseek_mla.svg" alt="" /></p>
+<h3 id="torchcompile延迟优化"><a class="markdownIt-Anchor" href="#torchcompile延迟优化"></a> Torch.compile延迟优化</h3>
+<p>Torch.compile是PyTorch 2.0的一个主要功能。在NVIDIA GPU上，它执行积极的融合并生成高效的Triton内核。我们将torch.compile集成到SGLang中，用于线性/规范/激活层，结合FlashInfer注意力和采样内核。我们为批量大小1到32启用torch.compile，我们观察到在这些批量大小下加速效果最明显。通过这种组合，SGLang在批量大小1时比gpt-fast更快，并支持所有在线服务功能，包括连续批处理和用于前缀缓存的RadixAttention。我们正在积极与torch.compile和torchao团队合作，将他们的最新优化集成到SGLang中。要在SGLang中使用torch.compile，请在启动服务器时添加–enable-torch-compile。SGLang w/ torch.compile在以下基准测试中实现了高达1.5倍的加速。 可复制的指令在附录中。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://lmsys.org/images/blog/sglang_v0_3/torch_compile.svg" alt="" /></p>
+<h3 id="支持交错文本-多图像和视频的llava-onevision"><a class="markdownIt-Anchor" href="#支持交错文本-多图像和视频的llava-onevision"></a> 支持交错文本、多图像和视频的LLaVA-OneVision</h3>
+<p>LLaVA-OneVision是第一个在三个重要的计算机视觉场景中实现最先进性能的开放模型：单图像、多图像和视频任务。我们与LLaVA团队合作，将这些功能集成到SGLang v0.3中。您可以启动服务器并使用OpenAI兼容的视觉API查询它，它支持交错文本、多图像和视频格式。使用细节在这里。作者验证了模型的准确性，并在VideoDetailDescriptions和LLaVA-in-the-wild数据集上报告了基准测试结果。SGLang比作者的原始实现在HuggingFace/transformers上快了高达4.5倍。</p>
+<h3 id="支持交错窗口注意力的gemma-2"><a class="markdownIt-Anchor" href="#支持交错窗口注意力的gemma-2"></a> 支持交错窗口注意力的Gemma-2</h3>
+<p>Google的Gemma-2模型使用交错窗口注意力来减少长上下文的计算复杂性，在每层交替使用局部滑动窗口注意力（4K上下文长度）和全局注意力（8K上下文长度）。我们增强了SGLang v0.3以完全支持8K上下文长度，利用FlashInfer内核优化的窗口注意力内核（它跳过计算而不是掩蔽）并改进了我们的KV缓存管理器。缺乏此功能的其他库只能以4K上下文长度运行。您可以使用以下命令启动模型：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m sglang.launch_server --model-path google/gemma-2b </span><br></pre></td></tr></table></figure>
-<p><img
-src="https://lmsys.org/images/blog/sglang_v0_3/gemma2.svg" /></p>
-<h1 id="附录">附录</h1>
-<h3 id="deepseek-mla基准测试指令">DeepSeek MLA基准测试指令</h3>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://lmsys.org/images/blog/sglang_v0_3/gemma2.svg" alt="" /></p>
+<h1 id="附录"><a class="markdownIt-Anchor" href="#附录"></a> 附录</h1>
+<h3 id="deepseek-mla基准测试指令"><a class="markdownIt-Anchor" href="#deepseek-mla基准测试指令"></a> DeepSeek MLA基准测试指令</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># DeepSeekCoder-V2-Lite (BF16)</span><br><span class="line">## Launch a server  </span><br><span class="line">python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct --enable-mla --disable-radix --trust-remote-code  </span><br><span class="line">python3 -m vllm.entrypoints.openai.api_server --model deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct --disable-log-requests --trust-remote-code --max-model-len 4096</span><br><span class="line"></span><br><span class="line">## Run benchmark  </span><br><span class="line">python3 -m sglang.bench_serving --backend sglang --num-prompts 5000  </span><br><span class="line">python3 -m sglang.bench_serving --backend vllm --num-prompts 5000</span><br><span class="line"></span><br><span class="line"># DeepSeekCoder-V2 (BF16)  </span><br><span class="line">## Launch a server  </span><br><span class="line">python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-Coder-V2-Instruct --disable-radix --tp 8 --trust-remote-code --enable-mla  </span><br><span class="line">python3 -m vllm.entrypoints.openai.api_server --model deepseek-ai/DeepSeek-Coder-V2-Instruct --disable-log-requests --tensor-parallel-size 8 --trust-remote-code --max-model-len 4096</span><br><span class="line"></span><br><span class="line">## Run benchmark  </span><br><span class="line">python3 -m sglang.bench_serving --backend sglang --num-prompts 5000  </span><br><span class="line">python3 -m sglang.bench_serving --backend vllm --num-prompts 5000</span><br><span class="line"></span><br><span class="line"># DeepSeekCoder-V2 (FP8)  </span><br><span class="line">## Launch a server  </span><br><span class="line">python3 -m sglang.launch_server --model neuralmagic/DeepSeek-Coder-V2-Instruct-FP8 --enable-mla --quantization fp8 --kv-cache-dtype fp8_e5m2 --disable-radix --tp 8 --trust-remote-code  </span><br><span class="line">python3 -m vllm.entrypoints.openai.api_server --model neuralmagic/DeepSeek-Coder-V2-Instruct-FP8 --quantization fp8 --disable-log-requests --tensor-parallel-size 8 --trust-remote-code --max-model-len 4096</span><br><span class="line"></span><br><span class="line">## Run benchmark  </span><br><span class="line">python3 -m sglang.bench_serving --backend sglang --num-prompts 5000  </span><br><span class="line">python3 -m sglang.bench_serving --backend vllm --num-prompts 5000  </span><br></pre></td></tr></table></figure>
-<h3 id="torch.compile基准测试指令">Torch.compile基准测试指令</h3>
+<h3 id="torchcompile基准测试指令"><a class="markdownIt-Anchor" href="#torchcompile基准测试指令"></a> Torch.compile基准测试指令</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># SGLang  </span><br><span class="line">## Launch a server  </span><br><span class="line">python3 -m sglang.launch_server --model meta-llama/Meta-Llama-3-8B --enable-torch-compile</span><br><span class="line"></span><br><span class="line">## Run benchmark  </span><br><span class="line">python3 -m sglang.bench_serving --backend sglang --dataset-name random --random-input-len 128 --random-output-len 512 --random-range-ratio 1 --num-prompts 1</span><br><span class="line"></span><br><span class="line"># vLLM  </span><br><span class="line">## Launch a server  </span><br><span class="line">python3 -m vllm.entrypoints.openai.api_server --model meta-llama/Meta-Llama-3-8B --disable-log-requests</span><br><span class="line"></span><br><span class="line">## Run benchmark  </span><br><span class="line">python3 -m sglang.bench_serving --backend vllm --dataset-name random --random-input-len 128 --random-output-len 512 --random-range-ratio 1 --num-prompts 1  </span><br></pre></td></tr></table></figure>
 <p>9月22日上午11点，SGLang社区将组织第一期开发者会议，欢迎大家预约～</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="image.png" /></p>
-<h1 id="议程">议程</h1>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="image.png" alt="" /></p>
+<h1 id="议程"><a class="markdownIt-Anchor" href="#议程"></a> 议程</h1>
 <table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr>
-<th style="text-align: center;">11:00 - 11:15</th>
-<th style="text-align: center;">SGLang Q4 planning</th>
-<th style="text-align: center;">SGL Team</th>
+<th style="text-align:center">11:00 - 11:15</th>
+<th style="text-align:center">SGLang Q4 planning</th>
+<th style="text-align:center">SGL Team</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">11:15 - 11:40</td>
-<td style="text-align: center;">SGLang v0.3 中Deepseek
-MLA的优化实现</td>
-<td style="text-align: center;">Ke Bao, Yineng Zhang</td>
+<td style="text-align:center">11:15 - 11:40</td>
+<td style="text-align:center">SGLang v0.3 中Deepseek MLA的优化实现</td>
+<td style="text-align:center">Ke Bao, Yineng Zhang</td>
 </tr>
 <tr>
-<td style="text-align: center;">11:40 - 12:00</td>
-<td style="text-align: center;">关于批处理和专家并行性的讨论</td>
-<td style="text-align: center;">Alex Li</td>
+<td style="text-align:center">11:40 - 12:00</td>
+<td style="text-align:center">关于批处理和专家并行性的讨论</td>
+<td style="text-align:center">Alex Li</td>
 </tr>
 </tbody>
 </table>
-<h1 id="加入sglang技术交流群">加入SGLang技术交流群</h1>
+<h1 id="加入sglang技术交流群"><a class="markdownIt-Anchor" href="#加入sglang技术交流群"></a> 加入SGLang技术交流群</h1>
 <p>想要进入SGLang技术交流群的朋友，可以添加小助手，回复暗号“<strong>SGL</strong>“进群！</p>
-<p><img
-src="https://qingkelab.github.io/2024/02/26/zhibo/Panel/20240302/eeef00c4c10ec47a8b7e3fc8b5bc960c.jpg" /></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://qingkelab.github.io/2024/02/26/zhibo/Panel/20240302/eeef00c4c10ec47a8b7e3fc8b5bc960c.jpg" alt="" /></p>
 </article><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/talks/2024/2024-09-10/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/talks/2024/2024-09-10/Canvas%20%E2%80%93%20514.png" onerror="onerror=null;src='/talks/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">mPLUG-Owl3：探索长序列模型架构的通用多模态大模型</div></div></a></div><div class="next-post pull-right"><a href="/talks/2024/2024-09-23/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/talks/2024/2024-09-23/Canvas%20%E2%80%93%20523.png" onerror="onerror=null;src='/talks/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">CogVideoX 视频生成开源模型上手实践</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/talks/2024/2024-09-03/" title="SGLang v0.2：面向 LLM 和 VLM 的快速、高效通用服务引擎"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/talks/2024/2024-09-03/Canvas%20%E2%80%93%20507.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-09-03</div><div class="title">SGLang v0.2：面向 LLM 和 VLM 的快速、高效通用服务引擎</div></div></a></div><div><a href="/talks/2024/2024-10-16/" title="SGLang、FlashInfer和MLC LLM：大模型高效部署与服务"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/talks/2024/2024-10-16/Canvas%20%E2%80%93%20547.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-10-17</div><div class="title">SGLang、FlashInfer和MLC LLM：大模型高效部署与服务</div></div></a></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2023 - 2025 By <a class="footer-bar-link" href="/talks/" title="青稞" target="_blank">青稞</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
   getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js').then(() => {
     jinrishici.load(result =>{
