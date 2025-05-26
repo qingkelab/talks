@@ -1,6 +1,6 @@
 ![](https://github.com/qingkelab/qingkelab/raw/main/staic/Logo-3.gif)
 
-### [青稞Talk/Panel](https://qingkeai.online/)｜[H5链接](https://appodzjvyp51702.h5.xiaoeknow.com/)|[PPT（提取码: r86c）](https://pan.baidu.com/s/1ZVuREC_81S6jPRYIkYvq_Q?pwd=r86c#list/path=%2FTalk)
+### [青稞Talk/Panel](https://qingkeai.online/)｜[H5链接](https://appodzjvyp51702.h5.xiaoeknow.com/)｜[PPT（提取码: r86c）](https://pan.baidu.com/s/1ZVuREC_81S6jPRYIkYvq_Q?pwd=r86c#list/path=%2FTalk)
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
