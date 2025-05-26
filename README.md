@@ -96,5 +96,5 @@
 
 
 ---
-### 支持青稞社区的发展，赞助青稞喝一杯咖啡 ☕️
+### 支持青稞社区的发展，赞赏青稞喝一杯咖啡 ☕️
 ![](https://github.com/qingkelab/qingkelab/blob/main/staic/1748250312483.jpg)
