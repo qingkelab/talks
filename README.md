@@ -2,7 +2,6 @@
 
 ### [青稞Talk/Panel](https://qingkeai.online/)｜[H5链接](https://appodzjvyp51702.h5.xiaoeknow.com/)|[PPT（提取码: r86c）](https://pan.baidu.com/s/1ZVuREC_81S6jPRYIkYvq_Q?pwd=r86c#list/path=%2FTalk)｜[订阅直播日历](https://calendar.google.com/calendar/embed?src=387214b6dc28bfd6dd8a798f502779291b776034e149b782eb52ce35a6e4f22d%40group.calendar.google.com&ctz=Asia%2FSingapore)
 
-<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Asia%2FShanghai&showPrint=0&showNav=0&showCalendars=0&src=Mzg3MjE0YjZkYzI4YmZkNmRkOGE3OThmNTAyNzc5MjkxYjc3NjAzNGUxNDliNzgyZWI1MmNlMzVhNmU0ZjIyZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23009688" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 ---
 
