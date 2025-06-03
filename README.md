@@ -1,11 +1,14 @@
 ![](https://github.com/qingkelab/qingkelab/raw/main/staic/Logo-3.gif)
 
-### [青稞Talk/Panel](https://qingkeai.online/)｜[H5链接](https://appodzjvyp51702.h5.xiaoeknow.com/)|[PPT（提取码: r86c）](https://pan.baidu.com/s/1ZVuREC_81S6jPRYIkYvq_Q?pwd=r86c#list/path=%2FTalk)｜[直播订阅](https://calendar.google.com/calendar/embed?src=387214b6dc28bfd6dd8a798f502779291b776034e149b782eb52ce35a6e4f22d%40group.calendar.google.com&ctz=Asia%2FSingapore)
+### [青稞Talk/Panel](https://qingkeai.online/)｜[H5链接](https://appodzjvyp51702.h5.xiaoeknow.com/)|[PPT（提取码: r86c）](https://pan.baidu.com/s/1ZVuREC_81S6jPRYIkYvq_Q?pwd=r86c#list/path=%2FTalk)｜[订阅直播日历](https://calendar.google.com/calendar/embed?src=387214b6dc28bfd6dd8a798f502779291b776034e149b782eb52ce35a6e4f22d%40group.calendar.google.com&ctz=Asia%2FSingapore)
+
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Asia%2FShanghai&showPrint=0&showNav=0&showCalendars=0&src=Mzg3MjE0YjZkYzI4YmZkNmRkOGE3OThmNTAyNzc5MjkxYjc3NjAzNGUxNDliNzgyZWI1MmNlMzVhNmU0ZjIyZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23009688" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 ---
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 2025.06.09 |                微软亚洲研究院高级研究员宋恺涛                | [Chain-of-Model （模型链）](https://arxiv.org/pdf/2505.11820)：引入因果建模，全新的大模型 Scaling 结构 |              https://hcqnc.xetlk.com/sl/1et5nH               |
 | 2025.05.29 |           加州大学伯克利分校计算机科学博士生席浩诚           | [Sparse VideoGen](https://github.com/svg-project/Sparse-VideoGen)：无需重新训练的 DiTs 推理加速框架 |              https://hcqnc.xetlk.com/sl/2P0xE7               |
 | 2025.05.26 |                   青稞社区联合创始人高岱恒                   | [EraseAnything](https://github.com/tomguluson92/eraseanything):在 Flux 等先进文生图架构的概念擦除方法 |               https://hcqnc.xetlk.com/sl/q7eoC               |
 | 2025.05.22 |                 北京大学智能学院博士生节世博                 | [MoLE](https://github.com/JieShibo/MoLE) & [SpeCache](https://arxiv.org/pdf/2503.16163)：大语言模型端侧部署的架构与算法 |              https://hcqnc.xetlk.com/sl/37knXb               |
