@@ -2,12 +2,15 @@
 
 
 
-### [青稞Talk/Panel](https://qingkeai.online/)｜[H5链接](https://appodzjvyp51702.h5.xiaoeknow.com/)|[PPT（提取码: r86c）](https://pan.baidu.com/s/1ZVuREC_81S6jPRYIkYvq_Q?pwd=r86c#list/path=%2FTalk)｜[订阅直播日历](https://calendar.google.com/calendar/embed?src=387214b6dc28bfd6dd8a798f502779291b776034e149b782eb52ce35a6e4f22d%40group.calendar.google.com&ctz=Asia%2FSingapore)
+### [青稞Talk/Panel](https://qingkeai.online/)｜[H5链接](https://appodzjvyp51702.h5.xiaoeknow.com/)  | [PPT（提取码: r86c）](https://pan.baidu.com/s/1ZVuREC_81S6jPRYIkYvq_Q?pwd=r86c#list/path=%2FTalk)｜[订阅直播日历](https://calendar.google.com/calendar/embed?src=387214b6dc28bfd6dd8a798f502779291b776034e149b782eb52ce35a6e4f22d%40group.calendar.google.com&ctz=Asia%2FSingapore)
 
 ---
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 2025.06.26 |                                                              | [Virtual Community 虚拟社区](http://github.com/UMass-Embodied-AGI/Virtual-Communit)：面向人、机器人与社会的开放世界 |                                                              |
+| 2025.06.24 |                  香港大学MMLab博士生吴成岳                   | [Fast-dLLM](https://github.com/NVlabs/Fast-dLLM)：无需重训的扩散大语言模型推理加速 |               https://hcqnc.xetlk.com/sl/c9Ftq               |
+| 2025.06.21 |                     复旦大学博士生王玮赟                     | [InternVL3](https://github.com/OpenGVLab/InternVL/tree/main)，GPT-4o开源平替：探索多模态通用感知大模型的技术演进与应用探索 |              https://hcqnc.xetlk.com/sl/1IC0H1               |
 | 2025.06.16 |                   新加坡国立大学博士生张扬                   |                   生成模型中的极简概念擦除                   |              https://hcqnc.xetlk.com/sl/1Enx4P               |
 | 2025.06.12 |                     中国科学院博士黎昆昌                     | [BAGEL](https://github.com/bytedance-seed/BAGEL)：统一生成理解的多模态基础模型 |              https://hcqnc.xetlk.com/sl/3pYJFj               |
 | 2025.06.09 |                微软亚洲研究院高级研究员宋恺涛                | [Chain-of-Model （模型链）](https://arxiv.org/pdf/2505.11820)：引入因果建模，全新的大模型 Scaling 结构 |              https://hcqnc.xetlk.com/sl/1et5nH               |
