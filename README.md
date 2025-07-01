@@ -8,6 +8,8 @@
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 2025.07.08 |                南洋理工大学MMLab博士生吴鹏浩                 | [GUI-Reflection](https://github.com/penghao-wu/GUI_Reflection)：让多模态 GUI 智能体获得反思纠错能力的训练框架 |                                                              |
+| 2025.07.05 |               新加坡科技设计大学 博士生曾广韬                | [Satori-SWE](https://github.com/satori-reasoning/Satori-SWE)：用 Evolutionary Test-Time Scaling 让小语言模型解决复杂软件工程 |            https://hcqnc.mk.xet.citv.cn/sl/4oOKF1            |
 | 2025.07.01 |                     北京大学博士生张宇臣                     | 大模型推理强化学习中的[熵机制](https://github.com/PRIME-RL/Entropy-Mechanism-of-RL) |            https://hcqnc.mk.xet.citv.cn/sl/2UpAa9            |
 | 2025.06.28 |        马萨诸塞大学阿默斯特分校周沁泓博士和张洪鑫博士        | [Virtual Community 虚拟社区](http://github.com/UMass-Embodied-AGI/Virtual-Communit)：面向人、机器人与社会的开放世界 |            https://hcqnc.mk.xet.citv.cn/sl/282whl            |
 | 2025.06.24 |                  香港大学MMLab博士生吴成岳                   | [Fast-dLLM](https://github.com/NVlabs/Fast-dLLM)：无需重训的扩散大语言模型推理加速 |               https://hcqnc.xetlk.com/sl/c9Ftq               |
