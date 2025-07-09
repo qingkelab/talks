@@ -9,7 +9,8 @@
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | 2025.07.26 |            香港城市大学计算机科学在读博士生陈胜庄            | [SIMoE](https://arxiv.org/abs/2506.12597)：大模型升级再造的自动化专家发现框架 |                                                              |
-| 2025.07.15 |             华南理工大学与IDEA 联合培养博士蒋擎              | [ChatRex](https://github.com/IDEA-Research/ChatRex)/[RexSeek](https://github.com/IDEA-Research/RexSeek)/[Rex-Thinker](https://github.com/IDEA-Research/Rex-Thinker) |                                                              |
+| 2025.07.19 |                                                              |       空间智能[MindCube](https://mind-cube.github.io/)       |                                                              |
+| 2025.07.15 |             华南理工大学与IDEA 联合培养博士蒋擎              | [ChatRex](https://github.com/IDEA-Research/ChatRex)/[RexSeek](https://github.com/IDEA-Research/RexSeek)/[Rex-Thinker](https://github.com/IDEA-Research/Rex-Thinker)：结合多模态大语言模型的目标检测模型构建 |            https://hcqnc.mk.xet.citv.cn/sl/rTL4A             |
 | 2025.07.12 |                    英伟达公司研究员刁诗哲                    | [ProRL](https://arxiv.org/abs/2505.24864): 延长强化学习训练框架，拓展大语言模型的推理边界 |               https://hcqnc.xetlk.com/sl/LjEeC               |
 | 2025.07.08 |                南洋理工大学MMLab博士生吴鹏浩                 | [GUI-Reflection](https://github.com/penghao-wu/GUI_Reflection)：让多模态 GUI 智能体获得反思纠错能力的训练框架 |              https://hcqnc.xetlk.com/sl/1NcuQi               |
 | 2025.07.05 |               新加坡科技设计大学 博士生曾广韬                | [Satori-SWE](https://github.com/satori-reasoning/Satori-SWE)：用 Evolutionary Test-Time Scaling 让小语言模型解决复杂软件工程 |            https://hcqnc.mk.xet.citv.cn/sl/4oOKF1            |
@@ -115,6 +116,6 @@
 
 ---
 
-### 支持青稞社区的发展，赞助青稞！
+### 支持青稞社区！
 
 ![](https://github.com/qingkelab/qingkelab/blob/main/staic/1748250312483.jpg)
