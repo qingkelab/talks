@@ -1,13 +1,20 @@
-![](https://github.com/qingkelab/qingkelab/raw/main/staic/Logo-3.gif)
+![](asset/Logo-3.gif)
+
+<center>青年AI研究员idea加油站，AI开发者的新能源充电桩！</center>
+
+---
 
 ### [青稞社区主页](https://qingkeai.online/)｜[H5链接](https://appodzjvyp51702.h5.xiaoeknow.com/)  | [PPT（提取码: r86c）](https://pan.baidu.com/s/1ZVuREC_81S6jPRYIkYvq_Q?pwd=r86c#list/path=%2FTalk)｜[订阅直播日历](https://calendar.google.com/calendar/embed?src=387214b6dc28bfd6dd8a798f502779291b776034e149b782eb52ce35a6e4f22d%40group.calendar.google.com&ctz=Asia%2FSingapore)
 
 - [青稞Talk](#青稞talk)
 - [青稞Tea](https://lu.ma/user/qingke)
+- [经典大模型公开课第二季](#经典大模型公开课第二季)
+- [合作&进群](#合作&进群)
+- [支持青稞社区](支持青稞社区)
 
 ---
 
-### 青稞talk
+### 青稞Talk
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
@@ -81,45 +88,35 @@
 
 ---
 
-<details>
-  <summary><strong><a href="https://hcqnc.xetlk.com/s/1SKePY" target="_blank">经典大模型公开课第二季</a></strong></summary>
-  <ul>
-    <li>【01】<a href="https://hcqnc.xetlk.com/s/46Hmi7" target="_blank">绪论｜大模型技术与交叉应用</a></li>
-    <li>【02】<a href="https://hcqnc.xetlk.com/s/bwAzR" target="_blank">神经网络与大模型基础（上）</a></li>
-    <li>【03】<a href="https://hcqnc.xetlk.com/s/1Z0NKd" target="_blank">神经网络与大模型基础（下）</a></li>
-    <li>【04】<a href="https://hcqnc.xetlk.com/s/36E9aw" target="_blank">大模型学习方法</a></li>
-    <li>【05】<a href="https://hcqnc.xetlk.com/s/21sOns" target="_blank">大模型前沿架构（上）</a></li>
-    <li>【06】<a href="https://hcqnc.xetlk.com/s/3CBRrA" target="_blank">大模型前沿架构（下）</a></li>
-    <li>【07】<a href="https://hcqnc.xetlk.com/s/yTrTp" target="_blank">Hugging Face 生态</a></li>
-    <li>【08】<a href="https://hcqnc.xetlk.com/s/3iTBHb" target="_blank">大模型实战指导</a></li>
-    <li>【09】<a href="https://hcqnc.xetlk.com/s/3OVyFt" target="_blank">人类反馈强化学习</a></li>
-    <li>【10】<a href="https://hcqnc.xetlk.com/s/1lJJHp" target="_blank">多模态智能</a></li>
-    <li>【11】<a href="https://hcqnc.xetlk.com/s/1OBuhE" target="_blank">自主智能体（上）</a></li>
-    <li>【12】<a href="https://hcqnc.xetlk.com/s/1GETkS" target="_blank">自主智能体（下）</a></li>
-    <li>【13】<a href="https://hcqnc.xetlk.com/s/3sgqaF" target="_blank">人工智能与安全伦理对齐</a></li>
-    <li>【14】<a href="https://hcqnc.xetlk.com/s/1i4YOd" target="_blank">人工智能与交叉学科（上）</a></li>
-    <li>【15】<a href="https://hcqnc.xetlk.com/s/WBdEj" target="_blank">人工智能与交叉学科（下）</a></li>
-    <li>【16】<a href="https://hcqnc.xetlk.com/s/wL9oM" target="_blank">大模型企业家访谈</a></li>
-  </ul>
-</details>
+###  [经典大模型公开课第二季](https://hcqnc.xetlk.com/s/1SKePY)
+
+- 【01】[绪论｜大模型技术与交叉应用](https://hcqnc.xetlk.com/s/46Hmi7)
+- 【02】[神经网络与大模型基础（上）](https://hcqnc.xetlk.com/s/bwAzR)
+- 【03】[神经网络与大模型基础（下）](https://hcqnc.xetlk.com/s/1Z0NKd)
+- 【04】[大模型学习方法](https://hcqnc.xetlk.com/s/36E9aw)
+- 【05】[大模型前沿架构（上）](https://hcqnc.xetlk.com/s/21sOns)
+- 【06】[大模型前沿架构（下）](https://hcqnc.xetlk.com/s/3CBRrA)
+- 【07】[Hugging Face 生态](https://hcqnc.xetlk.com/s/yTrTp)
+- 【08】[大模型实战指导](https://hcqnc.xetlk.com/s/3iTBHb)
+- 【09】[人类反馈强化学习](https://hcqnc.xetlk.com/s/3OVyFt)
+- 【10】[多模态智能](https://hcqnc.xetlk.com/s/1lJJHp)
+- 【11】[自主智能体（上）](https://hcqnc.xetlk.com/s/1OBuhE)
+- 【12】[自主智能体（下）](https://hcqnc.xetlk.com/s/1GETkS)
+- 【13】[人工智能与安全伦理对齐](https://hcqnc.xetlk.com/s/3sgqaF)
+- 【14】[人工智能与交叉学科（上）](https://hcqnc.xetlk.com/s/1i4YOd)
+- 【15】[人工智能与交叉学科（下）](https://hcqnc.xetlk.com/s/WBdEj)
+- 【16】[大模型企业家访谈](https://hcqnc.xetlk.com/s/wL9oM)
 
 
 ---
 
-<details>
-    <summary>💬 合作/分享/进群</summary>
-    <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1rem;">
-        <img alt="合作" src="https://wangguo.site/about/wechat.jpg" 
-             style="width: 20%; height: auto;" />
-        <img alt="加群" src="https://qingkelab.github.io/talks/images/qr.png" 
-             style="width: 20%; height: auto;" />
-    </div>
-</details>
+### 合作&进群
+
+| ![合作](asset/wang.png) | ![进群](asset/qingke.png) |
+| ----------------------- | ------------------------- |
 
 ---
 
+### 支持青稞社区
 
-
-### 支持青稞社区！
-
-![](https://github.com/qingkelab/qingkelab/blob/main/staic/1748250312483.jpg)
+![](asset/image.png)
