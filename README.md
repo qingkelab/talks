@@ -1,6 +1,8 @@
 ![](asset/Logo-3.gif)
 
-<center>青年AI研究员idea加油站，AI开发者的新能源充电桩！</center>
+<p align="center">青年AI研究员idea加油站，AI开发者的新能源充电桩！</p>
+
+
 
 ---
 
