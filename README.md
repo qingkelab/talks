@@ -4,7 +4,7 @@
 
 ---
 
-### [青稞社区主页](https://qingkeai.online/)｜[H5链接](https://appodzjvyp51702.h5.xiaoeknow.com/)  | [PPT（提取码: r86c）](https://pan.baidu.com/s/1ZVuREC_81S6jPRYIkYvq_Q?pwd=r86c#list/path=%2FTalk)｜[订阅直播日历](https://calendar.google.com/calendar/embed?src=387214b6dc28bfd6dd8a798f502779291b776034e149b782eb52ce35a6e4f22d%40group.calendar.google.com&ctz=Asia%2FSingapore)
+### [青稞社区主页](https://qingkeai.online/)｜[H5链接](https://appodzjvyp51702.h5.xiaoeknow.com/)  | [PPT（提取码: r86c）](https://pan.baidu.com/s/1ZVuREC_81S6jPRYIkYvq_Q?pwd=r86c#list/path=%2FTalk)｜[订阅直播日历](https://calendar.google.com/calendar/embed?src=387214b6dc28bfd6dd8a798f502779291b776034e149b782eb52ce35a6e4f22d%40group.calendar.google.com&ctz=Asia%2FSingapore) ｜[关于青稞](https://qingkelab.feishu.cn/wiki/SyGlwuAjriVCOokxcXRckwC7nYU)
 
 - [青稞Talk](#青稞talk)
 - [青稞Tea](https://lu.ma/user/qingke)
@@ -112,8 +112,9 @@
 
 ### 合作&进群
 
-| ![合作](asset/wang.png) | ![进群](asset/qingke.png) |
-| ----------------------- | ------------------------- |
+| ![合作](asset/wang.png)                     | ![进群](asset/qingke.png)                                    |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| 合作&交流：如果您有成果想要分享，欢迎➕v联系 | 进群：如果您想加入技术交流群[社群列表](https://mp.weixin.qq.com/s/CXi5oCaT8pZqrATCmqhmAw)，欢迎添加小助手申请。 |
 
 ---
 
