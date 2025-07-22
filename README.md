@@ -20,7 +20,7 @@
 
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| 2025.07.26 |            香港城市大学计算机科学在读博士生陈胜庄            | [SIMoE](https://arxiv.org/abs/2506.12597)：大模型升级再造的自动化专家发现框架 |                                                              |
+| 2025.07.26 |            香港城市大学计算机科学在读博士生陈胜庄            | [SIMoE](https://arxiv.org/abs/2506.12597)：稀疏插值混合专家，大模型升级再造的自动化专家发现框架 |            https://hcqnc.mk.xet.citv.cn/sl/1SAUun            |
 | 2025.07.22 |           香港中文大学(深圳)GAP实验室博士生叶崇杰            | [Hi3DGen](https://github.com/Stable-X/Stable3DGen)：法线为桥，为高清三维几何生成另辟蹊径 |            https://hcqnc.mk.xet.citv.cn/sl/1fuILn            |
 | 2025.07.19 |         纽约大学访问学生尹柏乔和西北大学博士生王启能         | [MindCube](https://mind-cube.github.io/)：空间智能的实现路径，探究 VLMs 构建稳健空间心理模型的能力 |            https://hcqnc.mk.xet.citv.cn/sl/34rxLm            |
 | 2025.07.15 |             华南理工大学与IDEA 联合培养博士蒋擎              | [ChatRex](https://github.com/IDEA-Research/ChatRex)/[RexSeek](https://github.com/IDEA-Research/RexSeek)/[Rex-Thinker](https://github.com/IDEA-Research/Rex-Thinker)：结合多模态大语言模型的目标检测模型构建 |            https://hcqnc.mk.xet.citv.cn/sl/rTL4A             |
