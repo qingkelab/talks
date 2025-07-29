@@ -21,6 +21,7 @@
 |  直播时间  |                            主讲人                            |                             主题                             |                      直播/回放观看链接                       |
 | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | 2025.08.05 |  Sea AI Lab（新加坡）算法工程师，新加坡国立大学博士生万信逸  | 大模型训练流水线并行四部曲：[吞吐](https://arxiv.org/pdf/2401.10241)、[内存](https://arxiv.org/pdf/2405.15362)、[负载均衡](https://github.com/sail-sg/VocabularyParallelism)与[线性扩展](https://arxiv.org/pdf/2503.01328) |         [H5](https://hcqnc.mk.xet.citv.cn/sl/1O1kEl)         |
+| 2025.08.02 |      智谱 AI RL Infra 工程师、slime 开源项目作者朱子霖       | [slime](https://github.com/THUDM/slime)：专为 RL Scaling 设计的大规模 RL 训练框架及实践 |         [H5](https://hcqnc.mk.xet.citv.cn/sl/1tGuY9)         |
 | 2025.07.26 |            香港城市大学计算机科学在读博士生陈胜庄            | [SIMoE](https://arxiv.org/abs/2506.12597)：稀疏插值混合专家，大模型升级再造的自动化专家发现框架 |            https://hcqnc.mk.xet.citv.cn/sl/1SAUun            |
 | 2025.07.22 |           香港中文大学(深圳)GAP实验室博士生叶崇杰            | [Hi3DGen](https://github.com/Stable-X/Stable3DGen)：法线为桥，为高清三维几何生成另辟蹊径 |            https://hcqnc.mk.xet.citv.cn/sl/1fuILn            |
 | 2025.07.19 |         纽约大学访问学生尹柏乔和西北大学博士生王启能         | [MindCube](https://mind-cube.github.io/)：空间智能的实现路径，探究 VLMs 构建稳健空间心理模型的能力 |            https://hcqnc.mk.xet.citv.cn/sl/34rxLm            |
