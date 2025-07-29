@@ -71,9 +71,9 @@
 | 2024.08.26 |                   UC Berkeley 博士生曹诗怡                   | [S-LoRA](https://github.com/S-LoRA/S-LoRA)：实现多 LoRA 大模型的高效并行化推理 |           [H5](https://hcqnc.xetlk.com/sl/3QsnQA)            |
 | 2024.08.14 |                  麻省理工学院准博士生唐嘉铭                  | [AWQ](https://github.com/mit-han-lab/llm-awq)：激活值感知的LLM低位权重量化 |            [H5](https://hcqnc.xetlk.com/sl/ivCj5)            |
 | 2024.08.06 |                   香港中文大学博士后王文海                   | [InternVL](https://github.com/OpenGVLab/InternVL) 2.0：通过渐进式策略扩展开源多模态大模型的性能边界 |           [H5](https://hcqnc.xetlk.com/sl/221tNT)            |
-| 2024.07.30 |        香港科技大学（广州）人工智能方向博士研究生杨帅        | [SEED-Story](https://github.com/TencentARC/SEED-Story)：生成长篇图文故事的多模态大型语言模型 | [H5]([https://hcqnc.xetlk.com/sl/3xzywr](https://hcqnc.xetlk.com/sl/3xzywr)) |
-| 2024.07.23 |                   华中科技大学博士生程天恒                   | [YOLO-World](https://github.com/AILab-CVC/YOLO-World)：基于视觉语言模型的实时开放词汇物体检测 | [H5]([https://hcqnc.xetlk.com/sl/12dD2S](https://hcqnc.xetlk.com/sl/12dD2S)) |
-| 2024.07.15 |            清华大学自然语言处理实验室博士生余天予            | [MiniCPM-V](https://github.com/OpenBMB/MiniCPM-V/tree/main)：端侧可用的 GPT-4V 级多模态大模型 | [H5]([https://hcqnc.xetlk.com/sl/30sK4y](https://hcqnc.xetlk.com/sl/30sK4y)) |
+| 2024.07.30 |        香港科技大学（广州）人工智能方向博士研究生杨帅        | [SEED-Story](https://github.com/TencentARC/SEED-Story)：生成长篇图文故事的多模态大型语言模型 |           [H5](https://hcqnc.xetlk.com/sl/3xzywr)            |
+| 2024.07.23 |                   华中科技大学博士生程天恒                   | [YOLO-World](https://github.com/AILab-CVC/YOLO-World)：基于视觉语言模型的实时开放词汇物体检测 |           [H5](https://hcqnc.xetlk.com/sl/12dD2S)            |
+| 2024.07.15 |            清华大学自然语言处理实验室博士生余天予            | [MiniCPM-V](https://github.com/OpenBMB/MiniCPM-V/tree/main)：端侧可用的 GPT-4V 级多模态大模型 |           [H5](https://hcqnc.xetlk.com/sl/30sK4y)            |
 | 2024.07.11 |               阿里通义实验室高级算法专家徐海洋               | [Mobile-Agent](https://github.com/X-PLUG/MobileAgent)：基于多模态Agent架构的手机智能体 |           [H5](https://hcqnc.xetlk.com/sl/34N5vR)            |
 | 2024.07.08 |                 北京航空航天大学博士生郑耀威                 | [LLaMA Factory](https://github.com/hiyouga/LLaMA-Factory)：从预训练到RLHF，大模型高效训练框架 |           [H5](https://hcqnc.xetlk.com/sl/4xFmvV)            |
 | 2024.06.27 |                   浙江大学硕士研究生董玉博                   | [VillagerAgent](https://github.com/cnsdqd-dyb/VillagerAgent)：减少幻觉、提高任务分解效率的多智能协作体框架 | [H5]([https://hcqnc.xetlk.com/sl/4z6PWd](https://hcqnc.xetlk.com/sl/4z6PWd)) |
